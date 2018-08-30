@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="33dp"
+    android:paddingRight="33dp"
+    style="@style/NoActionBar">
+
+    <TextView
+        android:id="@+id/some_id"
+        android:layout_width="289dp"
+        android:layout_height="98dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="35dp"
+        android:text="@string/welcome_text"
+        android:textAppearance="@style/TitleTextStyle"
+
+        />
+
+    <TextView
+        android:id="@+id/pass_registration"
+        android:layout_width="289dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="35dp"
+        android:text="@string/pass_registration_text"
+        android:textAppearance="@style/TitleTextStyle"
+        android:textSize="24sp" />
+    <EditText
+        android:id="@+id/name_edit"
+        android:hint="Имя"
+        style="@style/FillRegistrationStyle"
+        />
+    <EditText
+        android:id="@+id/family_edit"
+        android:hint="Фамилия"
+        style="@style/FillRegistrationStyle"
+        />
+    <EditText
+        android:id="@+id/father_name_edit"
+        android:hint="Отчество"
+        style="@style/FillRegistrationStyle"
+        />
+    <EditText
+        android:id="@+id/telephone_number_edit"
+        android:hint="Номер телефона (+996)"
+        style="@style/FillRegistrationStyle"
+        />
+    <EditText
+        android:id="@+id/email_edit"
+        android:hint="E-mail"
+        style="@style/FillRegistrationStyle"
+        />
+
+
+</LinearLayout>
