@@ -2,10 +2,15 @@
     <string name="app_name">CareerFair</string>
     <string name="welcome_text">Добро пожаловать на</string>
     <string name="career_fair">Career Fair</string>
+    <!--login activity-->
     <string name="pass_registration_text">Пройдите регистрацию</string>
     <string name="input_father_name">Отчество</string>
     <string name="input_surname">Фамилия</string>
     <string name="input_name">Имя</string>
     <string name="input_mobile">Номер телефона (+996)</string>
     <string name="input_email">E-mail</string>
+    <!--main menu-->
+    <string name="main_menu_title">Главное меню</string>
+    <string name="about_career_fair_text"><![CDATA[ <b><font color=#ffffff>О</b><b><font color=#FEE04A> Ярмарке Вакансий</b>
+]]> </string>
 </resources>
