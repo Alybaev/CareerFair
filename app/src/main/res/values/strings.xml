@@ -3,4 +3,9 @@
     <string name="welcome_text">Добро пожаловать на</string>
     <string name="career_fair">Career Fair</string>
     <string name="pass_registration_text">Пройдите регистрацию</string>
+    <string name="input_father_name">Отчество</string>
+    <string name="input_surname">Фамилия</string>
+    <string name="input_name">Имя</string>
+    <string name="input_mobile">Номер телефона (+996)</string>
+    <string name="input_email">E-mail</string>
 </resources>

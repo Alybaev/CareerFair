@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     android:paddingLeft="33dp"
-    android:paddingRight="33dp"
-    style="@style/NoActionBar">
+    android:paddingRight="33dp">
 
     <TextView
         android:id="@+id/some_id"
@@ -30,31 +28,50 @@
         android:text="@string/pass_registration_text"
         android:textAppearance="@style/TitleTextStyle"
         android:textSize="24sp" />
+
     <EditText
         android:id="@+id/name_edit"
-        android:hint="Имя"
         style="@style/FillRegistrationStyle"
-        />
+        android:hint="@string/input_name"
+        android:inputType="textPersonName"/>
+
     <EditText
-        android:id="@+id/family_edit"
-        android:hint="Фамилия"
+        android:id="@+id/surname_edit"
         style="@style/FillRegistrationStyle"
-        />
+        android:hint="@string/input_surname"
+        android:inputType="textPersonName"/>
+
     <EditText
         android:id="@+id/father_name_edit"
-        android:hint="Отчество"
         style="@style/FillRegistrationStyle"
-        />
+        android:hint="@string/input_father_name"
+        android:inputType="textPersonName"/>
+
     <EditText
         android:id="@+id/telephone_number_edit"
-        android:hint="Номер телефона (+996)"
         style="@style/FillRegistrationStyle"
-        />
+        android:hint="@string/input_mobile"
+
+        android:inputType="phone"/>
+
     <EditText
         android:id="@+id/email_edit"
-        android:hint="E-mail"
         style="@style/FillRegistrationStyle"
+        android:hint="@string/input_email"
+        android:inputType="textEmailAddress"
         />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:id="@+id/login_button"
+        android:fontFamily="@font/roboto_regular"
+        android:text="Зарегистрироваться"
+        android:textColor="#FFFFFF"
+
+        android:textAllCaps="false"
+        android:background="@color/colorPrimary"
+        android:layout_marginTop="22dp"/>
 
 
 </LinearLayout>
