@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:id="@+id/category"
+        android:layout_width="match_parent"
+        android:layout_height="45dp">
+
+        <FrameLayout
+
+            android:layout_width="325dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentStart="true"
+
+            android:layout_alignParentTop="true">
+
+            <ImageView
+                android:id="@+id/yellow_line_image"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="right"
+                android:src="@drawable/single_yellow_line" />
+
+
+        </FrameLayout>
+
+        <TextView
+            style="@style/TitleTextStyle"
+            android:id="@+id/category_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center"
+            android:textSize="16sp"
+            tools:text="Партнеры и Медиа-партнеры" />
+
+    </RelativeLayout>
+
+    <View
+        android:layout_width="325dp"
+        android:layout_height="10dp"
+        android:layout_below="@+id/category"
+        android:background="@drawable/dropshadow"
+        />
+
+
+</RelativeLayout>

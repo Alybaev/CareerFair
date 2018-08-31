@@ -1,9 +1,9 @@
 <resources>
     <string name="app_name">CareerFair</string>
-    <string name="welcome_text">Добро пожаловать на</string>
+    <string name="welcome_text">Добро\nпожаловать на</string>
     <string name="career_fair">Career Fair</string>
     <!--login activity-->
-    <string name="pass_registration_text">Пройдите регистрацию</string>
+    <string name="pass_registration_text">Пройдите регистрацию:</string>
     <string name="input_father_name">Отчество</string>
     <string name="input_surname">Фамилия</string>
     <string name="input_name">Имя</string>

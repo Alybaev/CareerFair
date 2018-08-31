@@ -9,23 +9,28 @@
     <TextView
         android:id="@+id/some_id"
         android:layout_width="289dp"
-        android:layout_height="98dp"
+        android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="35dp"
+        android:layout_marginTop="15dp"
         android:text="@string/welcome_text"
         android:textAppearance="@style/TitleTextStyle"
 
         />
 
+    <ImageView
+        android:layout_width="109dp"
+        android:layout_height="59dp"
+        android:src="@drawable/logo" />
     <TextView
         android:id="@+id/pass_registration"
         android:layout_width="289dp"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="35dp"
+        android:layout_marginTop="20dp"
         android:text="@string/pass_registration_text"
+        android:fontFamily="@font/roboto_medium"
         android:textAppearance="@style/TitleTextStyle"
         android:textSize="24sp" />
 
@@ -71,7 +76,7 @@
 
         android:textAllCaps="false"
         android:background="@color/colorPrimary"
-        android:layout_marginTop="22dp"/>
+        android:layout_marginTop="16dp"/>
 
 
 </LinearLayout>

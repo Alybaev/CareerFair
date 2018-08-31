@@ -29,8 +29,8 @@
             android:id="@+id/about_career_fair"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="9sp"
-            android:layout_marginTop="9sp"
+            android:layout_marginBottom="14sp"
+            android:layout_marginTop="14sp"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
             android:gravity="center_horizontal"
@@ -49,5 +49,11 @@
             android:src="@drawable/arrow_right32px" />
 
     </RelativeLayout>
+    <android.support.v7.widget.RecyclerView
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:listitem="@layout/item_category"/>
+
 
 </LinearLayout>
