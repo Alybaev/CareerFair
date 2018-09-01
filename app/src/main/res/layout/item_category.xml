@@ -7,25 +7,24 @@
     <RelativeLayout
         android:id="@+id/category"
         android:layout_width="match_parent"
-        android:layout_height="45dp">
+        android:layout_height="@dimen/height_of_categories">
 
-        <FrameLayout
-
-            android:layout_width="325dp"
+        <RelativeLayout
+            android:id="@+id/frame_for_category"
+            android:layout_width="@dimen/width_of_categories"
             android:layout_height="match_parent"
-            android:layout_alignParentStart="true"
-
-            android:layout_alignParentTop="true">
+            android:layout_alignParentEnd="true"
+            >
 
             <ImageView
                 android:id="@+id/yellow_line_image"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_gravity="right"
+               android:layout_alignParentStart="true"
                 android:src="@drawable/single_yellow_line" />
 
 
-        </FrameLayout>
+        </RelativeLayout>
 
         <TextView
             style="@style/TitleTextStyle"
@@ -40,11 +39,12 @@
     </RelativeLayout>
 
     <View
-        android:layout_width="325dp"
+        android:id="@+id/shadow_view"
+        android:layout_width="@dimen/width_of_categories"
         android:layout_height="10dp"
         android:layout_below="@+id/category"
         android:background="@drawable/dropshadow"
-        />
+        android:layout_alignParentEnd="true"/>
 
 
 </RelativeLayout>
