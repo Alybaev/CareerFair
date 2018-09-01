@@ -12,6 +12,15 @@ import android.widget.FrameLayout
 import android.widget.RelativeLayout
 import kg.neobis.careerfair.R
 import kotlinx.android.synthetic.main.item_category.view.*
+import android.R.attr.button
+import android.R.attr.gravity
+import android.view.ViewGroup.LayoutParams.FILL_PARENT
+import android.widget.LinearLayout
+import android.R.attr.gravity
+
+
+
+
 
 
 class MainMenuAdapter(var context: Context, var namesOfCategories: Array<String>) : RecyclerView.Adapter<MainMenuAdapter.MViewHolder>() {
@@ -26,35 +35,32 @@ class MainMenuAdapter(var context: Context, var namesOfCategories: Array<String>
 
     override fun onBindViewHolder(holder: MViewHolder, position: Int) {
         holder.categoryTextView.text = namesOfCategories[position]
+        val params = LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT)
         if (position % 2 != 0) {
-            val paramsShadow = holder.shadowView.layoutParams as RelativeLayout.LayoutParams
-            paramsShadow.addRule(RelativeLayout.ALIGN_PARENT_START,RelativeLayout.TRUE)
-            holder.shadowView.layoutParams = paramsShadow
 
-            val paramsFrame = holder.frameForCategory.layoutParams as RelativeLayout.LayoutParams
-            Log.d("____width" ,holder.frameForCategory.layoutParams.width.toString())
-            Log.d("____height" ,holder.frameForCategory.layoutParams.height.toString())
-            paramsFrame.addRule(RelativeLayout.ALIGN_PARENT_START,RelativeLayout.TRUE)
-            holder.frameForCategory.layoutParams = paramsFrame
+            holder.yellowLineImage2.visibility = View.INVISIBLE
+            params.gravity =  Gravity.END
 
+        }else{
+
+            holder.yellowLineImage1.visibility = View.INVISIBLE
+            params.gravity=  Gravity.START
 
 
-            val params2 = holder.yellowLineImage.layoutParams as RelativeLayout.LayoutParams
-
-            params2.addRule(RelativeLayout.ALIGN_PARENT_END,RelativeLayout.TRUE)
-
-
-            holder.yellowLineImage.layoutParams = params2
         }
+        holder.shadowView.layoutParams = params
+
 
 
     }
 
     inner class MViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         var shadowView = view.shadow_view
+        var itemCategory = view.item_category
         var categoryTextView = view.category_text
         var frameForCategory = view.frame_for_category
-        var yellowLineImage = view.yellow_line_image
+        var yellowLineImage1 = view.yellow_line_image1
+        var yellowLineImage2 = view.yellow_line_image2
 
     }
 

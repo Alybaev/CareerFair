@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.SheduleActivity.SheduleActivtiy"
+    android:layout_marginStart="15dp"
+    android:layout_marginEnd="15dp"
+    android:layout_marginTop="10dp">
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="26dp"
+        android:orientation="horizontal"
+        android:weightSum="105">
+
+        <TextView
+            style="@style/SheduleSubtitlesStyle"
+            android:layout_weight="20"
+            android:text="@string/time_title" />
+
+        <TextView
+            style="@style/SheduleSubtitlesStyle"
+            android:layout_weight="40"
+            android:text="@string/theme_title" />
+
+        <TextView
+            style="@style/SheduleSubtitlesStyle"
+            android:layout_weight="25"
+            android:text="@string/speaker_title" />
+
+        <TextView
+            style="@style/SheduleSubtitlesStyle"
+            android:layout_weight="20"
+            android:text="@string/place_title" />
+
+    </LinearLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/RecycleViewSchedule"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:listitem="@layout/item_category" />
+
+
+</LinearLayout>

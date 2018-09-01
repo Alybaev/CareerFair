@@ -49,6 +49,20 @@
 
     </style>
 
+    <style name="SheduleSubtitlesStyle">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_marginEnd">5dp</item>
+        <item name="android:layout_gravity">center_vertical</item>
+    </style>
+
+    <style name="SheduleItemStyle" parent="@style/SheduleSubtitlesStyle">
+        <item name="android:layout_marginTop">@dimen/margin_top_for_item_in_schedule</item>
+        <item name="android:textSize">14dp</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="android:layout_marginStart">5sp</item>
+    </style>
+
 
 
 

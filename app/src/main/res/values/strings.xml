@@ -13,6 +13,10 @@
     <string name="main_menu_title">Главное меню</string>
     <string name="about_career_fair_text"><![CDATA[ <b><font color=#ffffff>О</b><b><font color=#FEE04A> Ярмарке Вакансий</b>
 ]]> </string>
+    <string name="time_title">Время</string>
+    <string name="theme_title">Тема</string>
+    <string name="speaker_title">Спикер</string>
+    <string name="place_title">Место</string>
     <string-array name="categories_name">
         <item>Расписание</item>
         <item>Карта</item>

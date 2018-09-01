@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/item_category"
+    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    >
 
     <RelativeLayout
         android:id="@+id/category"
@@ -11,16 +14,23 @@
 
         <RelativeLayout
             android:id="@+id/frame_for_category"
-            android:layout_width="@dimen/width_of_categories"
+            android:layout_width="290dp"
             android:layout_height="match_parent"
             android:layout_alignParentEnd="true"
-            >
+            android:layout_marginEnd="35dp">
 
             <ImageView
-                android:id="@+id/yellow_line_image"
+                android:id="@+id/yellow_line_image1"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-               android:layout_alignParentStart="true"
+                android:layout_alignParentStart="true"
+                android:src="@drawable/single_yellow_line" />
+
+            <ImageView
+                android:id="@+id/yellow_line_image2"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
                 android:src="@drawable/single_yellow_line" />
 
 
@@ -42,9 +52,10 @@
         android:id="@+id/shadow_view"
         android:layout_width="@dimen/width_of_categories"
         android:layout_height="10dp"
-        android:layout_below="@+id/category"
+
         android:background="@drawable/dropshadow"
-        android:layout_alignParentEnd="true"/>
+
+    />
 
 
-</RelativeLayout>
+</LinearLayout>
