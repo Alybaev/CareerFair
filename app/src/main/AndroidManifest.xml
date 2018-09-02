@@ -9,8 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
         <activity
-            android:name=".ui.LoginActivity"
+            android:name=".MainActivity"
             android:theme="@style/NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -18,12 +19,21 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity" />
+
+        <activity
+            android:name=".ui.LoginActivity"
+            android:theme="@style/NoActionBar">
+
+        </activity>
         <activity
             android:name=".ui.mainMenuActivity.MainMenuActivity"
             android:theme="@style/NoActionBar" />
-        <activity android:name=".ui.sheduleActivity.SheduleActivity" />
-        <activity android:name=".ui.constestActivity.ContestActivity"></activity>
+        <activity
+            android:name=".ui.sheduleActivity.SheduleActivity"
+            android:label="Расписание" />
+        <activity
+            android:name=".ui.constestActivity.ContestActivity"
+            android:label="Конкурсы" />
     </application>
 
 </manifest>

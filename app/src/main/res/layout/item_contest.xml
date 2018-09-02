@@ -3,7 +3,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_gravity="center"
+    android:layout_gravity="center_horizontal"
     xmlns:tools="http://schemas.android.com/tools">
     <TextView
         android:id="@+id/title_of_contest"
@@ -14,7 +14,7 @@
         tools:text = "&quot;Самое лучшее Мок-интервью&quot;"
         style="@style/ContestTitleStyle"/>
     <ImageView
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="15dp"
         android:layout_gravity="center_horizontal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

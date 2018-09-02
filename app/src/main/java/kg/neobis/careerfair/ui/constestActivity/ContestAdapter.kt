@@ -10,7 +10,7 @@ import kotlinx.android.synthetic.main.item_contest.view.*
 class ContestAdapter(var listener: Listener, var namesOfContest: Array<String>) : RecyclerView.Adapter<ContestAdapter.MViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MViewHolder {
-        return MViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.item_contest, null, false))
+        return MViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.item_contest, parent, false))
     }
 
     override fun getItemCount(): Int {

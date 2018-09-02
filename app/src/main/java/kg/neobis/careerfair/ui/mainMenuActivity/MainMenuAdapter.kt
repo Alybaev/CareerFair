@@ -13,7 +13,7 @@ import android.widget.LinearLayout
 class MainMenuAdapter(var listener: Listener, var namesOfCategories: Array<String>) : RecyclerView.Adapter<MainMenuAdapter.MViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MViewHolder {
-        return MViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.item_category, null, false))
+        return MViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.item_category, parent, false))
     }
 
     override fun getItemCount(): Int {
@@ -35,7 +35,7 @@ class MainMenuAdapter(var listener: Listener, var namesOfCategories: Array<Strin
 
 
         }
-        holder.shadowView.layoutParams = params
+        holder.itemCategory.layoutParams = params
         holder.frameForCategory.setOnClickListener{
 
             listener.onItemSelectedAt(position)
