@@ -1,4 +1,4 @@
-package kg.neobis.careerfair.ui.SheduleActivity
+package kg.neobis.careerfair.ui.sheduleActivity
 
 import android.os.Bundle
 import kg.neobis.careerfair.R

@@ -19,8 +19,11 @@
             </intent-filter>
         </activity>
         <activity android:name=".MainActivity" />
-        <activity android:name=".ui.MainMenuActivity.MainMenuActivity" android:theme="@style/NoActionBar" />
-        <activity android:name=".ui.SheduleActivity.SheduleActivity"></activity>
+        <activity
+            android:name=".ui.mainMenuActivity.MainMenuActivity"
+            android:theme="@style/NoActionBar" />
+        <activity android:name=".ui.sheduleActivity.SheduleActivity" />
+        <activity android:name=".ui.constestActivity.ContestActivity"></activity>
     </application>
 
 </manifest>

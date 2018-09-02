@@ -3,9 +3,8 @@ package kg.neobis.careerfair.ui
 import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
-import android.view.View
 import kg.neobis.careerfair.R
-import kg.neobis.careerfair.ui.MainMenuActivity.MainMenuActivity
+import kg.neobis.careerfair.ui.mainMenuActivity.MainMenuActivity
 import kotlinx.android.synthetic.main.activity_login.*
 
 class LoginActivity : AppCompatActivity(){

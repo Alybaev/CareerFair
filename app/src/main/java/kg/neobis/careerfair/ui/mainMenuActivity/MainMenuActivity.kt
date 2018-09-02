@@ -1,13 +1,15 @@
-package kg.neobis.careerfair.ui.MainMenuActivity
+package kg.neobis.careerfair.ui.mainMenuActivity
 
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import android.support.v7.widget.DividerItemDecoration
 import android.text.Html
 import android.text.Spanned
 import kg.neobis.careerfair.R
-import kg.neobis.careerfair.ui.SheduleActivity.SheduleActivity
+import kg.neobis.careerfair.ui.constestActivity.ContestActivity
+import kg.neobis.careerfair.ui.sheduleActivity.SheduleActivity
 import kotlinx.android.synthetic.main.activity_main_menu.*
 
 
@@ -39,19 +41,20 @@ class MainMenuActivity : AppCompatActivity(), MainMenuAdapter.Listener {
         initAdapter()
     }
 
-    private fun initAdapter() {
+        private fun initAdapter() {
 
-        namesOfCategories = resources.getStringArray(R.array.categories_name)
-        mAdapter = MainMenuAdapter(this, namesOfCategories!!)
-        recycleViewOfCategories.adapter = mAdapter
+            namesOfCategories = resources.getStringArray(R.array.categories_name)
+            mAdapter = MainMenuAdapter(this, namesOfCategories!!)
+            recycleViewOfCategories.adapter = mAdapter
 
-    }
+
+        }
 
     override fun onItemSelectedAt(position: Int) {
-        val intent = Intent(this, SheduleActivity::class.java)
+        var intent = Intent(this, SheduleActivity::class.java)
+        when (position) {
+            3 -> intent = Intent(this, ContestActivity::class.java)
+        }
         startActivity(intent)
-//        when (position) {
-//            3 ->
-//        }
     }
 }

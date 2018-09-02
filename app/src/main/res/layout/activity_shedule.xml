@@ -5,7 +5,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.SheduleActivity.SheduleActivity"
+    tools:context=".ui.sheduleActivity.SheduleActivity"
     android:layout_marginStart="15dp"
     android:layout_marginEnd="15dp"
     android:layout_marginTop="10dp">

@@ -1,26 +1,13 @@
-package kg.neobis.careerfair.ui.MainMenuActivity
+package kg.neobis.careerfair.ui.mainMenuActivity
 
-import android.content.Context
-import android.content.Intent
 import android.support.v7.widget.RecyclerView
-import android.util.Log
 import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.FrameLayout
-import android.widget.RelativeLayout
 import kg.neobis.careerfair.R
 import kotlinx.android.synthetic.main.item_category.view.*
-import android.R.attr.button
-import android.R.attr.gravity
-import android.view.ViewGroup.LayoutParams.FILL_PARENT
 import android.widget.LinearLayout
-import android.R.attr.gravity
-
-
-
-
 
 
 class MainMenuAdapter(var listener: Listener, var namesOfCategories: Array<String>) : RecyclerView.Adapter<MainMenuAdapter.MViewHolder>() {

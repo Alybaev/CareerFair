@@ -29,4 +29,10 @@
     </string-array>
     <!--baseActivity-->
     <string name="loading">Loading</string>
+    <!--contestActivity-->
+    <string-array name="name_contests">
+        <item>“Самое лучшее Мок-интервью”</item>
+        <item>“Самое лучшее CV”</item>
+    </string-array>
+    <string name="take_part_in_contest">Участвовать</string>
 </resources>
