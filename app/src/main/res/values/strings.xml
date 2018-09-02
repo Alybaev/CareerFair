@@ -27,4 +27,6 @@
         <item>Спонсоры</item>
         <item>Опросы</item>
     </string-array>
+    <!--baseActivity-->
+    <string name="loading">Loading</string>
 </resources>

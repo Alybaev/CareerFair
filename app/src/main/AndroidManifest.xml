@@ -20,7 +20,7 @@
         </activity>
         <activity android:name=".MainActivity" />
         <activity android:name=".ui.MainMenuActivity.MainMenuActivity" android:theme="@style/NoActionBar" />
-        <activity android:name=".ui.SheduleActivity.SheduleActivtiy"></activity>
+        <activity android:name=".ui.SheduleActivity.SheduleActivity"></activity>
     </application>
 
 </manifest>

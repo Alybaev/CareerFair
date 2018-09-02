@@ -1,21 +1,18 @@
 package kg.neobis.careerfair.ui.MainMenuActivity
 
-import android.support.v7.app.AppCompatActivity
-import android.os.Bundle
-import android.support.v4.content.ContextCompat
-import android.text.Html
-import kg.neobis.careerfair.R
-import android.text.Spannable
-import android.text.style.ForegroundColorSpan
-import android.text.SpannableString
-import kotlinx.android.synthetic.main.activity_main_menu.*
+import android.content.Intent
 import android.os.Build
+import android.os.Bundle
+import android.support.v7.app.AppCompatActivity
+import android.text.Html
 import android.text.Spanned
+import kg.neobis.careerfair.R
+import kg.neobis.careerfair.ui.SheduleActivity.SheduleActivity
+import kotlinx.android.synthetic.main.activity_main_menu.*
 
 
+class MainMenuActivity : AppCompatActivity(), MainMenuAdapter.Listener {
 
-
-class MainMenuActivity : AppCompatActivity() {
 
     var namesOfCategories: Array<String>? = null
     var mAdapter: MainMenuAdapter? = null
@@ -36,7 +33,8 @@ class MainMenuActivity : AppCompatActivity() {
             Html.fromHtml(html)
         }
     }
-    private fun init(){
+
+    private fun init() {
         about_career_fair.text = fromHtml(getString(R.string.about_career_fair_text))
         initAdapter()
     }
@@ -47,5 +45,13 @@ class MainMenuActivity : AppCompatActivity() {
         mAdapter = MainMenuAdapter(this, namesOfCategories!!)
         recycleViewOfCategories.adapter = mAdapter
 
+    }
+
+    override fun onItemSelectedAt(position: Int) {
+        val intent = Intent(this, SheduleActivity::class.java)
+        startActivity(intent)
+//        when (position) {
+//            3 ->
+//        }
     }
 }

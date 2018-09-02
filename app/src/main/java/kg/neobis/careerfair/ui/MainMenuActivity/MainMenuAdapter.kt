@@ -23,7 +23,7 @@ import android.R.attr.gravity
 
 
 
-class MainMenuAdapter(var context: Context, var namesOfCategories: Array<String>) : RecyclerView.Adapter<MainMenuAdapter.MViewHolder>() {
+class MainMenuAdapter(var listener: Listener, var namesOfCategories: Array<String>) : RecyclerView.Adapter<MainMenuAdapter.MViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MViewHolder {
         return MViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.item_category, null, false))
@@ -49,8 +49,11 @@ class MainMenuAdapter(var context: Context, var namesOfCategories: Array<String>
 
         }
         holder.shadowView.layoutParams = params
+        holder.frameForCategory.setOnClickListener{
 
+            listener.onItemSelectedAt(position)
 
+        }
 
     }
 
@@ -62,6 +65,9 @@ class MainMenuAdapter(var context: Context, var namesOfCategories: Array<String>
         var yellowLineImage1 = view.yellow_line_image1
         var yellowLineImage2 = view.yellow_line_image2
 
+    }
+    interface Listener{
+        fun onItemSelectedAt(position:Int)
     }
 
 
