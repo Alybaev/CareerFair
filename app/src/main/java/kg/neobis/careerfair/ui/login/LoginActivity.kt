@@ -1,10 +1,10 @@
-package kg.neobis.careerfair.ui
+package kg.neobis.careerfair.ui.login
 
 import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import kg.neobis.careerfair.R
-import kg.neobis.careerfair.ui.mainMenuActivity.MainMenuActivity
+import kg.neobis.careerfair.ui.main_menu.MainMenuActivity
 import kotlinx.android.synthetic.main.activity_login.*
 
 class LoginActivity : AppCompatActivity(){

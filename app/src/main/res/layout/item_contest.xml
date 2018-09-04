@@ -21,6 +21,7 @@
         android:src="@drawable/yellow_horizontal_line"/>
 
     <Button
+        android:id="@+id/take_part_in_contest"
         style="@style/ButtonYellowStyle"
         android:layout_marginTop="25dp"
         android:text="@string/take_part_in_contest"

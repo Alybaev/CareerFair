@@ -1,13 +1,13 @@
-package kg.neobis.careerfair.ui.constestActivity
+package kg.neobis.careerfair.ui.constest
 
 import android.os.Bundle
 import android.support.v7.widget.DividerItemDecoration
 import android.support.v7.widget.LinearLayoutManager
 import kg.neobis.careerfair.R
+
 import kg.neobis.careerfair.ui.BaseActivity
+import kg.neobis.careerfair.utils.CustomTabForWebView
 import kotlinx.android.synthetic.main.activity_contest.*
-import kotlinx.android.synthetic.main.activity_main_menu.*
-import kotlinx.android.synthetic.main.activity_shedule.view.*
 
 class ContestActivity : BaseActivity(),ContestAdapter.Listener {
 
@@ -36,6 +36,11 @@ class ContestActivity : BaseActivity(),ContestAdapter.Listener {
 
     }
     override fun onItemSelectedAt(position: Int) {
-
+        var customTabWebView =  CustomTabForWebView()
+        customTabWebView.openUrlInChromeCustomTab(this,"https://goo.gl/forms/q7BaTHgV9dUh73Um2")
+//        when(position){
+//            1 -> intent = Intent(this, CvContestActivity::class.java)
+//        }
+//      startActivity(intent)
     }
 }

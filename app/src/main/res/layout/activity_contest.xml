@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
 
     android:layout_height="match_parent"
-    tools:context=".ui.constestActivity.ContestActivity">
+    tools:context=".ui.constest.ContestActivity">
     <android.support.v7.widget.RecyclerView
 
         android:id="@+id/RecycleViewContest"

@@ -1,4 +1,4 @@
-package kg.neobis.careerfair.ui.constestActivity
+package kg.neobis.careerfair.ui.constest
 
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
@@ -19,11 +19,15 @@ class ContestAdapter(var listener: Listener, var namesOfContest: Array<String>) 
 
     override fun onBindViewHolder(holder: MViewHolder, position: Int) {
         holder.titleOfContest.text = namesOfContest[position]
+        holder.buttonParticipation.setOnClickListener {
+            listener.onItemSelectedAt(position)
+        }
 
     }
 
     inner class MViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         var titleOfContest = view.title_of_contest
+        var buttonParticipation = view.take_part_in_contest
     }
 
     interface Listener {

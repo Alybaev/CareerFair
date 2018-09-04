@@ -1,15 +1,14 @@
-package kg.neobis.careerfair.ui.mainMenuActivity
+package kg.neobis.careerfair.ui.main_menu
 
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
-import android.support.v7.widget.DividerItemDecoration
 import android.text.Html
 import android.text.Spanned
 import kg.neobis.careerfair.R
-import kg.neobis.careerfair.ui.constestActivity.ContestActivity
-import kg.neobis.careerfair.ui.sheduleActivity.SheduleActivity
+import kg.neobis.careerfair.ui.constest.ContestActivity
+import kg.neobis.careerfair.ui.shedule.SheduleActivity
 import kotlinx.android.synthetic.main.activity_main_menu.*
 
 

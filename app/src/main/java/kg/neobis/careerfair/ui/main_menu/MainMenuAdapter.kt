@@ -1,4 +1,4 @@
-package kg.neobis.careerfair.ui.mainMenuActivity
+package kg.neobis.careerfair.ui.main_menu
 
 import android.support.v7.widget.RecyclerView
 import android.util.Log
