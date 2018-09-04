@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="height_of_categories">43dp</dimen>
+    <dimen name="height_of_categories">45dp</dimen>
     <dimen name="width_of_categories">338dp</dimen>
     <dimen name="margin_top_for_item_in_schedule">3dp</dimen>
 </resources>
