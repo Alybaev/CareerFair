@@ -47,12 +47,6 @@
         android:inputType="textPersonName"/>
 
     <EditText
-        android:id="@+id/father_name_edit"
-        style="@style/FillRegistrationStyle"
-        android:hint="@string/input_father_name"
-        android:inputType="textPersonName"/>
-
-    <EditText
         android:id="@+id/telephone_number_edit"
         style="@style/FillRegistrationStyle"
         android:hint="@string/input_mobile"

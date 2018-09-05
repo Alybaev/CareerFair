@@ -1,15 +1,11 @@
 package kg.neobis.careerfair.ui.main_menu
 
 import android.support.v7.widget.RecyclerView
-import android.util.Log
-import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import kg.neobis.careerfair.R
 import kotlinx.android.synthetic.main.item_category.view.*
-import android.widget.LinearLayout
-import android.widget.RelativeLayout
 
 
 class MainMenuAdapter(var listener: Listener, var namesOfCategories: Array<String>) : RecyclerView.Adapter<MainMenuAdapter.MViewHolder>() {
@@ -36,7 +32,7 @@ class MainMenuAdapter(var listener: Listener, var namesOfCategories: Array<Strin
             holder.frameForCategory.visibility = View.INVISIBLE
             holder.yellowLineImage.visibility = View.INVISIBLE
 
-        }else {
+        } else {
             holder.shadowView2.visibility = View.INVISIBLE
             holder.frameForCategory2.visibility = View.INVISIBLE
             holder.yellowLineImage2.visibility = View.INVISIBLE
@@ -45,10 +41,10 @@ class MainMenuAdapter(var listener: Listener, var namesOfCategories: Array<Strin
             holder.frameForCategory.visibility = View.VISIBLE
             holder.yellowLineImage.visibility = View.VISIBLE
         }
-        holder.frameForCategory.setOnClickListener{
+        holder.frameForCategory.setOnClickListener {
             listener.onItemSelectedAt(position)
         }
-        holder.frameForCategory2.setOnClickListener{
+        holder.frameForCategory2.setOnClickListener {
             listener.onItemSelectedAt(position)
         }
 
@@ -66,8 +62,9 @@ class MainMenuAdapter(var listener: Listener, var namesOfCategories: Array<Strin
         var yellowLineImage2 = view.yellow_line_image2
 
     }
-    interface Listener{
-        fun onItemSelectedAt(position:Int)
+
+    interface Listener {
+        fun onItemSelectedAt(position: Int)
     }
 
 
