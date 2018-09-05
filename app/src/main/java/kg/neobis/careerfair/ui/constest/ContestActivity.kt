@@ -37,10 +37,10 @@ class ContestActivity : BaseActivity(),ContestAdapter.Listener {
     }
     override fun onItemSelectedAt(position: Int) {
         var customTabWebView =  CustomTabForWebView()
-        customTabWebView.openUrlInChromeCustomTab(this,"https://goo.gl/forms/q7BaTHgV9dUh73Um2")
-//        when(position){
-//            1 -> intent = Intent(this, CvContestActivity::class.java)
-//        }
-//      startActivity(intent)
+
+        when(position){
+            0 -> customTabWebView.openUrlInChromeCustomTab(this,"https://docs.google.com/forms/d/e/1FAIpQLSefttaSmJoYDb5eyyGClHGeXeRWKs2NIu7NKyTjXg0nNDVhUQ/viewform")
+            1 -> customTabWebView.openUrlInChromeCustomTab(this,"https://docs.google.com/forms/d/e/1FAIpQLSd8R72J-i6fA2frwliEtyPRNf1KcbLJ69Z3-msrW3bOW5-JUA/viewform")
+        }
     }
 }
