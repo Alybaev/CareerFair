@@ -33,7 +33,10 @@
             android:name=".ui.constest.ContestActivity"
             android:label="Конкурсы" />
         <activity android:name=".ui.organizers.OrganizersActivity" />
-        <activity android:name=".ui.map.MapActivity"></activity>
+        <activity
+            android:name=".ui.map.MapActivity"
+            android:label="Карта" />
+        <activity android:name=".ui.employers.EmployersActivity"></activity>
     </application>
 
 </manifest>

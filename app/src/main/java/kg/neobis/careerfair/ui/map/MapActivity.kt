@@ -9,12 +9,10 @@ import kotlinx.android.synthetic.main.activity_map.*
 import android.widget.ArrayAdapter
 import android.widget.AdapterView
 import android.widget.Toast
+import kg.neobis.careerfair.ui.BaseActivity
 
 
-
-
-
-class MapActivity : AppCompatActivity() {
+class MapActivity : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

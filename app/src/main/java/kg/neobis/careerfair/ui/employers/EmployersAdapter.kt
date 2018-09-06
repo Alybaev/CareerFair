@@ -1,4 +1,4 @@
-package kg.neobis.careerfair.ui.organizers
+package kg.neobis.careerfair.ui.employers
 
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
@@ -7,8 +7,7 @@ import android.view.ViewGroup
 import kg.neobis.careerfair.R
 import kotlinx.android.synthetic.main.item_organizers.view.*
 
-
-class OrganizersAdapter(var listener: Listener) : RecyclerView.Adapter<OrganizersAdapter.MViewHolder>() {
+class EmployersAdapter(var listener: Listener) : RecyclerView.Adapter<EmployersAdapter.MViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MViewHolder {
 
