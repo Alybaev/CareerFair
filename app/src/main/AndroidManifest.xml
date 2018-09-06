@@ -32,7 +32,8 @@
         <activity
             android:name=".ui.constest.ContestActivity"
             android:label="Конкурсы" />
-        <activity android:name=".ui.organizers.OrganizersActivity"></activity>
+        <activity android:name=".ui.organizers.OrganizersActivity" />
+        <activity android:name=".ui.map.MapActivity"></activity>
     </application>
 
 </manifest>

@@ -8,6 +8,7 @@ import android.text.Html
 import android.text.Spanned
 import kg.neobis.careerfair.R
 import kg.neobis.careerfair.ui.constest.ContestActivity
+import kg.neobis.careerfair.ui.map.MapActivity
 import kg.neobis.careerfair.ui.organizers.OrganizersActivity
 import kg.neobis.careerfair.ui.shedule.SheduleActivity
 import kotlinx.android.synthetic.main.activity_main_menu.*
@@ -53,8 +54,9 @@ class MainMenuActivity : AppCompatActivity(), MainMenuAdapter.Listener {
     override fun onItemSelectedAt(position: Int) {
         var intent = Intent(this, SheduleActivity::class.java)
         when (position) {
+            1 -> intent = Intent(this, MapActivity::class.java)
             3 -> intent = Intent(this, ContestActivity::class.java)
-            5 -> intent = Intent(this,OrganizersActivity::class.java)
+            4 -> intent = Intent(this,OrganizersActivity::class.java)
         }
         startActivity(intent)
     }

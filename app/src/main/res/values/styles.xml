@@ -19,6 +19,15 @@
         <item name="android:fontFamily">@font/roboto_regular</item>
     </style>
 
+    <style name="SpinnerAppTheme" parent="android:Widget.Spinner">
+        <item name="android:background">@color/lightGreyColor</item>
+        <item name="android:dropDownSelector">@color/colorPrimary</item>
+    </style>
+
+    <style name="SpinnerDropDownItemAppTheme" parent="android:Widget.DropDownItem.Spinner">
+        <item name="android:checkMark">@color/colorAccent</item>
+    </style>
+
     <style name="NoActionBar" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="android:windowActionBar">false</item>
         <item name="android:windowNoTitle">true</item>

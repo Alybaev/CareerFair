@@ -21,7 +21,7 @@
     <ImageView
         android:layout_width="109dp"
         android:layout_height="59dp"
-        android:src="@drawable/logo2" />
+        android:src="@drawable/logo1" />
     <TextView
         android:id="@+id/pass_registration"
         android:layout_width="289dp"
