@@ -36,7 +36,9 @@
         <activity
             android:name=".ui.map.MapActivity"
             android:label="Карта" />
-        <activity android:name=".ui.employers.EmployersActivity"></activity>
+        <activity android:name=".ui.employers.EmployersActivity"
+            android:label="Работадатели"/>
+        <activity android:name=".ui.employers.DetailInfoAboutEmployerActivity"/>
     </application>
 
 </manifest>

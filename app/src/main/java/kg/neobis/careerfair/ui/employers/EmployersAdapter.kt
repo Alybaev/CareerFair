@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import kg.neobis.careerfair.R
+import kotlinx.android.synthetic.main.item_employers.view.*
 import kotlinx.android.synthetic.main.item_organizers.view.*
 
 class EmployersAdapter(var listener: Listener) : RecyclerView.Adapter<EmployersAdapter.MViewHolder>() {
@@ -22,23 +23,30 @@ class EmployersAdapter(var listener: Listener) : RecyclerView.Adapter<EmployersA
 
     override fun onBindViewHolder(holder: MViewHolder, position: Int) {
 
-        holder.logoOfCompany.setImageResource(R.drawable.default_image_for_organizers128px)
+        holder.imageOfEmployer.setImageResource(R.drawable.default_image_for_employers128px)
+        holder.nameOfEmployer.text  = "Dastan Alybaev"
+        holder.companyOfEmployer.text = "Google.com"
 
-//        holder.frameForCategory.setOnClickListener {
-//            listener.onItemSelectedAt(position)
-//        }
+        holder.employerInfo.setOnClickListener {
+            var name = holder.nameOfEmployer.text
+            listener.onItemSelectedAt(position,name.toString())
+
+        }
 
 
     }
 
     inner class MViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        var logoOfCompany = view.logo_of_company
 
+        var imageOfEmployer = view.photo_of_employer
+        var nameOfEmployer = view.name_of_employer
+        var companyOfEmployer = view.company_of_employer
+        var employerInfo = view.employer_info
 
     }
 
     interface Listener {
-        fun onItemSelectedAt(position: Int)
+        fun onItemSelectedAt(position: Int,nameOfEmployer :String)
     }
 
 

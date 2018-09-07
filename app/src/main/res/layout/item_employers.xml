@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/employer_info"
     android:orientation="horizontal"
     android:layout_width="match_parent"
-    android:layout_height="110dp"
+    android:layout_height="100dp"
     android:layout_margin="8dp">
     <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/photo_of_employer"
         android:layout_width="70dp"
         android:layout_height="70dp"
         android:layout_gravity="center_vertical"
@@ -17,6 +19,7 @@
         android:layout_marginStart="10dp"
         android:orientation="vertical">
         <TextView
+            android:id="@+id/name_of_employer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="@color/colorBlack"
@@ -25,11 +28,12 @@
             />
         <ImageView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="3dp"
             android:src="@drawable/horizontal_long_line"
             />
 
         <TextView
+            android:id="@+id/company_of_employer"
             tools:text="Amazon.com, Inc."
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
