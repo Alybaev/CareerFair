@@ -42,10 +42,10 @@ class MainMenuAdapter(var listener: Listener, var namesOfCategories: Array<Strin
             holder.yellowLineImage.visibility = View.VISIBLE
         }
         holder.frameForCategory.setOnClickListener {
-            listener.onItemSelectedAt(position)
+            listener.onItemSelectedAt(position, namesOfCategories[position])
         }
         holder.frameForCategory2.setOnClickListener {
-            listener.onItemSelectedAt(position)
+            listener.onItemSelectedAt(position,namesOfCategories[position])
         }
 
     }
@@ -64,7 +64,7 @@ class MainMenuAdapter(var listener: Listener, var namesOfCategories: Array<Strin
     }
 
     interface Listener {
-        fun onItemSelectedAt(position: Int)
+        fun onItemSelectedAt(position: Int, nameOfCategory : String)
     }
 
 

@@ -10,6 +10,7 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
+        android:logo="@drawable/logo2"
         android:theme="@style/AppTheme">
         <activity
             android:name=".MainActivity"
@@ -36,9 +37,11 @@
         <activity
             android:name=".ui.map.MapActivity"
             android:label="Карта" />
-        <activity android:name=".ui.employers.EmployersActivity"
-            android:label="Работадатели"/>
-        <activity android:name=".ui.employers.DetailInfoAboutEmployerActivity"/>
+        <activity
+            android:name=".ui.employers.EmployersActivity"
+            android:label="Работадатели" />
+        <activity android:name=".ui.employers.DetailInfoAboutEmployerActivity" />
+        <activity android:name=".ui.about_career_fair.AboutCareerFairActivity"></activity>
     </application>
 
 </manifest>

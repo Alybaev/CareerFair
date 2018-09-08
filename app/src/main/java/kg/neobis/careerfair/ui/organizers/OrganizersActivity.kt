@@ -6,12 +6,10 @@ import kg.neobis.careerfair.R
 import kotlinx.android.synthetic.main.activity_organizers.*
 import android.support.v7.widget.LinearLayoutManager
 import kg.neobis.careerfair.ui.BaseActivity
+import kg.neobis.careerfair.utils.Constants
 
 
 class OrganizersActivity : BaseActivity(), OrganizersAdapter.Listener {
-    override fun onItemSelectedAt(position: Int) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-    }
 
     var mAdapter: OrganizersAdapter? = null
 
@@ -25,6 +23,15 @@ class OrganizersActivity : BaseActivity(), OrganizersAdapter.Listener {
     private fun init() {
 
         initAdapter()
+        getDataFromIntent()
+    }
+
+    private fun getDataFromIntent() {
+
+        val intent = intent
+        val nameOfCategory = intent.getStringExtra(Constants.NAME_OF_CATEGORY_KEY)
+        title = nameOfCategory
+
     }
 
     private fun initAdapter() {
@@ -32,6 +39,10 @@ class OrganizersActivity : BaseActivity(), OrganizersAdapter.Listener {
         mAdapter = OrganizersAdapter(this)
         RecycleViewOrganizers.layoutManager = layoutManager
         RecycleViewOrganizers.adapter = mAdapter
+
+    }
+
+    override fun onItemSelectedAt(position: Int) {
 
     }
 }
