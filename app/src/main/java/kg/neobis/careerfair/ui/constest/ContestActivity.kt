@@ -6,7 +6,7 @@ import android.support.v7.widget.LinearLayoutManager
 import kg.neobis.careerfair.R
 
 import kg.neobis.careerfair.ui.BaseActivity
-import kg.neobis.careerfair.utils.CustomTabForWebView
+import kg.neobis.careerfair.utils.custom_classes.CustomTabForWebView
 import kotlinx.android.synthetic.main.activity_contest.*
 
 class ContestActivity : BaseActivity(),ContestAdapter.Listener {
@@ -36,7 +36,7 @@ class ContestActivity : BaseActivity(),ContestAdapter.Listener {
 
     }
     override fun onItemSelectedAt(position: Int) {
-        var customTabWebView =  CustomTabForWebView()
+        var customTabWebView = CustomTabForWebView()
 
         when(position){
             0 -> customTabWebView.openUrlInChromeCustomTab(this,"https://docs.google.com/forms/d/e/1FAIpQLSefttaSmJoYDb5eyyGClHGeXeRWKs2NIu7NKyTjXg0nNDVhUQ/viewform")

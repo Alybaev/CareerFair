@@ -1,4 +1,4 @@
-package kg.neobis.careerfair.utils
+package kg.neobis.careerfair.utils.custom_classes
 
 import android.app.Activity
 import android.content.ActivityNotFoundException

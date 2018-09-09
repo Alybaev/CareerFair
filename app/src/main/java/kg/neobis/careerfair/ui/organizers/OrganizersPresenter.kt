@@ -1,7 +1,7 @@
 package kg.neobis.careerfair.ui.organizers
 import android.util.Log
 import kg.neobis.careerfair.model.Organizers
-import kg.neobis.careerfair.utils.ApplicationClass
+import kg.neobis.careerfair.utils.custom_classes.ApplicationClass
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

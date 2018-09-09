@@ -1,10 +1,9 @@
-package kg.neobis.careerfair.utils
+package kg.neobis.careerfair.utils.custom_classes
 
 import android.app.Application
 import kg.neobis.careerfair.utils.Constants.Companion.BASE_URL
 import kg.neobis.careerfair.utils.data.ForumService
 import kg.neobis.careerfair.utils.data.NetWork
-import java.io.File
 
 class ApplicationClass : Application(){
     companion object {

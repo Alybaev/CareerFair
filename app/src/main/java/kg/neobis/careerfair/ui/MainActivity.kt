@@ -1,4 +1,4 @@
-package kg.neobis.careerfair
+package kg.neobis.careerfair.ui
 
 import android.content.Intent
 import android.os.Bundle
@@ -6,6 +6,10 @@ import kg.neobis.careerfair.ui.main_menu.MainMenuActivity
 import android.view.WindowManager
 import android.support.v7.app.AppCompatActivity
 import android.view.Window
+import kg.neobis.careerfair.R
+import kg.neobis.careerfair.ui.login.LoginActivity
+import kg.neobis.careerfair.utils.Constants
+import kg.neobis.careerfair.utils.FileUtils
 
 
 class MainActivity : AppCompatActivity() {
@@ -31,9 +35,13 @@ class MainActivity : AppCompatActivity() {
             } catch (e: InterruptedException) {
                 e.printStackTrace()
             }
+            var intent = Intent(this@MainActivity, LoginActivity::class.java)
+            if(FileUtils.readCacheData<String>(this@MainActivity,Constants.REGISTRATION_KEY ) != null) {
+                intent = Intent(this@MainActivity, MainMenuActivity::class.java)
+            }
 
-            val intent = Intent(this@MainActivity, MainMenuActivity::class.java)
-            startActivity(intent)
+
+             startActivity(intent)
             this@MainActivity.finish()
         }
     }

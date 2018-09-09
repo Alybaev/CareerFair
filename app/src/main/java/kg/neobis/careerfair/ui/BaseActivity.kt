@@ -56,4 +56,5 @@ open class BaseActivity : AppCompatActivity(){
         hideProgress()
     }
 
+
 }

@@ -1,6 +1,6 @@
 package kg.neobis.careerfair.ui.organizers
 
-import kg.neobis.careerfair.utils.CustomClasses.IProgressBar
+import kg.neobis.careerfair.utils.custom_classes.IProgressBar
 
 interface OrganizersContract {
     interface  View : IProgressBar{
