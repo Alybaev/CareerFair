@@ -6,13 +6,14 @@
     android:layout_width="match_parent"
     android:layout_height="100dp"
     android:layout_margin="8dp">
-    <de.hdodenhof.circleimageview.CircleImageView
+    <com.mikhaellopez.circularimageview.CircularImageView
         android:id="@+id/photo_of_employer"
         android:layout_width="70dp"
         android:layout_height="70dp"
         android:layout_gravity="center_vertical"
         android:background="@android:color/transparent"
-        android:src="@drawable/default_image_for_employers128px"/>
+        android:src="@drawable/default_image_for_employers128px"
+        />
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"

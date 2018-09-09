@@ -9,7 +9,10 @@ import kg.neobis.careerfair.ui.BaseActivity
 import kg.neobis.careerfair.utils.Constants
 
 
-class OrganizersActivity : BaseActivity(), OrganizersAdapter.Listener {
+class OrganizersActivity : BaseActivity(), OrganizersAdapter.Listener,OrganizersContract.View {
+    override fun onSuccess(result: List<Any>) {
+
+    }
 
     var mAdapter: OrganizersAdapter? = null
 
@@ -24,6 +27,15 @@ class OrganizersActivity : BaseActivity(), OrganizersAdapter.Listener {
 
         initAdapter()
         getDataFromIntent()
+        initPresenter()
+    }
+
+    private var presenter: OrganizersPresenter? = null
+
+    private fun initPresenter() {
+
+        presenter = OrganizersPresenter(this)
+        presenter!!.getOrganizers()
     }
 
     private fun getDataFromIntent() {

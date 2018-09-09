@@ -13,7 +13,7 @@ class EmployersAdapter(var listener: Listener) : RecyclerView.Adapter<EmployersA
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MViewHolder {
 
 
-        return MViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.item_organizers, parent, false))
+        return MViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.item_employers, parent, false))
     }
 
 

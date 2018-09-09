@@ -24,6 +24,7 @@ class EmployersActivity : BaseActivity(),EmployersAdapter.Listener {
     override fun onItemSelectedAt(position: Int,nameOfEmployer : String) {
         val intent = Intent(this,DetailInfoAboutEmployerActivity::class.java)
         intent.putExtra(Constants.NAME_OF_EMPLOYER_KEY, nameOfEmployer)
+        startActivity(intent)
     }
 
 
