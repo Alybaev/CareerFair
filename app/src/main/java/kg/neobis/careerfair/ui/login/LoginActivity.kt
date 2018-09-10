@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 
 import android.view.KeyEvent
+import android.view.MenuItem
 import kg.neobis.careerfair.R
 import kotlinx.android.synthetic.main.activity_login2.*
 
@@ -36,14 +37,14 @@ class LoginActivity : BaseActivity() {
     }
 
     //       initListeners()
-    override fun onKeyDown(keyCode: Int, event: KeyEvent?): Boolean {
-        if (keyCode == KeyEvent.KEYCODE_BACK && this.webViewRegistration.canGoBack()) {
-            this.webViewRegistration.goBack()
-            return true
+    public override fun onBackPressed() {
+        if (webViewRegistration.canGoBack()) {
+            webViewRegistration.goBack()
+        } else {
+            super.onBackPressed()
         }
-
-        return super.onKeyDown(keyCode, event)
     }
+
 
 }
 

@@ -19,15 +19,14 @@ class SimpleWebViewClientImpl(var activity: Activity) : WebViewClient() {
 
         if (url.contains("https://docs.google.com/forms/d/e/1FAIpQLSevckocpQKbsAVyn5xKaMBsDbR3rY90n5ItBoPy7xOAxfZkzw/alreadyresponded")) {
             val intent = Intent(activity, MainMenuActivity::class.java)
-   //         FileUtils.writeCacheData(activity, Constants.REGISTRATION_KEY, "true")
+            FileUtils.writeCacheData(activity, Constants.REGISTRATION_KEY, "true")
             activity!!.startActivity(intent)
+            activity.finish()
             return false
         } else if (url == "https://docs.google.com/forms/d/e/1FAIpQLSevckocpQKbsAVyn5xKaMBsDbR3rY90n5ItBoPy7xOAxfZkzw/viewform") {
             return false
         }
-//        val intent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
-//        activity.startActivity(intent)
-//        return true
+
         return false
 
 
