@@ -1,43 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_marginStart="24dp"
-    android:orientation="vertical"
-    tools:context=".ui.organizers.OrganizersActivity"
-    tools:layout_height="150dp">
+    android:layout_height="match_parent">
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/RecycleViewOrganizers"
-
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="25dp"
-        android:layout_marginTop="28dp"
-        tools:listitem="@layout/item_organizers" />
+        android:layout_height="match_parent"
 
-    <ImageView
+        android:orientation="vertical"
+        tools:context=".ui.organizers.OrganizersActivity"
+        tools:layout_height="150dp">
 
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="@dimen/margin_end_in_organizers_activity"
-        android:src="@drawable/yellow_horizontal_line" />
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="@dimen/margin_end_in_organizers_activity">
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/RecycleViewOrganizers"
 
-        <TextView
-
-            android:layout_marginTop="24dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/amazon_default_text"
-             />
-    </ScrollView>
+            android:layout_marginBottom="25dp"
+            android:layout_marginTop="28dp"
+            tools:listitem="@layout/item_organizers" />
+
+        <ImageView
+
+            android:layout_width="308dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginEnd="@dimen/margin_end_in_organizers_activity"
+            android:layout_marginStart="@dimen/margin_end_in_organizers_activity"
+            android:src="@drawable/yellow_horizontal_line" />
 
 
-</LinearLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/margin_end_in_organizers_activity"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            android:text="@string/amazon_default_text" />
+
+
+    </LinearLayout>
+</ScrollView>

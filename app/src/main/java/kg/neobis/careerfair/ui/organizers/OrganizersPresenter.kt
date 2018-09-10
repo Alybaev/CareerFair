@@ -17,7 +17,7 @@ class OrganizersPresenter(val view: OrganizersContract.View) : OrganizersContrac
                             Log.d("______name", response.message())
                             view!!.onSuccess(response.body()!!)
                         } else {
-                            view!!.onError("error")
+                            view!!.onError("Не удалось получить данные")
                         }
                         view.hideProgress()
                     }
@@ -25,7 +25,7 @@ class OrganizersPresenter(val view: OrganizersContract.View) : OrganizersContrac
 
                 override fun onFailure(call: Call<List<Organizers>>?, t: Throwable?) {
                     if (isViewAttached()) {
-                        view!!.onError("error")
+                        view!!.onError("Не удалось получить данные")
                         view.hideProgress()
                     }
                     t?.printStackTrace()
@@ -35,6 +35,8 @@ class OrganizersPresenter(val view: OrganizersContract.View) : OrganizersContrac
 
     }
 
-    private fun isViewAttached(): Boolean = view != null
+
+
+        private fun isViewAttached(): Boolean = view != null
 }
 

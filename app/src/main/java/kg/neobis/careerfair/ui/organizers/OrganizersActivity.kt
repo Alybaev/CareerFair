@@ -1,20 +1,20 @@
 package kg.neobis.careerfair.ui.organizers
 
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import kg.neobis.careerfair.R
-import kotlinx.android.synthetic.main.activity_organizers.*
 import android.support.v7.widget.LinearLayoutManager
+import kg.neobis.careerfair.R
 import kg.neobis.careerfair.ui.BaseActivity
 import kg.neobis.careerfair.utils.Constants
+import kotlinx.android.synthetic.main.activity_organizers.*
 
 
-class OrganizersActivity : BaseActivity(), OrganizersAdapter.Listener,OrganizersContract.View {
+class OrganizersActivity : BaseActivity(), OrganizersAdapter.Listener, OrganizersContract.View {
     override fun onSuccess(result: List<Any>) {
 
     }
 
     var mAdapter: OrganizersAdapter? = null
+    private var presenter: OrganizersPresenter? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,7 +30,6 @@ class OrganizersActivity : BaseActivity(), OrganizersAdapter.Listener,Organizers
         initPresenter()
     }
 
-    private var presenter: OrganizersPresenter? = null
 
     private fun initPresenter() {
 

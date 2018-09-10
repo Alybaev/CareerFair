@@ -8,10 +8,10 @@ import kg.neobis.careerfair.ui.organizers.OrganizersAdapter
 import kotlinx.android.synthetic.main.activity_organizers.*
 import kotlinx.android.synthetic.main.activity_shedule.*
 
-class SheduleActivity : BaseActivity(),SheduleAdapter.Listener {
-    override fun onItemSelectedAt(position: Int) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-    }
+class SheduleActivity : BaseActivity(),SheduleAdapter.Listener,SheduleContract.View {
+
+    private var shedulePresenter: ShedulePresenter? = null
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,7 +21,15 @@ class SheduleActivity : BaseActivity(),SheduleAdapter.Listener {
 
     private fun init() {
 
+        initPresenter()
         initAdapter()
+    }
+
+
+    private fun initPresenter() {
+
+        shedulePresenter = ShedulePresenter(this)
+        shedulePresenter!!.getShedule()
     }
 
     private var mAdapter: SheduleAdapter? = null
@@ -31,6 +39,14 @@ class SheduleActivity : BaseActivity(),SheduleAdapter.Listener {
         mAdapter = SheduleAdapter(this)
         RecycleViewSchedule.layoutManager = layoutManager
         RecycleViewSchedule.adapter = mAdapter
+
+    }
+
+    override fun onSuccess(result: List<Any>) {
+
+    }
+
+    override fun onItemSelectedAt(position: Int) {
 
     }
 
