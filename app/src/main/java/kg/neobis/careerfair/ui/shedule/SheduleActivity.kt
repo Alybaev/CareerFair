@@ -8,9 +8,9 @@ import kg.neobis.careerfair.ui.organizers.OrganizersAdapter
 import kotlinx.android.synthetic.main.activity_organizers.*
 import kotlinx.android.synthetic.main.activity_shedule.*
 
-class SheduleActivity : BaseActivity(),SheduleAdapter.Listener,SheduleContract.View {
+class SheduleActivity : BaseActivity(),SheduleAdapter.Listener{
 
-    private var shedulePresenter: ShedulePresenter? = null
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -28,8 +28,7 @@ class SheduleActivity : BaseActivity(),SheduleAdapter.Listener,SheduleContract.V
 
     private fun initPresenter() {
 
-        shedulePresenter = ShedulePresenter(this)
-        shedulePresenter!!.getShedule()
+
     }
 
     private var mAdapter: SheduleAdapter? = null
@@ -42,9 +41,7 @@ class SheduleActivity : BaseActivity(),SheduleAdapter.Listener,SheduleContract.V
 
     }
 
-    override fun onSuccess(result: List<Any>) {
 
-    }
 
     override fun onItemSelectedAt(position: Int) {
 

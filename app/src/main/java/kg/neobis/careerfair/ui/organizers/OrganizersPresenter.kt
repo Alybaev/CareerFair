@@ -1,6 +1,7 @@
 package kg.neobis.careerfair.ui.organizers
 import android.util.Log
 import kg.neobis.careerfair.model.Organizers
+import kg.neobis.careerfair.utils.Constants
 import kg.neobis.careerfair.utils.custom_classes.ApplicationClass
 import retrofit2.Call
 import retrofit2.Callback
@@ -9,7 +10,7 @@ class OrganizersPresenter(val view: OrganizersContract.View) : OrganizersContrac
     override fun getOrganizers() {
         if (isViewAttached()) {
             view?.showProgress()
-            ApplicationClass.service.getOrganizersList().enqueue(object : Callback<List<Organizers>> {
+            ApplicationClass.service.getOrganizersList(Constants.PATH_FOR_ORGANIZERS).enqueue(object : Callback<List<Organizers>> {
                 override fun onResponse(call: Call<List<Organizers>>?, response: Response<List<Organizers>>?) {
                     if (isViewAttached()) {
                         if (response!!.isSuccessful && response.body() != null) {

@@ -29,7 +29,7 @@ class EmployersActivity : BaseActivity(),EmployersAdapter.Listener {
 
 
     private fun initAdapter() {
-        val layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
+        val layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
         mAdapter = EmployersAdapter(this)
         recycleViewOfEmployers.layoutManager = layoutManager
         recycleViewOfEmployers.adapter = mAdapter

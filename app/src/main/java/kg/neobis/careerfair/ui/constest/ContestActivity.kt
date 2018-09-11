@@ -6,6 +6,7 @@ import android.support.v7.widget.LinearLayoutManager
 import kg.neobis.careerfair.R
 
 import kg.neobis.careerfair.ui.BaseActivity
+import kg.neobis.careerfair.utils.Constants
 import kg.neobis.careerfair.utils.custom_classes.CustomTabForWebView
 import kotlinx.android.synthetic.main.activity_contest.*
 
@@ -39,8 +40,8 @@ class ContestActivity : BaseActivity(),ContestAdapter.Listener {
         var customTabWebView = CustomTabForWebView()
 
         when(position){
-            0 -> customTabWebView.openUrlInChromeCustomTab(this,"https://docs.google.com/forms/d/e/1FAIpQLSefttaSmJoYDb5eyyGClHGeXeRWKs2NIu7NKyTjXg0nNDVhUQ/viewform")
-            1 -> customTabWebView.openUrlInChromeCustomTab(this,"https://docs.google.com/forms/d/e/1FAIpQLSd8R72J-i6fA2frwliEtyPRNf1KcbLJ69Z3-msrW3bOW5-JUA/viewform")
+            0 -> customTabWebView.openUrlInChromeCustomTab(this,Constants.URL_OF_CV_GOOGLE_FORM)
+            1 -> customTabWebView.openUrlInChromeCustomTab(this,Constants.URL_OF_MOCK_GOOGLE_FORM)
         }
     }
 }
