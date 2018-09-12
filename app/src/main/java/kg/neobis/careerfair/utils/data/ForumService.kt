@@ -5,12 +5,13 @@ import kg.neobis.careerfair.model.Organizers
 import kg.neobis.careerfair.model.Shedule
 import retrofit2.Call
 import retrofit2.http.GET
+import retrofit2.http.Path
 
 interface ForumService {
 
 
-    @GET("organizer/")
-    fun getOrganizersList(): Call<List<Organizers>>
+    @GET("{category}/")
+    fun getOrganizersList(@Path("category") category: String): Call<List<Organizers>>
     @GET("sponsor/")
     fun getSponsorsList(): Call<List<Organizers>>
     @GET("employer/")

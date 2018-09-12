@@ -10,6 +10,7 @@ import kg.neobis.careerfair.R
 import kg.neobis.careerfair.ui.about_career_fair.AboutCareerFairActivity
 import kg.neobis.careerfair.ui.constest.ContestActivity
 import kg.neobis.careerfair.ui.employers.EmployersActivity
+import kg.neobis.careerfair.ui.interview.InterviewActivity
 import kg.neobis.careerfair.ui.map.MapActivity
 import kg.neobis.careerfair.ui.organizers.OrganizersActivity
 import kg.neobis.careerfair.ui.shedule.SheduleActivity
@@ -73,6 +74,8 @@ class MainMenuActivity : AppCompatActivity(), MainMenuAdapter.Listener {
             1 -> intent = Intent(this, MapActivity::class.java)
             2 -> intent = Intent(this, EmployersActivity::class.java)
             3 -> intent = Intent(this, ContestActivity::class.java)
+            7 -> intent = Intent(this, InterviewActivity::class.java)
+
 
         }
         startActivity(intent)
