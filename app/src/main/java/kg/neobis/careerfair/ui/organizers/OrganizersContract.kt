@@ -9,5 +9,6 @@ interface OrganizersContract {
     }
     interface Presenter {
         fun getOrganizers()
+        fun getOrganizers2()
     }
 }

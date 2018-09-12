@@ -12,7 +12,7 @@ interface ForumService {
 
     @GET("{category}/")
     fun getOrganizersList(@Path("category") category: String): Call<List<Organizers>>
-    @GET("sponsor/")
+    @GET("organizer/")
     fun getSponsorsList(): Call<List<Organizers>>
     @GET("employer/")
     fun getListEmployers():Call<List<Organizers>>

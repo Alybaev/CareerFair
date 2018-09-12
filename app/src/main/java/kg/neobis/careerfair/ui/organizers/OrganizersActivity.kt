@@ -34,7 +34,7 @@ class OrganizersActivity : BaseActivity(), OrganizersAdapter.Listener, Organizer
     private fun initPresenter() {
 
         presenter = OrganizersPresenter(this)
-        presenter!!.getOrganizers()
+        presenter!!.getOrganizers2()
     }
 
     private fun getDataFromIntent() {

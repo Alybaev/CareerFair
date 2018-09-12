@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-<color name="colorPrimary">#1F3058</color>
-<color name="colorPrimaryDark">#101E3F</color>
-<color name="colorAccent">#FEE04A</color>
-<color name="lightGreyColor">#F4F4F4</color>
+    <color name="colorPrimary">#1F3058</color>
+    <color name="colorPrimaryDark">#101E3F</color>
+    <color name="colorAccent">#FEE04A</color>
+    <color name="lightGreyColor">#F4F4F4</color>
     <color name="colorBlack">#3E3E3E</color>
+    <color name="logo_background">#202239</color>
 </resources>
