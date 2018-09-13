@@ -19,7 +19,8 @@ class ShedulePresenter(val view: SheduleContract.View) : SheduleContract.Present
                             Log.d("______time", response.message())
                             view!!.onSuccess(response.body()!!)
                         } else {
-                            view!!.onError("Не удалось получить данные")
+
+                            view!!.onError("Ошибка")
                         }
                         view.hideProgress()
                     }
