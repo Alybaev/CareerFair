@@ -7,6 +7,34 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 class OrganizersPresenter(val view: OrganizersContract.View) : OrganizersContract.Presenter {
+    override fun getOrganizers2() {
+        if (isViewAttached()) {
+            view?.showProgress()
+            ApplicationClass.service.getSponsorsList().enqueue(object : Callback<List<Organizers>> {
+                override fun onResponse(call: Call<List<Organizers>>?, response: Response<List<Organizers>>?) {
+                    if (isViewAttached()) {
+                        if (response!!.isSuccessful && response.body() != null) {
+
+                            Log.d("______name", response.message())
+                            view!!.onSuccess(response.body()!!)
+                        } else {
+                            view!!.onError("Ошибка")
+                        }
+                        view.hideProgress()
+                    }
+                }
+
+                override fun onFailure(call: Call<List<Organizers>>?, t: Throwable?) {
+                    if (isViewAttached()) {
+                        view!!.onError("Не удалось получить данные")
+                        view.hideProgress()
+                    }
+                    t?.printStackTrace()
+                }
+            })
+        }
+    }
+
     override fun getOrganizers() {
         if (isViewAttached()) {
             view?.showProgress()
@@ -18,7 +46,7 @@ class OrganizersPresenter(val view: OrganizersContract.View) : OrganizersContrac
                             Log.d("______name", response.message())
                             view!!.onSuccess(response.body()!!)
                         } else {
-                            view!!.onError("Не удалось получить данные")
+                            view!!.onError("Ошибка")
                         }
                         view.hideProgress()
                     }

@@ -1,5 +1,6 @@
 package kg.neobis.careerfair.ui.shedule
 
+
 import kg.neobis.careerfair.utils.custom_classes.IProgressBar
 
 interface SheduleContract {

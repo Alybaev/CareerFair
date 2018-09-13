@@ -6,7 +6,6 @@ import android.view.View
 import android.view.ViewGroup
 import kg.neobis.careerfair.R
 import kotlinx.android.synthetic.main.item_employers.view.*
-import kotlinx.android.synthetic.main.item_organizers.view.*
 
 class EmployersAdapter(var listener: Listener) : RecyclerView.Adapter<EmployersAdapter.MViewHolder>() {
 
@@ -29,7 +28,8 @@ class EmployersAdapter(var listener: Listener) : RecyclerView.Adapter<EmployersA
 
         holder.employerInfo.setOnClickListener {
             var name = holder.nameOfEmployer.text
-            listener.onItemSelectedAt(position,name.toString())
+            var company = holder.companyOfEmployer.text
+            listener.onItemSelectedAt(position,name.toString(),company.toString())
 
         }
 
@@ -46,7 +46,7 @@ class EmployersAdapter(var listener: Listener) : RecyclerView.Adapter<EmployersA
     }
 
     interface Listener {
-        fun onItemSelectedAt(position: Int,nameOfEmployer :String)
+        fun onItemSelectedAt(position: Int, nameOfEmployer: String, company: String)
     }
 
 
