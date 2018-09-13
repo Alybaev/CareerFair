@@ -19,6 +19,7 @@
 
         <TextView
             style="@style/SheduleSubtitlesStyle"
+            android:layout_marginStart="7dp"
             android:layout_weight="20"
             android:text="@string/time_title" />
 

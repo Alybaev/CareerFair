@@ -10,7 +10,7 @@ class OrganizersPresenter(val view: OrganizersContract.View) : OrganizersContrac
     override fun getOrganizers2() {
         if (isViewAttached()) {
             view?.showProgress()
-            ApplicationClass.service.getSponsorsList().enqueue(object : Callback<List<Organizers>> {
+            ApplicationClass.service.getOrganizersList2().enqueue(object : Callback<List<Organizers>> {
                 override fun onResponse(call: Call<List<Organizers>>?, response: Response<List<Organizers>>?) {
                     if (isViewAttached()) {
                         if (response!!.isSuccessful && response.body() != null) {
