@@ -1,13 +1,17 @@
 package kg.neobis.careerfair.ui.employers
 
+import android.content.Context
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.bumptech.glide.Glide
+import com.bumptech.glide.request.RequestOptions
 import kg.neobis.careerfair.R
+import kg.neobis.careerfair.model.Organizers
 import kotlinx.android.synthetic.main.item_employers.view.*
 
-class EmployersAdapter(var listener: Listener) : RecyclerView.Adapter<EmployersAdapter.MViewHolder>() {
+class EmployersAdapter(var context : Context,var listener: Listener,var info : ArrayList<Organizers>) : RecyclerView.Adapter<EmployersAdapter.MViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MViewHolder {
 
@@ -17,19 +21,22 @@ class EmployersAdapter(var listener: Listener) : RecyclerView.Adapter<EmployersA
 
 
     override fun getItemCount(): Int {
-        return 5
+        return info.size
     }
 
     override fun onBindViewHolder(holder: MViewHolder, position: Int) {
 
-        holder.imageOfEmployer.setImageResource(R.drawable.default_image_for_employers128px)
-        holder.nameOfEmployer.text  = "Dastan Alybaev"
-        holder.companyOfEmployer.text = "Google.com"
+        Glide.with(context)
+                .load(info[position].logo_url)
+                .apply(RequestOptions.circleCropTransform())
+                .into(holder.imageOfEmployer)
+        holder.nameOfEmployer.text  = info[position].full_name
+        holder.companyOfEmployer.text = info[position].full_name
 
         holder.employerInfo.setOnClickListener {
             var name = holder.nameOfEmployer.text
             var company = holder.companyOfEmployer.text
-            listener.onItemSelectedAt(position,name.toString(),company.toString())
+            listener.onItemSelectedAt(position)
 
         }
 
@@ -44,9 +51,13 @@ class EmployersAdapter(var listener: Listener) : RecyclerView.Adapter<EmployersA
         var employerInfo = view.employer_info
 
     }
+    fun setMData(info:  ArrayList<Organizers>) {
+        this.info = info
+        notifyDataSetChanged()
+    }
 
     interface Listener {
-        fun onItemSelectedAt(position: Int, nameOfEmployer: String, company: String)
+        fun onItemSelectedAt(position: Int)
     }
 
 

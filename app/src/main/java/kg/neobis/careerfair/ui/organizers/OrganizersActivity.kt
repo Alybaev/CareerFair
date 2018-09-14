@@ -7,6 +7,8 @@ import kg.neobis.careerfair.model.Organizers
 import kg.neobis.careerfair.ui.BaseActivity
 import kg.neobis.careerfair.utils.Constants
 import kg.neobis.careerfair.utils.Constants.Companion.PATH_FOR_ORGANIZERS
+import kg.neobis.careerfair.utils.Constants.Companion.PATH_FOR_PARTNERS
+import kg.neobis.careerfair.utils.Constants.Companion.PATH_FOR_SPONSORS
 import kotlinx.android.synthetic.main.activity_organizers.*
 
 
@@ -39,6 +41,8 @@ class OrganizersActivity : BaseActivity(), OrganizersAdapter.Listener, Organizer
         val namesOfCategories = resources.getStringArray(R.array.categories_name)
         when(nameOfCategory){
             namesOfCategories[4] ->   presenter!!.getInfo(PATH_FOR_ORGANIZERS)
+            namesOfCategories[5] -> presenter!!.getInfo(PATH_FOR_PARTNERS)
+            namesOfCategories[6] -> presenter!!.getInfo(PATH_FOR_SPONSORS)
         }
 
 
@@ -68,8 +72,11 @@ class OrganizersActivity : BaseActivity(), OrganizersAdapter.Listener, Organizer
     override fun onSuccess(result: List<Organizers>) {
 
         info = result as ArrayList<Organizers>
-        info_text_view_organizers.text = info!![0].description
+        if(info!!.size != 0) {
+            info_text_view_organizers.text = info!![0].description
+        }
         mAdapter!!.setMData(info!!)
+
 
     }
 }

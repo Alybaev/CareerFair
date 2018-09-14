@@ -7,7 +7,7 @@
     android:layout_gravity="center_vertical"
     android:layout_marginEnd="10dp">
 
-    <com.mikhaellopez.circularimageview.CircularImageView
+    <ImageView
         android:id="@+id/logo_of_company"
         android:layout_width="80dp"
         android:layout_height="80dp"

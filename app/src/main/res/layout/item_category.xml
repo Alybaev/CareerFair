@@ -45,6 +45,7 @@
 
         <TextView
             style="@style/TitleTextStyle"
+            android:textColor="@color/colorBlack"
             android:id="@+id/category_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -58,7 +59,7 @@
     <View
         android:id="@+id/shadow_view"
         android:layout_width="@dimen/width_of_categories"
-        android:layout_height="10dp"
+        android:layout_height="7dp"
         android:layout_below="@+id/category"
         android:background="@drawable/dropshadow"
         android:layout_alignParentStart = "true"/>
@@ -66,7 +67,7 @@
     <View
         android:id="@+id/shadow_view2"
         android:layout_width="@dimen/width_of_categories"
-        android:layout_height="10dp"
+        android:layout_height="7dp"
         android:layout_below="@+id/category"
         android:layout_alignParentEnd="true"
         android:background="@drawable/dropshadow"

@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.bumptech.glide.Glide
+import com.bumptech.glide.request.RequestOptions
 import kg.neobis.careerfair.R
 import kg.neobis.careerfair.model.Organizers
 import kotlinx.android.synthetic.main.item_organizers.view.*
@@ -25,10 +26,17 @@ class OrganizersAdapter(var context : Context,var listener: Listener,var info : 
     }
 
     override fun onBindViewHolder(holder: MViewHolder, position: Int) {
-
-        Glide.with(context)
-                .load(info[position].logo_url)
-                .into(holder.logoOfCompany)
+        if(info[position].logo_url != null) {
+            Glide.with(context)
+                    .load(info[position].logo_url)
+                    .apply(RequestOptions.circleCropTransform())
+                    .into(holder.logoOfCompany)
+        }else {
+            Glide.with(context)
+                    .load(R.drawable.default_image_for_organizers128px)
+                    .apply(RequestOptions.circleCropTransform())
+                    .into(holder.logoOfCompany)
+        }
         holder.logoOfCompany.setOnClickListener{
             listener.onItemSelectedAt(position)
         }
