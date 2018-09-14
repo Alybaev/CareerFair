@@ -7,10 +7,10 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 class OrganizersPresenter(val view: OrganizersContract.View) : OrganizersContract.Presenter {
-    override fun getOrganizers2() {
+    override fun getOrganizers() {
         if (isViewAttached()) {
             view?.showProgress()
-            ApplicationClass.service.getOrganizersList2().enqueue(object : Callback<List<Organizers>> {
+            ApplicationClass.service.getOrganizers().enqueue(object : Callback<List<Organizers>> {
                 override fun onResponse(call: Call<List<Organizers>>?, response: Response<List<Organizers>>?) {
                     if (isViewAttached()) {
                         if (response!!.isSuccessful && response.body() != null) {
@@ -26,7 +26,7 @@ class OrganizersPresenter(val view: OrganizersContract.View) : OrganizersContrac
 
                 override fun onFailure(call: Call<List<Organizers>>?, t: Throwable?) {
                     if (isViewAttached()) {
-                        view!!.onError("Не удалось получить данные")
+                            view!!.onError("Не удалось получить данные")
                         view.hideProgress()
                     }
                     t?.printStackTrace()
@@ -35,10 +35,10 @@ class OrganizersPresenter(val view: OrganizersContract.View) : OrganizersContrac
         }
     }
 
-    override fun getOrganizers() {
+    override fun getInfo(requestUrl : String) {
         if (isViewAttached()) {
             view?.showProgress()
-            ApplicationClass.service.getOrganizersList(Constants.PATH_FOR_ORGANIZERS).enqueue(object : Callback<List<Organizers>> {
+            ApplicationClass.service.getInfoAbout(requestUrl).enqueue(object : Callback<List<Organizers>> {
                 override fun onResponse(call: Call<List<Organizers>>?, response: Response<List<Organizers>>?) {
                     if (isViewAttached()) {
                         if (response!!.isSuccessful && response.body() != null) {

@@ -1,14 +1,16 @@
 package kg.neobis.careerfair.ui.organizers
 
+import kg.neobis.careerfair.model.Organizers
 import kg.neobis.careerfair.utils.custom_classes.IProgressBar
 
 interface OrganizersContract {
     interface  View : IProgressBar{
-        fun  onSuccess(result: List<Any>)
         fun onError(message: String?)
+        fun onSuccess(result: List<Organizers>)
     }
     interface Presenter {
+
         fun getOrganizers()
-        fun getOrganizers2()
+        fun getInfo(requestUrl: String)
     }
 }
