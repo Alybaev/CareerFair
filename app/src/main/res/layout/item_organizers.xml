@@ -13,7 +13,7 @@
         android:layout_height="80dp"
 
         android:layout_marginEnd="8dp"
-
+        android:scaleType="fitXY"
         android:background="@android:color/transparent"
         android:src="@drawable/default_image_for_organizers128px"
         app:layout_constraintEnd_toEndOf="parent" />

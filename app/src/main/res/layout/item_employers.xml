@@ -12,6 +12,7 @@
         android:layout_height="70dp"
         android:layout_gravity="center_vertical"
         android:background="@android:color/transparent"
+        android:scaleType="fitXY"
         android:src="@drawable/default_image_for_employers128px"
         />
     <LinearLayout
