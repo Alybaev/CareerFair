@@ -3,17 +3,14 @@ package kg.neobis.careerfair.ui.shedule
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
 import kg.neobis.careerfair.R
+import kg.neobis.careerfair.model.Shedule
 import kg.neobis.careerfair.ui.BaseActivity
-import kg.neobis.careerfair.ui.organizers.OrganizersAdapter
-import kotlinx.android.synthetic.main.activity_organizers.*
 import kotlinx.android.synthetic.main.activity_shedule.*
 
-class SheduleActivity : BaseActivity(),SheduleAdapter.Listener,SheduleContract.View{
-    override fun onSuccess(result: List<Any>) {
-
-    }
-
-    var presenter : ShedulePresenter? = null
+class ScheduleActivity : BaseActivity(),ScheduleAdapter.Listener,ScheduleContract.View{
+    var infoAboutSchedule : ArrayList<Shedule>? = null
+    var presenter : SchedulePresenter? = null
+    private var mAdapter: ScheduleAdapter? = null
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -24,22 +21,26 @@ class SheduleActivity : BaseActivity(),SheduleAdapter.Listener,SheduleContract.V
 
     private fun init() {
 
-        initPresenter()
         initAdapter()
+        initPresenter()
     }
 
 
     private fun initPresenter() {
-        presenter = ShedulePresenter(this)
-        presenter!!.getShedule()
+        presenter = SchedulePresenter(this)
+        presenter!!.getSchedule()
 
     }
 
-    private var mAdapter: SheduleAdapter? = null
+    override fun onSuccess(result: List<Any>) {
+        infoAboutSchedule = result as ArrayList<Shedule>
+        mAdapter!!.setMData(infoAboutSchedule!!)
+    }
 
     private fun initAdapter() {
         val layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
-        mAdapter = SheduleAdapter(this)
+        infoAboutSchedule = ArrayList()
+        mAdapter = ScheduleAdapter(this,infoAboutSchedule!!)
         RecycleViewSchedule.layoutManager = layoutManager
         RecycleViewSchedule.adapter = mAdapter
 

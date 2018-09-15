@@ -1,6 +1,8 @@
 package kg.neobis.careerfair.ui.employers
 
 import android.os.Bundle
+import com.bumptech.glide.Glide
+import com.bumptech.glide.request.RequestOptions
 import kg.neobis.careerfair.R
 import kg.neobis.careerfair.model.Organizers
 import kg.neobis.careerfair.ui.BaseActivity
@@ -24,8 +26,14 @@ class DetailInfoAboutEmployerActivity : BaseActivity() {
 
     private fun initIncludedView() {
         item_about_employer.name_of_employer.text = info!![position!!].full_name
-        item_about_employer.company_of_employer.text = info!![position!!].full_name
+
+        Glide.with(this)
+                .load(info!![position!!].logo_url)
+                .apply(RequestOptions().circleCrop())
+                .into(item_about_employer.photo_of_employer)
+        item_about_employer.photo_of_employer
         description_about_employer_detail.text = info!![position!!].description
+
     }
 
     private fun getDataFromIntent() {

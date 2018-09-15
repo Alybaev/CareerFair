@@ -3,6 +3,7 @@
     <dimen name="height_of_categories">45dp</dimen>
     <dimen name="width_of_categories">338dp</dimen>
     <dimen name="margin_top_for_item_in_schedule">3dp</dimen>
+    <dimen name="margin_start_for_item_in_schedule">5dp</dimen>
     <dimen name="simple_text_size">18sp</dimen>
     <dimen name="margin_end_in_organizers_activity">16dp</dimen>
 </resources>

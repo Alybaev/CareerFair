@@ -34,8 +34,6 @@ class MapActivity : BaseActivity() {
 
         spinner_in_map.adapter = adapter
 
-
-        spinner_in_map.background.setColorFilter(resources.getColor(R.color.colorAccent), PorterDuff.Mode.SRC_ATOP)
         setSpinnerListener()
     }
 

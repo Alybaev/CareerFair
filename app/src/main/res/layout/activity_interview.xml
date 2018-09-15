@@ -15,6 +15,7 @@
         android:layout_marginTop="54dp"
         android:textSize="18sp"/>
     <android.support.v7.widget.RecyclerView
+        android:layout_gravity="center_horizontal"
         android:id="@+id/recycleViewOfInterview"
         tools:listitem="@layout/item_interview"
         android:layout_marginTop="100dp"

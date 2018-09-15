@@ -23,9 +23,7 @@
         <item name="android:fontFamily">@font/roboto_regular</item>
     </style>
 
-    <style name="SpinnerAppTheme" parent="android:Widget.DropDownItem.Spinner">
-        <item name="android:background">@color/lightGreyColor</item>
-    </style>
+
 
 
 
@@ -63,7 +61,7 @@
     <style name="SheduleSubtitlesStyle">
         <item name="android:layout_width">0dp</item>
         <item name="android:layout_height">match_parent</item>
-        <item name="android:layout_marginStart">5dp</item>
+        <item name="android:layout_marginStart">@dimen/margin_start_for_item_in_schedule</item>
         <item name="android:layout_gravity">center_vertical</item>
     </style>
 

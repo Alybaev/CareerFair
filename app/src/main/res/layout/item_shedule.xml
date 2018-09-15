@@ -15,9 +15,10 @@
             android:layout_width="match_parent"
             android:layout_height="29dp"
             tools:text="12:00"
-            android:textSize="18sp"
-            android:gravity="center_vertical|center_horizontal"
-            style="@style/TitleTextStyle"/>
+            android:textSize="16sp"
+            android:gravity="center_horizontal"
+            style="@style/SheduleItemStyle"
+            android:fontFamily="@font/roboto_bold"/>
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -26,22 +27,22 @@
     </LinearLayout>
     <TextView
         android:id="@+id/topic_text"
-        android:layout_weight="40"
+        android:layout_weight="30"
         style="@style/SheduleItemStyle"
         android:fontFamily="@font/roboto_bold"
-
+        android:layout_marginStart="6dp"
         tools:text="Что написать на 'чистой доске' ?"
         />
     <TextView
         android:id="@+id/speaker_name_text"
-        android:textSize="12dp"
-        android:layout_weight="25"
+
+        android:layout_weight="30"
         style="@style/SheduleItemStyle"
         tools:text="Эндрю Вахтель Джекшенбекович"
         />
     <TextView
         android:id="@+id/place_text"
-        android:layout_weight="20"
+        android:layout_weight="25"
         style="@style/SheduleItemStyle"
         tools:text="4 этаж 410 каб."
         />

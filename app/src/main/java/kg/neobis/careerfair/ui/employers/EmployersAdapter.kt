@@ -31,7 +31,7 @@ class EmployersAdapter(var context : Context,var listener: Listener,var info : A
                 .apply(RequestOptions.circleCropTransform())
                 .into(holder.imageOfEmployer)
         holder.nameOfEmployer.text  = info[position].full_name
-        holder.companyOfEmployer.text = info[position].full_name
+        holder.companyOfEmployer.text = info[position].description
 
         holder.employerInfo.setOnClickListener {
             var name = holder.nameOfEmployer.text

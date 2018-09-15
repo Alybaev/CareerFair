@@ -7,11 +7,11 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class ShedulePresenter(val view: SheduleContract.View) : SheduleContract.Presenter {
-    override fun getShedule() {
+class SchedulePresenter(val view: ScheduleContract.View) : ScheduleContract.Presenter {
+    override fun getSchedule() {
         if (isViewAttached()) {
             view?.showProgress()
-            ApplicationClass.service.getSheduleList().enqueue(object : Callback<List<Shedule>> {
+            ApplicationClass.service.getScheduleList().enqueue(object : Callback<List<Shedule>> {
                 override fun onResponse(call: Call<List<Shedule>>?, response: Response<List<Shedule>>?) {
                     if (isViewAttached()) {
                         if (response!!.isSuccessful && response.body() != null) {

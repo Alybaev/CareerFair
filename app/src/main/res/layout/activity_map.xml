@@ -19,10 +19,11 @@
 
 
         <Spinner
+            android:background="@drawable/bg_spinnner"
             android:id="@+id/spinner_in_map"
-            android:layout_width="94dp"
+            android:layout_width="100dp"
             android:layout_height="46dp"
-            android:gravity="end"
+            android:layout_gravity="end"
 
 
             />

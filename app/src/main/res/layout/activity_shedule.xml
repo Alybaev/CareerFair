@@ -5,7 +5,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.shedule.SheduleActivity"
+    tools:context=".ui.shedule.ScheduleActivity"
     android:layout_marginStart="15dp"
     android:layout_marginEnd="15dp"
     android:layout_marginTop="10dp">
@@ -19,28 +19,30 @@
 
         <TextView
             style="@style/SheduleSubtitlesStyle"
-            android:layout_marginStart="7dp"
             android:layout_weight="20"
+            android:gravity="center_horizontal"
+            android:layout_marginStart="4dp"
             android:text="@string/time_title" />
 
         <TextView
             style="@style/SheduleSubtitlesStyle"
-            android:layout_weight="40"
+            android:layout_weight="30"
             android:text="@string/theme_title" />
 
         <TextView
             style="@style/SheduleSubtitlesStyle"
-            android:layout_weight="25"
+            android:layout_weight="30"
             android:text="@string/speaker_title" />
 
         <TextView
             style="@style/SheduleSubtitlesStyle"
-            android:layout_weight="20"
+            android:layout_weight="25"
             android:text="@string/place_title" />
 
     </LinearLayout>
 
     <android.support.v7.widget.RecyclerView
+        android:layout_marginTop="10dp"
         android:id="@+id/RecycleViewSchedule"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

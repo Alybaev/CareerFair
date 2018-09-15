@@ -13,7 +13,7 @@ import kg.neobis.careerfair.ui.employers.EmployersActivity
 import kg.neobis.careerfair.ui.interview.InterviewActivity
 import kg.neobis.careerfair.ui.map.MapActivity
 import kg.neobis.careerfair.ui.organizers.OrganizersActivity
-import kg.neobis.careerfair.ui.shedule.SheduleActivity
+import kg.neobis.careerfair.ui.shedule.ScheduleActivity
 import kg.neobis.careerfair.utils.Constants.Companion.NAME_OF_CATEGORY_KEY
 import kotlinx.android.synthetic.main.activity_main_menu.*
 
@@ -70,7 +70,7 @@ class MainMenuActivity : AppCompatActivity(), MainMenuAdapter.Listener {
         intent.putExtra(NAME_OF_CATEGORY_KEY, nameOfCategory)
         when (position) {
 
-            0 -> intent = Intent(this, SheduleActivity::class.java)
+            0 -> intent = Intent(this, ScheduleActivity::class.java)
             1 -> intent = Intent(this, MapActivity::class.java)
             2 -> intent = Intent(this, EmployersActivity::class.java)
             3 -> intent = Intent(this, ContestActivity::class.java)

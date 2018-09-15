@@ -23,7 +23,7 @@ interface ForumService {
     @GET("mediapartner/")
     fun getMediaPartnersList():Call<List<Organizers>>
     @GET("shedule/")
-    fun getSheduleList():Call<List<Shedule>>
+    fun getScheduleList():Call<List<Shedule>>
     @GET("about/")
     fun getInfoAboutCareerFair():Call<List<AboutCareerFair>>
 

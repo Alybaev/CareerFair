@@ -29,7 +29,7 @@
             android:name=".ui.main_menu.MainMenuActivity"
             android:theme="@style/NoActionBar" />
         <activity
-            android:name=".ui.shedule.SheduleActivity"
+            android:name=".ui.shedule.ScheduleActivity"
             android:label="Расписание" />
         <activity
             android:name=".ui.constest.ContestActivity"
