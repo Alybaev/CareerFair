@@ -26,6 +26,7 @@
         
     </LinearLayout>
     <TextView
+        android:background="@color/lightGreyColor"
         android:id="@+id/topic_text"
         android:layout_weight="30"
         style="@style/SheduleItemStyle"
@@ -41,6 +42,7 @@
         tools:text="Эндрю Вахтель Джекшенбекович"
         />
     <TextView
+
         android:id="@+id/place_text"
         android:layout_weight="25"
         style="@style/SheduleItemStyle"

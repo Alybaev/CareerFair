@@ -50,7 +50,7 @@ class MainMenuActivity : AppCompatActivity(), MainMenuAdapter.Listener {
 
     private fun initListener() {
 
-        arrow_right_drawable.setOnClickListener {
+        about_career_fair.setOnClickListener {
             val intent = Intent(this,AboutCareerFairActivity :: class.java)
             startActivity(intent)
         }

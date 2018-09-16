@@ -45,6 +45,7 @@ class ContestActivity : BaseActivity(), ContestAdapter.Listener {
 
         val checkMockRegistration: String? = FileUtils.readCacheData<String>(this, Constants.URL_KEY_FOR_CACHE_MOCK)
         val checkCVRegistration: String? = FileUtils.readCacheData<String>(this, Constants.URL_KEY_FOR_CACHE_CV)
+        val checkAboutCareerFairContestRegistration: String? = FileUtils.readCacheData<String>(this, Constants.URL_KEY_FOR_CACHE_ABOUT_CAREER_FAIR)
         when (position) {
 
             0 -> if (checkMockRegistration == null) {
@@ -55,6 +56,12 @@ class ContestActivity : BaseActivity(), ContestAdapter.Listener {
             }
             1 ->  if (checkCVRegistration == null) {
                 intent.putExtra(Constants.URL_KEY, Constants.URL_OF_CV_GOOGLE_FORM)
+                startActivity(intent)
+            } else {
+                Toast.makeText(this,"Вы уже учавствуете в этом конкурсе",Toast.LENGTH_SHORT).show()
+            }
+            2 ->  if (checkAboutCareerFairContestRegistration == null) {
+                intent.putExtra(Constants.URL_KEY, Constants.URL_OF_ABOUT_CAREER_FAIR_GOOGLE_FORM)
                 startActivity(intent)
             } else {
                 Toast.makeText(this,"Вы уже учавствуете в этом конкурсе",Toast.LENGTH_SHORT).show()

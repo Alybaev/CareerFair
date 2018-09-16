@@ -1,6 +1,5 @@
 package kg.neobis.careerfair.ui.about_career_fair
 
-import android.graphics.Color
 import android.os.Bundle
 import android.support.v4.content.ContextCompat
 import com.bumptech.glide.Glide
@@ -14,18 +13,10 @@ import kg.neobis.careerfair.utils.Constants
 import kg.neobis.careerfair.utils.Constants.Companion.PATH_FOR_ORGANIZERS
 import kotlinx.android.synthetic.main.activity_about_career_fair.*
 
-class AboutCareerFairActivity : BaseActivity(), AboutCareerFairContract.View,OrganizersContract.View {
-    var info : List<Organizers>? = null
-    override fun onSuccess(result: List<Organizers>) {
-        info = result
-        logo_image.background = ContextCompat.getDrawable(this, R.color.lightGreyColor)
-        Glide.with(this)
-                .load(info!![0].logo_url)
-                .into(logo_image)
-         about_career_fair_text_view.text = info!![0].description
-    }
+class AboutCareerFairActivity : BaseActivity(), AboutCareerFairContract.View, OrganizersContract.View {
+    var info: List<Organizers>? = null
 
-    private var infoAboutCareerFair: List<AboutCareerFair>?  = null
+    private var infoAboutCareerFair: List<AboutCareerFair>? = null
     private var presenter: AboutCareerFairPresenter? = null
     private var presenterOrganizers: OrganizersPresenter? = null
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -46,21 +37,30 @@ class AboutCareerFairActivity : BaseActivity(), AboutCareerFairContract.View,Org
         val intent = intent
         var name = intent.getStringExtra(Constants.NAME_OF_CATEGORY_KEY)
         var name2 = namesOfCategories!![4]
-        if(name == namesOfCategories!![4]){
+        if (name == namesOfCategories!![4]) {
             title = namesOfCategories!![4]
             presenterOrganizers = OrganizersPresenter(this)
             presenterOrganizers!!.getInfo(PATH_FOR_ORGANIZERS)
-        }else {
+        } else {
             presenter = AboutCareerFairPresenter(this)
             presenter!!.getInfoAboutCareerFair()
         }
     }
+
     override fun onSuccessAboutCarerrFair(result: List<AboutCareerFair>) {
         infoAboutCareerFair = result as ArrayList
-        if(infoAboutCareerFair!!.isNotEmpty()) {
+        if (infoAboutCareerFair!!.isNotEmpty()) {
             about_career_fair_text_view.text = infoAboutCareerFair!![0].description + "\n\n" + infoAboutCareerFair!![0].target +
-                    "\n\n" +   infoAboutCareerFair!![0].mission + "\n\n" +infoAboutCareerFair!![0].task
+                    "\n\n" + infoAboutCareerFair!![0].mission + "\n\n" + infoAboutCareerFair!![0].task
         }
 
+    }
+    override fun onSuccess(result: List<Organizers>) {
+        info = result
+        logo_image.background = ContextCompat.getDrawable(this, R.color.lightGreyColor)
+        Glide.with(this)
+                .load(info!![0].logo_url)
+                .into(logo_image)
+        about_career_fair_text_view.text = info!![0].description
     }
 }
