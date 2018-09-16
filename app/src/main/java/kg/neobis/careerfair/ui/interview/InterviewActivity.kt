@@ -42,4 +42,5 @@ class InterviewActivity : BaseActivity(), InterviewAdapter.Listener {
 
 
     }
+
 }

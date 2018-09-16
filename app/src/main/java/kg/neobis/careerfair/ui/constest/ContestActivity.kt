@@ -10,10 +10,12 @@ import kg.neobis.careerfair.R
 import kg.neobis.careerfair.ui.BaseActivity
 import kg.neobis.careerfair.utils.Constants
 import kg.neobis.careerfair.utils.FileUtils
-import kg.neobis.careerfair.utils.custom_classes.CustomTabForWebView
 import kotlinx.android.synthetic.main.activity_contest.*
 
 class ContestActivity : BaseActivity(), ContestAdapter.Listener {
+    override fun onHintSelectedAt(position: Int) {
+        showHint(position)
+    }
 
     private var mAdapter: ContestAdapter? = null
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -43,34 +45,30 @@ class ContestActivity : BaseActivity(), ContestAdapter.Listener {
     override fun onItemSelectedAt(position: Int) {
         var intent = Intent(this, ContestActivityGoogleForm::class.java)
 
-        val checkMockRegistration: String? = FileUtils.readCacheData<String>(this, Constants.URL_KEY_FOR_CACHE_MOCK)
-        val checkCVRegistration: String? = FileUtils.readCacheData<String>(this, Constants.URL_KEY_FOR_CACHE_CV)
-        val checkAboutCareerFairContestRegistration: String? = FileUtils.readCacheData<String>(this, Constants.URL_KEY_FOR_CACHE_ABOUT_CAREER_FAIR)
-        when (position) {
-
-            0 -> if (checkMockRegistration == null) {
-                intent.putExtra(Constants.URL_KEY, Constants.URL_OF_MOCK_GOOGLE_FORM)
-                startActivity(intent)
-            } else {
-                Toast.makeText(this,"Вы уже учавствуете в этом конкурсе",Toast.LENGTH_SHORT).show()
-            }
-            1 ->  if (checkCVRegistration == null) {
-                intent.putExtra(Constants.URL_KEY, Constants.URL_OF_CV_GOOGLE_FORM)
-                startActivity(intent)
-            } else {
-                Toast.makeText(this,"Вы уже учавствуете в этом конкурсе",Toast.LENGTH_SHORT).show()
-            }
-            2 ->  if (checkAboutCareerFairContestRegistration == null) {
-                intent.putExtra(Constants.URL_KEY, Constants.URL_OF_ABOUT_CAREER_FAIR_GOOGLE_FORM)
-                startActivity(intent)
-            } else {
-                Toast.makeText(this,"Вы уже учавствуете в этом конкурсе",Toast.LENGTH_SHORT).show()
-            }
-
-
-
-
-
+        val checkRegistration: String? = FileUtils.readCacheData<String>(this, position.toString())
+        val urlsOfForms = resources.getStringArray(R.array.urls)
+        if(checkRegistration == null ){
+            intent.putExtra(Constants.URL_KEY, urlsOfForms[position])
+            startActivity(intent)
+        }else {
+            Toast.makeText(this,"Вы уже учавствуете в этом конкурсе",Toast.LENGTH_SHORT).show()
         }
+
+    }
+    fun showHint(position: Int) {
+
+        val ft = supportFragmentManager.beginTransaction()
+        val prev = supportFragmentManager.findFragmentByTag(Constants.TAG_FOR_SHOW_DIALOG_FRAGMENT)
+
+        if (prev != null) {
+            ft.remove(prev)
+        }
+        ft.addToBackStack(null)
+
+
+        val newFragment = DialogFragmentHint.newInstance(position)
+        newFragment!!.show(ft, Constants.TAG_FOR_SHOW_DIALOG_FRAGMENT)
+
+
     }
 }

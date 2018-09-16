@@ -53,5 +53,26 @@
         <item>Тенденций карьеры</item>
         <item>Вопросы генеральных директоров</item>
     </string-array>
+    <!--url-->
+    <string-array name="urls">
+        <item>https://docs.google.com/forms/d/e/1FAIpQLSefttaSmJoYDb5eyyGClHGeXeRWKs2NIu7NKyTjXg0nNDVhUQ/viewform</item>
+        <item>https://docs.google.com/forms/d/e/1FAIpQLSd8R72J-i6fA2frwliEtyPRNf1KcbLJ69Z3-msrW3bOW5-JUA/viewform</item>
+        <item>https://docs.google.com/forms/d/e/1FAIpQLSfMWsSbLRpRsfkT9Xw0f7PfKRoQXwHKslwi6ZQNi8SlsQMn8Q/viewform</item>
+    </string-array>
+    <string-array name="urls_responses">
+        <item>https://docs.google.com/forms/d/e/1FAIpQLSefttaSmJoYDb5eyyGClHGeXeRWKs2NIu7NKyTjXg0nNDVhUQ/formResponse</item>
+        <item>https://docs.google.com/forms/d/e/1FAIpQLSd8R72J-i6fA2frwliEtyPRNf1KcbLJ69Z3-msrW3bOW5-JUA/formResponse</item>
+        <item>https://docs.google.com/forms/d/e/1FAIpQLSfMWsSbLRpRsfkT9Xw0f7PfKRoQXwHKslwi6ZQNi8SlsQMn8Q/formResponse</item>
+    </string-array>
 
+    <string-array name="hint_description">
+        <item>Мок-интервью - это 60-секундное интервью перед публикой, по результатам которого, выберут лучшего кандидата, и предложат ему работу</item>
+        <item>CV - это конкурс на лучшее резюме, по результатам которого, выберут лучшего кандидата, и предложат ему работу</item>
+        <item>Это обычный опросник, цель которого является узнать разные мнение по поводу Ярмарки</item>
+    </string-array>
+    <string-array name="hint_names">
+        <item>Мок-интервью</item>
+        <item>CV</item>
+        <item>О Фестивале</item>
+    </string-array>
 </resources>

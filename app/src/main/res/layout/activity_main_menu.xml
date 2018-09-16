@@ -36,6 +36,7 @@
             android:layout_centerHorizontal="true"
             android:gravity="center_horizontal"
             tools:text="О Ярмарке Вакансий"
+            android:fontFamily="@font/point_semi_blod"
             android:textColor="@color/colorAccent"
             android:textAppearance="@style/TitleTextStyle"
             android:textSize="18sp" />

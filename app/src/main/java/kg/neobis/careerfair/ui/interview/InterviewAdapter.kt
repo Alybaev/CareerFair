@@ -29,7 +29,9 @@ class InterviewAdapter(var interviewTopics :  Array<out String>, var listener: L
 
         holder.buttonGoToInteview.setOnClickListener {
             listener.onItemSelectedAt(position)
+
         }
+
 
 
     }
@@ -43,6 +45,7 @@ class InterviewAdapter(var interviewTopics :  Array<out String>, var listener: L
 
     interface Listener {
         fun onItemSelectedAt(position: Int)
+
     }
 
 

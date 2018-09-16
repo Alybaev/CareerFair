@@ -10,6 +10,7 @@ import android.net.Uri
 import kg.neobis.careerfair.ui.main_menu.MainMenuActivity
 import android.support.v4.content.ContextCompat.startActivity
 import android.util.Log
+import kg.neobis.careerfair.R
 import kg.neobis.careerfair.ui.constest.ContestActivity
 import kg.neobis.careerfair.utils.Constants
 import kg.neobis.careerfair.utils.Constants.Companion.URL_OF_ABOUT_CAREER_RESPONSE_GOOGLE_FORM
@@ -43,13 +44,11 @@ class SimpleWebViewClientImpl(var activity: Activity) : WebViewClient() {
 
         }else if(url.contains(URL_OF_CV_RESPONSE_GOOGLE_FORM ) || url.contains(URL_OF_MOCK_RESPONSE_GOOGLE_FORM ) || url.contains(URL_OF_ABOUT_CAREER_RESPONSE_GOOGLE_FORM )){
             intent = Intent(activity, ContestActivity::class.java)
-            if (url.contains(URL_OF_CV_RESPONSE_GOOGLE_FORM)) {
-
-                FileUtils.writeCacheData(activity, Constants.URL_KEY_FOR_CACHE_CV, url)
-            } else if (url.contains(URL_OF_MOCK_RESPONSE_GOOGLE_FORM)) {
-                FileUtils.writeCacheData(activity, Constants.URL_KEY_FOR_CACHE_MOCK, url)
-            } else if(url.contains(URL_OF_ABOUT_CAREER_RESPONSE_GOOGLE_FORM)){
-                FileUtils.writeCacheData(activity, Constants.URL_KEY_FOR_CACHE_ABOUT_CAREER_FAIR, url)
+            val urlResponses = activity.resources.getStringArray(R.array.urls_responses)
+            for(i in 0 until urlResponses.size){
+                if(url.contains(urlResponses[i])){
+                    FileUtils.writeCacheData(activity,i.toString(),urlResponses[i])
+                }
             }
             activity!!.startActivity(intent)
             activity.finish()

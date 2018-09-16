@@ -28,7 +28,7 @@ class EmployersAdapter(var context : Context,var listener: Listener,var info : A
 
         Glide.with(context)
                 .load(info[position].logo_url)
-                .apply(RequestOptions.circleCropTransform())
+                .apply(RequestOptions().circleCrop())
                 .into(holder.imageOfEmployer)
         holder.nameOfEmployer.text  = info[position].full_name
         holder.companyOfEmployer.text = info[position].description

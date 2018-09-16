@@ -22,16 +22,21 @@ class ContestAdapter(var listener: Listener, var namesOfContest: Array<String>) 
         holder.buttonParticipation.setOnClickListener {
             listener.onItemSelectedAt(position)
         }
+        holder.buttonHint.setOnClickListener {
+            listener.onHintSelectedAt(position)
+        }
 
     }
 
     inner class MViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         var titleOfContest = view.title_of_contest
         var buttonParticipation = view.take_part_in_contest
+        var buttonHint = view.hint
     }
 
     interface Listener {
         fun onItemSelectedAt(position: Int)
+        fun onHintSelectedAt(position: Int)
     }
 
 
