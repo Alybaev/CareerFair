@@ -19,7 +19,7 @@ class AboutCareerFairPresenter(var view:AboutCareerFairContract.View) : AboutCar
                         if (response!!.isSuccessful && response.body() != null) {
 
                             Log.d("______about", response.message())
-                            view!!.onSuccess(response.body()!!)
+                            view!!.onSuccessAboutCarerrFair(response.body()!!)
                         } else {
 
                             view!!.onError("Ошибка")

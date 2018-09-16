@@ -6,7 +6,7 @@ import kg.neobis.careerfair.utils.custom_classes.IProgressBar
 interface AboutCareerFairContract {
 
     interface  View : IProgressBar {
-        fun  onSuccess(result: List<AboutCareerFair>)
+        fun  onSuccessAboutCarerrFair(result: List<AboutCareerFair>)
         fun onError(message: String?)
     }
     interface Presenter {

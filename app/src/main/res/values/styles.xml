@@ -8,7 +8,10 @@
         <item name="colorAccent">@color/colorAccent</item>
 
         <item name="android:textViewStyle">@style/RobotoTextViewStyle</item>
-        <item name="android:buttonStyle">@style/RobotoButtonStyle</item>]
+        <item name="android:buttonStyle">@style/RobotoButtonStyle</item>
+        <!-- enable window content transitions -->
+
+
 
 
 

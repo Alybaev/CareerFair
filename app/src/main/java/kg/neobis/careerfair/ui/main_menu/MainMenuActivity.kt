@@ -1,5 +1,6 @@
 package kg.neobis.careerfair.ui.main_menu
 
+import android.app.ActivityOptions
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
@@ -67,17 +68,23 @@ class MainMenuActivity : AppCompatActivity(), MainMenuAdapter.Listener {
 
     override fun onItemSelectedAt(position: Int, nameOfCategory: String) {
         var intent = Intent(this, OrganizersActivity::class.java)
-        intent.putExtra(NAME_OF_CATEGORY_KEY, nameOfCategory)
+
         when (position) {
 
             0 -> intent = Intent(this, ScheduleActivity::class.java)
             1 -> intent = Intent(this, MapActivity::class.java)
             2 -> intent = Intent(this, EmployersActivity::class.java)
+            4 -> intent = Intent(this, AboutCareerFairActivity :: class.java)
             3 -> intent = Intent(this, ContestActivity::class.java)
             7 -> intent = Intent(this, InterviewActivity::class.java)
 
 
         }
+        intent.putExtra(NAME_OF_CATEGORY_KEY, nameOfCategory)
+
         startActivity(intent)
+        overridePendingTransition(R.anim.abc_fade_in,R.anim.abc_fade_out);
+
+
     }
 }
