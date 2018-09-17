@@ -12,7 +12,7 @@
         android:layout_height="match_parent"
         android:layout_alignParentStart="true"
         android:layout_centerVertical="true"
-        android:src="@drawable/logo2" />
+        android:src="@drawable/logo" />
 
 
 

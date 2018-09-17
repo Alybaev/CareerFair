@@ -24,9 +24,9 @@ class SimpleWebViewClientImpl(var activity: Activity) : WebViewClient() {
 
     override fun shouldOverrideUrlLoading(webView: WebView, url: String): Boolean {
 
-      if (url == Constants.URL_OF_REGISTRATION_GOOGLE_FORM || url == Constants.URL_OF_MOCK_GOOGLE_FORM || url == Constants.URL_OF_CV_GOOGLE_FORM ) {
+        if (url == Constants.URL_OF_REGISTRATION_GOOGLE_FORM || url == Constants.URL_OF_MOCK_GOOGLE_FORM || url == Constants.URL_OF_CV_GOOGLE_FORM) {
             return false
-      }
+        }
 
         return false
 
@@ -36,18 +36,18 @@ class SimpleWebViewClientImpl(var activity: Activity) : WebViewClient() {
     override fun onPageFinished(view: WebView, url: String) {
         Log.d("WebView", "your current url when webpage loading.. finish$url")
         var intent = Intent(activity, MainMenuActivity::class.java)
-        if (url.contains(Constants.URL_OF_REGISTRATION_RESPONSE_GOOGLE_FORM )) {
+        if (url.contains(Constants.URL_OF_REGISTRATION_RESPONSE_GOOGLE_FORM)) {
 
             FileUtils.writeCacheData(activity, Constants.REGISTRATION_KEY, "true")
             activity!!.startActivity(intent)
             activity.finish()
 
-        }else if(url.contains(URL_OF_CV_RESPONSE_GOOGLE_FORM ) || url.contains(URL_OF_MOCK_RESPONSE_GOOGLE_FORM ) || url.contains(URL_OF_ABOUT_CAREER_RESPONSE_GOOGLE_FORM )){
+        } else if (url.contains(URL_OF_CV_RESPONSE_GOOGLE_FORM) || url.contains(URL_OF_MOCK_RESPONSE_GOOGLE_FORM) || url.contains(URL_OF_ABOUT_CAREER_RESPONSE_GOOGLE_FORM)) {
             intent = Intent(activity, ContestActivity::class.java)
             val urlResponses = activity.resources.getStringArray(R.array.urls_responses)
-            for(i in 0 until urlResponses.size){
-                if(url.contains(urlResponses[i])){
-                    FileUtils.writeCacheData(activity,i.toString(),urlResponses[i])
+            for (i in 0 until urlResponses.size) {
+                if (url.contains(urlResponses[i])) {
+                    FileUtils.writeCacheData(activity, i.toString(), urlResponses[i])
                 }
             }
             activity!!.startActivity(intent)

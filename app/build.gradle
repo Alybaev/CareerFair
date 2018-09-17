@@ -50,4 +50,5 @@ dependencies {
     //Zoom view
     implementation 'com.github.chrisbanes:PhotoView:2.1.4'
 
+
 }

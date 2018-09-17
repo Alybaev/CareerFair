@@ -7,6 +7,9 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.text.Html
 import android.text.Spanned
+import android.transition.Explode
+import android.transition.TransitionInflater
+import android.view.Window
 import kg.neobis.careerfair.R
 import kg.neobis.careerfair.ui.about_career_fair.AboutCareerFairActivity
 import kg.neobis.careerfair.ui.constest.ContestActivity
@@ -29,8 +32,8 @@ class MainMenuActivity : AppCompatActivity(), MainMenuAdapter.Listener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main_menu)
 
-        init()
 
+        init()
 
     }
 
@@ -51,7 +54,7 @@ class MainMenuActivity : AppCompatActivity(), MainMenuAdapter.Listener {
     private fun initListener() {
 
         about_career_fair.setOnClickListener {
-            val intent = Intent(this,AboutCareerFairActivity :: class.java)
+            val intent = Intent(this, AboutCareerFairActivity::class.java)
             startActivity(intent)
         }
 
@@ -74,7 +77,7 @@ class MainMenuActivity : AppCompatActivity(), MainMenuAdapter.Listener {
             0 -> intent = Intent(this, ScheduleActivity::class.java)
             1 -> intent = Intent(this, MapActivity::class.java)
             2 -> intent = Intent(this, EmployersActivity::class.java)
-            4 -> intent = Intent(this, AboutCareerFairActivity :: class.java)
+            4 -> intent = Intent(this, AboutCareerFairActivity::class.java)
             3 -> intent = Intent(this, ContestActivity::class.java)
             7 -> intent = Intent(this, InterviewActivity::class.java)
 
@@ -82,8 +85,9 @@ class MainMenuActivity : AppCompatActivity(), MainMenuAdapter.Listener {
         }
         intent.putExtra(NAME_OF_CATEGORY_KEY, nameOfCategory)
 
+
+
         startActivity(intent)
-        overridePendingTransition(R.anim.abc_fade_in,R.anim.abc_fade_out);
 
 
     }

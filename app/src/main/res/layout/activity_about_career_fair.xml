@@ -19,8 +19,7 @@
             android:id="@+id/logo_image"
             android:layout_width="match_parent"
             android:layout_height="180dp"
-            android:background="@color/logo_background"
-            android:src="@drawable/logo2" />
+           />
 
 
         <TextView

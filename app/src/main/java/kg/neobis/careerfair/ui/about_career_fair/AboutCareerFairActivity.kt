@@ -50,8 +50,10 @@ class AboutCareerFairActivity : BaseActivity(), AboutCareerFairContract.View, Or
     override fun onSuccessAboutCarerrFair(result: List<AboutCareerFair>) {
         infoAboutCareerFair = result as ArrayList
         if (infoAboutCareerFair!!.isNotEmpty()) {
-            about_career_fair_text_view.text = infoAboutCareerFair!![0].description + "\n\n" + infoAboutCareerFair!![0].target +
-                    "\n\n" + infoAboutCareerFair!![0].mission + "\n\n" + infoAboutCareerFair!![0].task
+            about_career_fair_text_view.text = infoAboutCareerFair!![0].description
+            logo_image.setImageResource(R.drawable.logo)
+            logo_image.setBackgroundColor(ContextCompat.getColor(this,R.color.logo_background))
+
         }
 
     }

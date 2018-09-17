@@ -7,14 +7,12 @@
     android:layout_gravity="center_vertical"
     android:layout_marginEnd="10dp">
 
-    <ImageView
+    <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/logo_of_company"
         android:layout_width="80dp"
         android:layout_height="80dp"
-
         android:layout_marginEnd="8dp"
-        android:scaleType="fitXY"
-        android:background="@android:color/transparent"
+        android:background="@drawable/shadow_circle"
         android:src="@drawable/default_image_for_organizers128px"
         app:layout_constraintEnd_toEndOf="parent" />
 

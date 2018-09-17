@@ -1,7 +1,9 @@
 package kg.neobis.careerfair.ui.shedule
 
+import android.os.Build
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
+import android.transition.TransitionInflater
 import kg.neobis.careerfair.R
 import kg.neobis.careerfair.model.Shedule
 import kg.neobis.careerfair.ui.BaseActivity

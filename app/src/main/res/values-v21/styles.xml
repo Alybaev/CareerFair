@@ -8,4 +8,28 @@
         <item name="android:textSize">16sp</item>
         <item name="android:backgroundTint">@color/colorPrimary</item>
     </style>
+
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+
+
+
+        <!-- specify enter and exit transitions -->
+
+
+
+
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+
+
+
+
+        <item name="android:textViewStyle">@style/RobotoTextViewStyle</item>
+        <item name="android:buttonStyle">@style/RobotoButtonStyle</item>
+        <!-- enable window content transitions -->
+
+
+    </style>
 </resources>

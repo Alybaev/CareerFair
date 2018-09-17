@@ -29,7 +29,9 @@ class OrganizersAdapter(var context : Context,var listener: Listener,var info : 
         if(info[position].logo_url != null) {
             Glide.with(context)
                     .load(info[position].logo_url)
-                    .apply(RequestOptions.circleCropTransform())
+
+                    .apply(RequestOptions().override(100, 100))
+
                     .into(holder.logoOfCompany)
         }else {
             Glide.with(context)

@@ -10,8 +10,12 @@ import com.bumptech.glide.request.RequestOptions
 import kg.neobis.careerfair.R
 import kg.neobis.careerfair.model.Organizers
 import kotlinx.android.synthetic.main.item_employers.view.*
+import android.graphics.BitmapFactory
+import android.net.Uri
+import java.io.File
 
-class EmployersAdapter(var context : Context,var listener: Listener,var info : ArrayList<Organizers>) : RecyclerView.Adapter<EmployersAdapter.MViewHolder>() {
+
+class EmployersAdapter(var context: Context, var listener: Listener, var info: ArrayList<Organizers>) : RecyclerView.Adapter<EmployersAdapter.MViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MViewHolder {
 
@@ -26,22 +30,50 @@ class EmployersAdapter(var context : Context,var listener: Listener,var info : A
 
     override fun onBindViewHolder(holder: MViewHolder, position: Int) {
 
+        val w = getWidth(info[position].logo_url.toUri()) + 150
+        val h = getHeight(info[position].logo_url.toUri()) + 150
+
+        val maxP = Math.max(w, h)
+
         Glide.with(context)
                 .load(info[position].logo_url)
-                .apply(RequestOptions().circleCrop())
+                .apply(RequestOptions().override(maxP, maxP).fitCenter())
                 .into(holder.imageOfEmployer)
-        holder.nameOfEmployer.text  = info[position].full_name
+
+        holder.nameOfEmployer.text = info[position].full_name
         holder.companyOfEmployer.text = info[position].description
 
         holder.employerInfo.setOnClickListener {
             var name = holder.nameOfEmployer.text
             var company = holder.companyOfEmployer.text
             listener.onItemSelectedAt(position)
-
         }
 
 
     }
+
+    fun String.toUri(): Uri {
+        return Uri.parse(this)
+    }
+
+    private fun getHeight(uri: Uri): Int {
+        val options = BitmapFactory.Options()
+        options.inJustDecodeBounds = true
+        BitmapFactory.decodeFile(File(uri.getPath()).getAbsolutePath(), options)
+        return options.outHeight
+
+
+    }
+
+    private fun getWidth(uri: Uri): Int {
+        val options = BitmapFactory.Options()
+        options.inJustDecodeBounds = true
+        BitmapFactory.decodeFile(File(uri.getPath()).getAbsolutePath(), options)
+
+        return options.outWidth
+
+    }
+
 
     inner class MViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 
@@ -51,7 +83,8 @@ class EmployersAdapter(var context : Context,var listener: Listener,var info : A
         var employerInfo = view.employer_info
 
     }
-    fun setMData(info:  ArrayList<Organizers>) {
+
+    fun setMData(info: ArrayList<Organizers>) {
         this.info = info
         notifyDataSetChanged()
     }

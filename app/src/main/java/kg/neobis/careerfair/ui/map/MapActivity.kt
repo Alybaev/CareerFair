@@ -39,28 +39,39 @@ class MapActivity : BaseActivity() {
 
     private fun setSpinnerListener() {
         spinner_in_map.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onNothingSelected(parent: AdapterView<*>?) {
+                TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+            }
+
             override fun onItemSelected(parent: AdapterView<*>,
                                         itemSelected: View, selectedItemPosition: Int, selectedId: Long) {
 
                 val choose = resources.getStringArray(R.array.stageList)
                 when(choose[selectedItemPosition]){
-                    "1 Этаж"-> {imageMap1.setImageResource(R.drawable.first_floor)
+                    "1 Этаж"-> {imageMap1.setImageResource(R.drawable.image_1_floor)
                        }
 
-                    "2 Этаж"-> {imageMap1.setImageResource(R.drawable.second_floor)
+                    "2 Этаж"-> {imageMap1.setImageResource(R.drawable.image_2_floor)
                      }
 
-                    "3 Этаж"-> {imageMap1.setImageResource(R.drawable.third_floor)
+                    "3 Этаж"-> {imageMap1.setImageResource(R.drawable.image_3_floor)
                         }
-                    "4 Этаж"-> {imageMap1.setImageResource(R.drawable.fourth_floor)
+                    "4 Этаж"-> {
+                        imageMap1.setImageResource(R.drawable.image_4_floor)
                     }
+                        else ->{
+                            imageMap1.setImageResource(R.drawable.food_zone)
+                        }
+
 
 
                 }
 
+
             }
 
-            override fun onNothingSelected(parent: AdapterView<*>) {}
+
         }
     }
+
 }
