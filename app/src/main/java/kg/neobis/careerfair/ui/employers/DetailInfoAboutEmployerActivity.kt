@@ -25,13 +25,13 @@ class DetailInfoAboutEmployerActivity : BaseActivity() {
     }
 
     private fun initIncludedView() {
-        item_about_employer.name_of_employer.text = info!![position!!].full_name
+        name_of_employer_in_detail_info.text = info!![position!!].full_name
 
         Glide.with(this)
                 .load(info!![position!!].logo_url)
                 .apply(RequestOptions().circleCrop())
-                .into(item_about_employer.photo_of_employer)
-        item_about_employer.photo_of_employer
+                .into(photo_of_employer_in_detail_info)
+
         description_about_employer_detail.text = info!![position!!].description
 
     }

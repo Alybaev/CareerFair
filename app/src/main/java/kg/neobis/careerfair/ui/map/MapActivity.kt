@@ -48,10 +48,10 @@ class MapActivity : BaseActivity() {
 
                 val choose = resources.getStringArray(R.array.stageList)
                 when(choose[selectedItemPosition]){
-                    "1 Этаж"-> {imageMap1.setImageResource(R.drawable.image_1_floor)
+                    "1 Этаж"-> {imageMap1.setImageResource(R.drawable.image_2_floor)
                        }
 
-                    "2 Этаж"-> {imageMap1.setImageResource(R.drawable.image_2_floor)
+                    "2 Этаж"-> {imageMap1.setImageResource(R.drawable.image_1_floor)
                      }
 
                     "3 Этаж"-> {imageMap1.setImageResource(R.drawable.image_3_floor)

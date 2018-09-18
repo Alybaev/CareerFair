@@ -15,7 +15,7 @@
         android:layout_width="match_parent"
         android:layout_height="26dp"
         android:orientation="horizontal"
-        android:weightSum="105">
+        android:weightSum="100">
 
         <TextView
             style="@style/SheduleSubtitlesStyle"
@@ -26,17 +26,14 @@
 
         <TextView
             style="@style/SheduleSubtitlesStyle"
-            android:layout_weight="30"
+            android:layout_weight="40"
             android:text="@string/theme_title" />
 
-        <TextView
-            style="@style/SheduleSubtitlesStyle"
-            android:layout_weight="30"
-            android:text="@string/speaker_title" />
+
 
         <TextView
             style="@style/SheduleSubtitlesStyle"
-            android:layout_weight="25"
+            android:layout_weight="40"
             android:text="@string/place_title" />
 
     </LinearLayout>

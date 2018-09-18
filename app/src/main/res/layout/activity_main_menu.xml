@@ -53,7 +53,7 @@
     </RelativeLayout>
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recycleViewOfCategories"
-        android:layout_marginTop="8dp"
+
         app:layoutManager="android.support.v7.widget.LinearLayoutManager"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
