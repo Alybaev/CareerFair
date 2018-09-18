@@ -25,7 +25,8 @@ class ScheduleAdapter(var listener: Listener, var infoAboutSchedule : ArrayList<
 
     override fun onBindViewHolder(holder: MViewHolder, position: Int) {
 
-        holder.time.text = infoAboutSchedule[position].time.substring(0,infoAboutSchedule[position].time.length - 3)
+        holder.start_time.text = infoAboutSchedule[position].start.substring(0,infoAboutSchedule[position].start.length - 3)
+        holder.end_time.text = infoAboutSchedule[position].end.substring(0,infoAboutSchedule[position].end.length - 3)
         holder.topic.text = infoAboutSchedule[position].subject
         holder.place.text = infoAboutSchedule[position].place
 
@@ -41,7 +42,8 @@ class ScheduleAdapter(var listener: Listener, var infoAboutSchedule : ArrayList<
         notifyDataSetChanged()
     }
     inner class MViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        var time = view.time_text
+        var start_time = view.time_text_start
+        var end_time = view.time_text_end
 
         var topic = view.topic_text
         var place = view.place_text

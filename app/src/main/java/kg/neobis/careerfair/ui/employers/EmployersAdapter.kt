@@ -30,49 +30,24 @@ class EmployersAdapter(var context: Context, var listener: Listener, var info: A
 
     override fun onBindViewHolder(holder: MViewHolder, position: Int) {
 
-        val w = getWidth(info[position].logo_url.toUri()) + 150
-        val h = getHeight(info[position].logo_url.toUri()) + 150
 
-        val maxP = Math.max(w, h)
+
 
         Glide.with(context)
+                .asBitmap()
                 .load(info[position].logo_url)
-                .apply(RequestOptions().override(maxP, maxP).fitCenter())
                 .into(holder.imageOfEmployer)
 
         holder.nameOfEmployer.text = info[position].full_name
         holder.companyOfEmployer.text = info[position].description
 
         holder.employerInfo.setOnClickListener {
-            var name = holder.nameOfEmployer.text
-            var company = holder.companyOfEmployer.text
             listener.onItemSelectedAt(position)
         }
 
 
     }
 
-    fun String.toUri(): Uri {
-        return Uri.parse(this)
-    }
-
-    private fun getHeight(uri: Uri): Int {
-        val options = BitmapFactory.Options()
-        options.inJustDecodeBounds = true
-        BitmapFactory.decodeFile(File(uri.getPath()).getAbsolutePath(), options)
-        return options.outHeight
-
-
-    }
-
-    private fun getWidth(uri: Uri): Int {
-        val options = BitmapFactory.Options()
-        options.inJustDecodeBounds = true
-        BitmapFactory.decodeFile(File(uri.getPath()).getAbsolutePath(), options)
-
-        return options.outWidth
-
-    }
 
 
     inner class MViewHolder(view: View) : RecyclerView.ViewHolder(view) {

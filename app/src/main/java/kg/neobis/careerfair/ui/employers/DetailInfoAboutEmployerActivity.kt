@@ -29,7 +29,6 @@ class DetailInfoAboutEmployerActivity : BaseActivity() {
 
         Glide.with(this)
                 .load(info!![position!!].logo_url)
-                .apply(RequestOptions().circleCrop())
                 .into(photo_of_employer_in_detail_info)
 
         description_about_employer_detail.text = info!![position!!].description

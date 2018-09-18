@@ -9,9 +9,10 @@
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:orientation="vertical"
+        android:layout_gravity="center_vertical"
         android:layout_weight="20">
         <TextView
-            android:id="@+id/time_text"
+            android:id="@+id/time_text_start"
             android:layout_width="match_parent"
             android:layout_height="29dp"
             tools:text="12:00"
@@ -20,9 +21,20 @@
             style="@style/SheduleItemStyle"
             android:fontFamily="@font/roboto_bold"/>
         <ImageView
+            android:paddingStart="4dp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="48dp"
             android:src="@drawable/yellow_line_long"/>
+        <TextView
+            android:id="@+id/time_text_end"
+            android:layout_width="match_parent"
+            android:layout_height="29dp"
+            tools:text="13:00"
+            android:textColor="@color/colorBlack"
+            android:textSize="16sp"
+            android:gravity="center_horizontal"
+            style="@style/SheduleItemStyle"
+            android:fontFamily="@font/roboto_bold"/>
         
     </LinearLayout>
     <TextView

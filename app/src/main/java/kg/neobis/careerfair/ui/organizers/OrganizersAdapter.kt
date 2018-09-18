@@ -28,11 +28,10 @@ class OrganizersAdapter(var context : Context,var listener: Listener,var info : 
     override fun onBindViewHolder(holder: MViewHolder, position: Int) {
         if(info[position].logo_url != null) {
             Glide.with(context)
+                    .asBitmap()
                     .load(info[position].logo_url)
-
-                    .apply(RequestOptions().override(100, 100))
-
                     .into(holder.logoOfCompany)
+
         }else {
             Glide.with(context)
                     .load(R.drawable.default_image_for_organizers128px)

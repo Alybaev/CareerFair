@@ -20,14 +20,15 @@
             android:layout_height="100dp"
             android:orientation="horizontal">
 
-            <ImageView
+            <com.joooonho.SelectableRoundedImageView
                 android:id="@+id/photo_of_employer_in_detail_info"
                 android:layout_width="70dp"
                 android:layout_height="70dp"
                 android:layout_gravity="center_vertical"
                 android:adjustViewBounds="true"
-                android:background="@drawable/shadow_circle"
-                android:scaleType="centerInside"
+                app:sriv_oval="true"
+                android:scaleType="fitXY"
+                app:sriv_border_width="1dp"
                 android:src="@drawable/default_image_for_employers128px"
                 android:layout_margin="5dp"
                 />
