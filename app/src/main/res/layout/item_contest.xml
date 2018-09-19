@@ -1,39 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_gravity="center_horizontal"
-    xmlns:tools="http://schemas.android.com/tools">
+    android:orientation="vertical">
+
     <TextView
-        android:id="@+id/title_of_contest"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
+        android:id="@+id/tvContest"
+        style="@style/CustomTitleStyle"
         android:layout_marginTop="36dp"
-        tools:text = "&quot;Самое лучшее Мок-интервью&quot;"
-        style="@style/ContestTitleStyle"/>
-    <ImageView
-        android:layout_marginTop="15dp"
+        android:gravity="center_horizontal"
+        tools:text="&quot;Самое лучшее Мок-интервью&quot;" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
         android:layout_gravity="center_horizontal"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:src="@drawable/yellow_horizontal_line"/>
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:background="@drawable/yellow_horizontal_line" />
 
     <Button
-        android:id="@+id/take_part_in_contest"
+        android:id="@+id/btnParticipate"
         style="@style/ButtonYellowStyle"
-        android:layout_marginTop="25dp"
-        android:text="@string/take_part_in_contest"
-        android:layout_marginBottom="8dp"/>
+        android:layout_margin="16dp"
+        android:text="@string/take_part_in_contest" />
 
     <ImageView
-        android:layout_marginEnd="10dp"
-        android:id="@+id/hint"
+        android:id="@+id/ivHint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_gravity="end"
-        android:layout_width="25dp"
-        android:layout_height="25dp"
         android:layout_marginBottom="15dp"
-        android:src="@drawable/hint" />
+        android:layout_marginEnd="10dp"
+        android:src="@drawable/hint"
+        android:contentDescription="@string/app_name" />
 
 </LinearLayout>

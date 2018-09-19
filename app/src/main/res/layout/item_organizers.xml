@@ -4,7 +4,6 @@
     android:orientation="horizontal"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:layout_gravity="center_vertical"
     android:layout_marginEnd="10dp">
 
     <com.joooonho.SelectableRoundedImageView

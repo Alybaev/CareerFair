@@ -1,36 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="horizontal"
-
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginBottom="42dp"
+    android:orientation="horizontal"
+    android:layout_marginTop="12dp">
 
-    >
-    <ImageView
-        android:layout_width="11dp"
-        android:layout_height="31dp"
-        android:layout_marginStart="20dp"
+    <View
+        android:layout_width="12dp"
+        android:layout_height="match_parent"
         android:layout_gravity="center_vertical"
-        android:src="@drawable/yellow_line_in_interview"/>
+        android:layout_marginLeft="8dp"
+        android:background="#FEE04A" />
+
     <TextView
-        android:id="@+id/topic_text_view"
-        android:layout_width="200dp"
-        android:layout_height="50dp"
-        android:textColor="@color/colorPrimary"
-        android:textSize="16dp"
-        android:gravity="center_vertical"
-        android:layout_marginStart="10dp"
-        tools:text="Тендеций карьеры"/>
-    
+        style="@style/CustomTitleStyle"
+        android:id="@+id/tvTopic"
+        android:layout_weight="1"
+        tools:text="Тендеций карьеры" />
+
     <Button
-        android:id="@+id/go_to_interview_button"
+        android:id="@+id/btnRedirect"
         android:layout_width="100dp"
-        android:layout_gravity="center_vertical"
         android:layout_height="30dp"
-        android:textSize="14dp"
+        android:layout_marginRight="16dp"
+        android:layout_gravity="center_vertical"
         android:background="@color/colorPrimary"
-        android:text="@string/go_to_interview_button_text"/>
+        android:text="@string/go_to_interview_button_text"
+        android:textSize="14dp" />
 
 </LinearLayout>

@@ -59,7 +59,9 @@ class EmployersAdapter(var context: Context, var listener: Listener, var info: A
 
     }
 
-    fun setMData(info: ArrayList<Organizers>) {
+    fun setMData(info: ArrayList<Organizers>?) {
+        if(info == null)
+            return
         this.info = info
         notifyDataSetChanged()
     }

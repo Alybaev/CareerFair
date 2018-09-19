@@ -1,16 +1,16 @@
-package kg.neobis.careerfair.ui.interview
+package kg.neobis.careerfair.ui.contest
 
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
+import android.view.View
 import kg.neobis.careerfair.R
-import kotlinx.android.synthetic.main.item_interview.view.*
+import kotlinx.android.synthetic.main.item_contest.view.*
 
-class InterviewAdapter(var mList :  Array<out String>, var listener: Listener) : RecyclerView.Adapter<InterviewAdapter.ViewHolder>() {
+class ContestAdapter(var listener: Listener, var mList: Array<String>) : RecyclerView.Adapter<ContestAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val mView = LayoutInflater.from(parent.context).inflate(R.layout.item_interview, parent, false)
+        val mView = LayoutInflater.from(parent.context).inflate(R.layout.item_contest, parent, false)
         return ViewHolder(mView)
     }
 
@@ -23,16 +23,20 @@ class InterviewAdapter(var mList :  Array<out String>, var listener: Listener) :
     }
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+
         fun bind(position: Int){
-            itemView.tvTopic.text = mList[position]
-            itemView.btnRedirect.setOnClickListener {
+            itemView.tvContest.text = mList[position]
+            itemView.tvContest.setOnClickListener {
                 listener.onItemSelectedAt(position)
+            }
+            itemView.ivHint.setOnClickListener {
+                listener.onHintSelectedAt(position)
             }
         }
     }
 
     interface Listener {
         fun onItemSelectedAt(position: Int)
-
+        fun onHintSelectedAt(position: Int)
     }
 }

@@ -1,82 +1,52 @@
 package kg.neobis.careerfair.ui.organizers
 
 import android.os.Bundle
-import android.support.v7.widget.LinearLayoutManager
 import kg.neobis.careerfair.R
 import kg.neobis.careerfair.model.Organizers
 import kg.neobis.careerfair.ui.BaseActivity
 import kg.neobis.careerfair.utils.Constants
-import kg.neobis.careerfair.utils.Constants.Companion.PATH_FOR_ORGANIZERS
-import kg.neobis.careerfair.utils.Constants.Companion.PATH_FOR_PARTNERS
-import kg.neobis.careerfair.utils.Constants.Companion.PATH_FOR_SPONSORS
 import kotlinx.android.synthetic.main.activity_organizers.*
 
-
 class OrganizersActivity : BaseActivity(), OrganizersAdapter.Listener, OrganizersContract.View {
-
-
-    var mAdapter: OrganizersAdapter? = null
-    private var presenter: OrganizersPresenter? = null
-    private var nameOfCategory: String?= null
-    private var info: ArrayList<Organizers>? = null
+    private var presenter: OrganizersContract.Presenter? = null
+    private var mAdapter: OrganizersAdapter? = null
+    private var info: ArrayList<Organizers>? = ArrayList()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_organizers)
-
         init()
     }
 
     private fun init() {
-
-        getDataFromIntent()
+        val name = intent.getStringExtra(Constants.NAME_OF_CATEGORY_KEY)
+        title = name
         initAdapter()
-        initPresenter()
-    }
-
-
-    private fun initPresenter() {
-
         presenter = OrganizersPresenter(this)
-        val namesOfCategories = resources.getStringArray(R.array.categories_name)
-        when(nameOfCategory){
-            namesOfCategories[4] ->   presenter!!.getInfo(PATH_FOR_ORGANIZERS)
-            namesOfCategories[5] -> presenter!!.getInfo(PATH_FOR_PARTNERS)
-            namesOfCategories[6] -> presenter!!.getInfo(PATH_FOR_SPONSORS)
-        }
+        val list = resources.getStringArray(R.array.categories_name)
 
-
-    }
-
-
-    private fun getDataFromIntent() {
-
-        val intent = intent
-        nameOfCategory = intent.getStringExtra(Constants.NAME_OF_CATEGORY_KEY)
-        title = nameOfCategory
-
+        presenter?.getInfo(when (name) {
+            list[4] -> Constants.PATH_FOR_ORGANIZERS
+            list[5] -> Constants.PATH_FOR_PARTNERS
+            list[6] -> Constants.PATH_FOR_SPONSORS
+            else -> null
+        })
     }
 
     private fun initAdapter() {
-        val layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
-        info =  ArrayList<Organizers>()
-        mAdapter = OrganizersAdapter(this,this,info!!)
-        RecycleViewOrganizers.layoutManager = layoutManager
-        RecycleViewOrganizers.adapter = mAdapter
-
+        val info = ArrayList<Organizers>()
+        mAdapter = OrganizersAdapter(this, this, info)
+        rvOrganizers.adapter = mAdapter
     }
 
     override fun onItemSelectedAt(position: Int) {
-        info_text_view_organizers.text = info!![position].description
+        tvOrganizers.text = info!![position].description
     }
-    override fun onSuccess(result: List<Organizers>) {
 
-        info = result as ArrayList<Organizers>
-        if(info!!.size != 0) {
-            info_text_view_organizers.text = info!![0].description
-        }
-        mAdapter!!.setMData(info!!)
-
-
+    override fun onSuccess(result: ArrayList<Organizers>) {
+        info = result
+        if (info != null && !info!!.isEmpty())
+            tvOrganizers.text = info!![0].description
+        mAdapter?.setMData(info!!)
     }
 }

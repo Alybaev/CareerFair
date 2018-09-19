@@ -12,55 +12,46 @@ import kg.neobis.careerfair.model.Organizers
 import kotlinx.android.synthetic.main.item_organizers.view.*
 
 
-class OrganizersAdapter(var context : Context,var listener: Listener,var info : ArrayList<Organizers>) : RecyclerView.Adapter<OrganizersAdapter.MViewHolder>() {
+class OrganizersAdapter(var listener: Listener, var mList: ArrayList<Organizers>) : RecyclerView.Adapter<OrganizersAdapter.ViewHolder>() {
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MViewHolder {
-
-
-        return MViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.item_organizers, parent, false))
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+        val mView = LayoutInflater.from(parent.context).inflate(R.layout.item_organizers, parent, false)
+        return ViewHolder(mView)
     }
-
 
     override fun getItemCount(): Int {
-        return info.size
+        return mList.size
     }
 
-    override fun onBindViewHolder(holder: MViewHolder, position: Int) {
-        if(info[position].logo_url != null) {
-            Glide.with(context)
-                    .asBitmap()
-                    .load(info[position].logo_url)
-                    .into(holder.logoOfCompany)
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        holder.bind(position)
+    }
 
-        }else {
-            Glide.with(context)
-                    .load(R.drawable.default_image_for_organizers128px)
-                    .apply(RequestOptions.circleCropTransform())
-                    .into(holder.logoOfCompany)
+    inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        fun bind(position: Int){
+            if (mList.get(position).logo_url != null) {
+                Glide.with(itemView.context)
+                        .asBitmap()
+                        .load(mList.get(position).logo_url)
+                        .into(itemView.logo_of_company)
+            } else {
+                Glide.with(itemView.context)
+                        .load(R.drawable.default_image_for_organizers128px)
+                        .apply(RequestOptions.circleCropTransform())
+                        .into(itemView.logo_of_company)
+            }
+            itemView.logo_of_company.setOnClickListener {
+                listener.onItemSelectedAt(position)
+            }
         }
-        holder.logoOfCompany.setOnClickListener{
-            listener.onItemSelectedAt(position)
-        }
-
-
-
-
-
     }
 
-    inner class MViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        var logoOfCompany = view.logo_of_company
-
-
-
-    }
-    fun setMData(info:  ArrayList<Organizers>) {
-        this.info = info
+    fun setMData(info: ArrayList<Organizers>) {
+        this.mList = info
         notifyDataSetChanged()
     }
+
     interface Listener {
         fun onItemSelectedAt(position: Int)
     }
-
-
 }

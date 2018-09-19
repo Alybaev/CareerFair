@@ -10,8 +10,7 @@ import kotlinx.android.synthetic.main.activity_interview.*
 
 class InterviewActivity : BaseActivity(), InterviewAdapter.Listener {
     override fun onItemSelectedAt(position: Int) {
-        var customTabWebView =  CustomTabForWebView()
-
+        val customTabWebView =  CustomTabForWebView()
         val url = when(position){
             0-> Constants.URL_OF_INTERVIEW_TENDENCY_OF_CAREER
             1-> Constants.URL_OF_INTERVIEW_QUESTIONS_OF_DIRECTORS
@@ -19,7 +18,6 @@ class InterviewActivity : BaseActivity(), InterviewAdapter.Listener {
 
         }
         customTabWebView.openUrlInChromeCustomTab(this,url!!)
-
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {

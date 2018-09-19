@@ -1,17 +1,13 @@
 package kg.neobis.careerfair.utils.custom_classes
 
 import android.webkit.WebViewClient
-import android.support.v4.content.ContextCompat.startActivity
 import android.content.Intent
 import android.webkit.WebView
 import android.app.Activity
-import android.graphics.Bitmap
-import android.net.Uri
-import kg.neobis.careerfair.ui.main_menu.MainMenuActivity
-import android.support.v4.content.ContextCompat.startActivity
+import kg.neobis.careerfair.ui.main.MainActivity
 import android.util.Log
 import kg.neobis.careerfair.R
-import kg.neobis.careerfair.ui.constest.ContestActivity
+import kg.neobis.careerfair.ui.contest.ContestActivity
 import kg.neobis.careerfair.utils.Constants
 import kg.neobis.careerfair.utils.Constants.Companion.URL_OF_ABOUT_CAREER_RESPONSE_GOOGLE_FORM
 import kg.neobis.careerfair.utils.Constants.Companion.URL_OF_CV_RESPONSE_GOOGLE_FORM
@@ -35,7 +31,7 @@ class SimpleWebViewClientImpl(var activity: Activity) : WebViewClient() {
 
     override fun onPageFinished(view: WebView, url: String) {
         Log.d("WebView", "your current url when webpage loading.. finish$url")
-        var intent = Intent(activity, MainMenuActivity::class.java)
+        var intent = Intent(activity, MainActivity::class.java)
         if (url.contains(Constants.URL_OF_REGISTRATION_RESPONSE_GOOGLE_FORM)) {
 
             FileUtils.writeCacheData(activity, Constants.REGISTRATION_KEY, "true")

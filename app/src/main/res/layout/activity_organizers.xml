@@ -1,47 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:fillViewport="true">
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-
-        android:orientation="vertical"
-        tools:context=".ui.organizers.OrganizersActivity"
-        tools:layout_height="150dp">
-
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
         <android.support.v7.widget.RecyclerView
-            android:id="@+id/RecycleViewOrganizers"
-
+            android:id="@+id/rvOrganizers"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="25dp"
-            android:layout_marginTop="28dp"
+            android:layout_marginBottom="16dp"
+            android:layout_marginTop="16dp"
+            android:nestedScrollingEnabled="false"
             tools:listitem="@layout/item_organizers" />
 
-        <ImageView
-
-            android:layout_width="308dp"
-            android:layout_height="wrap_content"
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
             android:layout_gravity="center_horizontal"
             android:layout_marginEnd="@dimen/margin_end_in_organizers_activity"
             android:layout_marginStart="@dimen/margin_end_in_organizers_activity"
-            android:src="@drawable/yellow_horizontal_line" />
-
+            android:background="#FEE04A" />
 
         <TextView
-            android:id="@+id/info_text_view_organizers"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:id="@+id/tvOrganizers"
+            style="@style/CustomTitleStyle"
             android:layout_marginEnd="@dimen/margin_end_in_organizers_activity"
             android:layout_marginStart="24dp"
             android:layout_marginTop="24dp"
             android:text="@string/amazon_default_text" />
 
-
     </LinearLayout>
-</ScrollView>
+</android.support.v4.widget.NestedScrollView>

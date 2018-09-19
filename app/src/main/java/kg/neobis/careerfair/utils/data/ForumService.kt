@@ -11,9 +11,9 @@ interface ForumService {
 
 
     @GET("{category}/")
-    fun getInfoAbout(@Path("category") category: String): Call<List<Organizers>>
+    fun getInfoAbout(@Path("category") category: String): Call<ArrayList<Organizers>>
     @GET("organizer/")
-    fun getOrganizers(): Call<List<Organizers>>
+    fun getOrganizers(): Call<ArrayList<Organizers>>
     @GET("sponsor/")
     fun getSponsorsList(): Call<List<Organizers>>
     @GET("employer/")
@@ -23,9 +23,9 @@ interface ForumService {
     @GET("mediapartner/")
     fun getMediaPartnersList():Call<List<Organizers>>
     @GET("shedule/")
-    fun getScheduleList():Call<List<Shedule>>
+    fun getScheduleList():Call<ArrayList<Shedule>>
     @GET("about/")
-    fun getInfoAboutCareerFair():Call<List<AboutCareerFair>>
+    fun getInfoAboutCareerFair():Call<ArrayList<AboutCareerFair>>
 
 
 

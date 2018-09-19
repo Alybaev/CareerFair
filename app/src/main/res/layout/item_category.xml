@@ -2,77 +2,11 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_marginTop="8dp"
     android:layout_height="wrap_content">
 
-    <RelativeLayout
-        android:id="@+id/category"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/height_of_categories">
-
-        <RelativeLayout
-            android:id="@+id/frame_for_category"
-            android:layout_width="@dimen/width_of_categories"
-            android:layout_height="match_parent"
-            android:layout_alignParentStart="true"
-            >
-
-            <ImageView
-                android:id="@+id/yellow_line_image"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_alignParentEnd="true"
-                android:src="@drawable/single_yellow_line" />
-
-
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:id="@+id/frame_for_category2"
-            android:layout_width="@dimen/width_of_categories"
-            android:layout_height="match_parent"
-            android:layout_alignParentEnd="true"
-            >
-
-            <ImageView
-                android:id="@+id/yellow_line_image2"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_alignParentStart="true"
-                android:src="@drawable/single_yellow_line" />
-
-
-        </RelativeLayout>
-
-        <TextView
-            style="@style/TitleTextStyle"
-            android:textColor="@color/colorBlack"
-            android:id="@+id/category_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:layout_gravity="center"
-            android:textSize="14sp"
-            tools:text="Партнеры и Медиа-партнеры" />
-
-    </RelativeLayout>
-
-    <View
-        android:id="@+id/shadow_view"
-        android:layout_width="@dimen/width_of_categories"
-        android:layout_height="7dp"
-        android:layout_below="@+id/category"
-        android:background="@drawable/dropshadow"
-        android:layout_alignParentStart = "true"/>
-
-    <View
-        android:id="@+id/shadow_view2"
-        android:layout_width="@dimen/width_of_categories"
-        android:layout_height="7dp"
-        android:layout_below="@+id/category"
-        android:layout_alignParentEnd="true"
-        android:background="@drawable/dropshadow"
-       />
-
+    <TextView
+        android:id="@+id/tvCategory"
+        style="@style/CustomTitleStyle"
+        tools:text="Партнеры и Медиа-партнеры" />
 
 </RelativeLayout>

@@ -1,52 +1,34 @@
-package kg.neobis.careerfair.ui.constest
+package kg.neobis.careerfair.ui.contest
 
 import android.os.Bundle
 import kg.neobis.careerfair.R
 import kg.neobis.careerfair.ui.BaseActivity
 import kg.neobis.careerfair.utils.Constants
 import kg.neobis.careerfair.utils.custom_classes.SimpleWebViewClientImpl
-import kotlinx.android.synthetic.main.activity_login2.*
-
+import kotlinx.android.synthetic.main.activity_login_web.*
 
 class ContestActivityGoogleForm() : BaseActivity() {
 
-    private var url: String? = null
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_login2)
-        init()
-    }
-
-    private fun init() {
-        getDataFromIntent()
+        setContentView(R.layout.activity_login_web)
         initWebView()
     }
 
-
-    private fun getDataFromIntent() {
-        url = intent.getStringExtra(Constants.URL_KEY)
-    }
-
     private fun initWebView() {
-
-        val webSettings = webViewRegistration.getSettings()
-        webSettings.javaScriptEnabled = true
-
+        webViewRegistration.settings.javaScriptEnabled = true
         val webViewClient = SimpleWebViewClientImpl(this)
         webViewRegistration.webViewClient = webViewClient
 
+        val url = intent.getStringExtra(Constants.URL_KEY)
         webViewRegistration.loadUrl(url)
     }
 
-    //       initListeners()
-    public override fun onBackPressed() {
+    override fun onBackPressed() {
         if (webViewRegistration.canGoBack()) {
             webViewRegistration.goBack()
         } else {
             super.onBackPressed()
         }
     }
-
-
 }
