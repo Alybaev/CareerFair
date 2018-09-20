@@ -28,7 +28,7 @@
                 app:sriv_border_width="1dp"
                 app:sriv_oval="true" />
 
-            <TextView
+            <kg.neobis.careerfair.ui.custom.TextViewRobotoLight
                 android:id="@+id/tvName"
                 style="@style/CustomTitleStyle"
                 android:layout_height="match_parent"
@@ -41,7 +41,7 @@
             android:layout_height="1dp"
             android:background="#FEE04A" />
 
-        <TextView
+        <kg.neobis.careerfair.ui.custom.TextViewRobotoMedium
             android:id="@+id/tvDescription"
             style="@style/CustomTitleStyle"
             android:layout_marginTop="15dp"

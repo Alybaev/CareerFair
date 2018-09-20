@@ -18,19 +18,19 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
-            <TextView
+            <kg.neobis.careerfair.ui.custom.TextViewRobotoRegular
                 style="@style/SheduleSubtitlesStyle"
                 android:layout_marginStart="4dp"
                 android:layout_weight="20"
                 android:gravity="center_horizontal"
                 android:text="@string/time_title" />
 
-            <TextView
+            <kg.neobis.careerfair.ui.custom.TextViewRobotoRegular
                 style="@style/SheduleSubtitlesStyle"
                 android:layout_weight="40"
                 android:text="@string/theme_title" />
 
-            <TextView
+            <kg.neobis.careerfair.ui.custom.TextViewRobotoRegular
                 style="@style/SheduleSubtitlesStyle"
                 android:layout_weight="40"
                 android:text="@string/place_title" />

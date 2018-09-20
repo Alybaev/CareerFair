@@ -11,7 +11,7 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <TextView
+        <kg.neobis.careerfair.ui.custom.TextViewRobotoLight
             style="@style/CustomTitleStyle"
             android:gravity="center_horizontal"
             android:text="@string/take_part_in_interview" />

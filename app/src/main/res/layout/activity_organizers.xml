@@ -27,7 +27,7 @@
             android:layout_marginStart="@dimen/margin_end_in_organizers_activity"
             android:background="#FEE04A" />
 
-        <TextView
+        <kg.neobis.careerfair.ui.custom.TextViewRobotoMedium
             android:id="@+id/tvOrganizers"
             style="@style/CustomTitleStyle"
             android:layout_marginEnd="@dimen/margin_end_in_organizers_activity"

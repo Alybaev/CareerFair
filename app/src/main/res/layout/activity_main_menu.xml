@@ -7,13 +7,12 @@
     android:orientation="vertical"
     tools:context=".ui.main.MainActivity">
 
-    <TextView
+    <kg.neobis.careerfair.ui.custom.TextViewRobotoLight
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="18dp"
         android:gravity="center_horizontal"
         android:text="@string/main_menu_title"
-        android:textAppearance="@style/TitleTextStyle"
         android:textSize="24sp" />
 
     <RelativeLayout
@@ -23,7 +22,7 @@
         android:layout_marginTop="28dp"
         android:background="@color/colorPrimary">
 
-        <TextView
+        <kg.neobis.careerfair.ui.custom.TextViewRobotoMedium
             android:id="@+id/tvAbout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -32,7 +31,6 @@
             android:layout_marginBottom="14sp"
             android:layout_marginTop="14sp"
             android:gravity="center_horizontal"
-            android:textAppearance="@style/TitleTextStyle"
             android:textColor="@color/colorAccent"
             android:textSize="18sp"
             tools:text="О Ярмарке Вакансий" />

@@ -11,7 +11,7 @@
         android:orientation="vertical"
         android:layout_gravity="center_vertical"
         android:layout_weight="20">
-        <TextView
+        <kg.neobis.careerfair.ui.custom.TextViewRobotoRegular
             android:id="@+id/time_text_start"
             android:layout_width="match_parent"
             android:layout_height="29dp"
@@ -25,7 +25,7 @@
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:src="@drawable/yellow_line_long"/>
-        <TextView
+        <kg.neobis.careerfair.ui.custom.TextViewRobotoRegular
             android:id="@+id/time_text_end"
             android:layout_width="match_parent"
             android:layout_height="29dp"
@@ -37,7 +37,7 @@
             android:fontFamily="@font/roboto_bold"/>
         
     </LinearLayout>
-    <TextView
+    <kg.neobis.careerfair.ui.custom.TextViewRobotoRegular
         android:background="@color/lightGreyColor"
         android:id="@+id/topic_text"
         android:layout_weight="40"
@@ -47,7 +47,7 @@
         tools:text="Что написать на 'чистой доске' ?"
         />
 
-    <TextView
+    <kg.neobis.careerfair.ui.custom.TextViewRobotoRegular
 
         android:id="@+id/place_text"
         android:layout_weight="40"

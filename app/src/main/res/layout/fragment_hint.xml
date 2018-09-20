@@ -8,7 +8,7 @@
     android:orientation="vertical"
     android:padding="16dp">
 
-    <TextView
+    <kg.neobis.careerfair.ui.custom.TextViewRobotoLight
         android:id="@+id/tvTitle"
         style="@style/CustomTitleStyle"
         android:gravity="center_horizontal"
@@ -16,7 +16,7 @@
         android:textStyle="bold"
         tools:text="Мок Интервью" />
 
-    <TextView
+    <kg.neobis.careerfair.ui.custom.TextViewRobotoRegular
         android:id="@+id/tvHint"
         style="@style/CustomTitleStyle"
         android:layout_marginTop="10dp"

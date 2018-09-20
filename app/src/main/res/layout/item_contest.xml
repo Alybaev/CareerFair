@@ -6,7 +6,7 @@
     android:layout_gravity="center_horizontal"
     android:orientation="vertical">
 
-    <TextView
+    <kg.neobis.careerfair.ui.custom.TextViewRobotoRegular
         android:id="@+id/tvContest"
         style="@style/CustomTitleStyle"
         android:layout_marginTop="36dp"

@@ -1,56 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
-        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-            xmlns:app="http://schemas.android.com/apk/res-auto"
-            xmlns:tools="http://schemas.android.com/tools"
-            android:id="@+id/employer_info"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/employer_info"
+    android:layout_width="match_parent"
+    android:layout_height="100dp"
+    android:layout_margin="8dp"
+    android:orientation="horizontal">
+
+    <com.joooonho.SelectableRoundedImageView
+        android:id="@+id/photo_of_employer"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_gravity="center_vertical"
+        android:layout_margin="5dp"
+        android:background="@drawable/shadow_circle"
+        android:scaleType="fitXY"
+        android:src="@drawable/default_image_for_employers128px"
+        app:sriv_border_width="1dp"
+        app:sriv_oval="true" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="15dp"
+        android:gravity="center_vertical"
+        android:orientation="vertical">
+
+        <kg.neobis.careerfair.ui.custom.TextViewRobotoRegular
+            android:id="@+id/name_of_employer"
             android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:layout_margin="8dp"
-            android:orientation="horizontal">
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorBlack"
+            android:textSize="18sp"
+            tools:text="Amazon" />
 
-            <com.joooonho.SelectableRoundedImageView
-                android:id="@+id/photo_of_employer"
-                android:layout_width="70dp"
-                android:layout_height="70dp"
-                android:layout_gravity="center_vertical"
-                android:background="@drawable/shadow_circle"
-                app:sriv_oval="true"
-                android:scaleType="fitXY"
-                app:sriv_border_width="1dp"
-                android:src="@drawable/default_image_for_employers128px"
-                android:layout_margin="5dp"
-                />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="3dp"
+            android:src="@drawable/horizontal_long_line" />
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginStart="15dp"
-                android:gravity="center_vertical"
-                android:orientation="vertical">
+        <kg.neobis.careerfair.ui.custom.TextViewRobotoRegular
+            android:id="@+id/company_of_employer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="3sp"
+            android:ellipsize="end"
+            android:maxLines="2"
+            tools:text="Amazon.com, Inc."
 
-                <TextView
-                    android:id="@+id/name_of_employer"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textColor="@color/colorBlack"
-                    android:textSize="18sp"
-                    tools:text="Amazon" />
+            />
+    </LinearLayout>
 
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="3dp"
-                    android:src="@drawable/horizontal_long_line" />
-
-                <TextView
-                    android:id="@+id/company_of_employer"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="3sp"
-                    android:ellipsize="end"
-                    android:maxLines="2"
-                    tools:text="Amazon.com, Inc."
-
-                    />
-            </LinearLayout>
-
-        </LinearLayout>
+</LinearLayout>

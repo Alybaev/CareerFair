@@ -13,7 +13,7 @@
         android:layout_marginLeft="8dp"
         android:background="#FEE04A" />
 
-    <TextView
+    <kg.neobis.careerfair.ui.custom.TextViewRobotoRegular
         style="@style/CustomTitleStyle"
         android:id="@+id/tvTopic"
         android:layout_weight="1"

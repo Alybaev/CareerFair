@@ -6,13 +6,12 @@
     android:paddingLeft="33dp"
     android:paddingRight="33dp">
 
-    <TextView
+    <kg.neobis.careerfair.ui.custom.TextViewRobotoMedium
         android:id="@+id/some_id"
         android:layout_width="289dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
-        android:text="@string/welcome_text"
-        android:textAppearance="@style/TitleTextStyle" />
+        android:text="@string/welcome_text" />
 
     <ImageView
         android:layout_marginTop="5dp"
@@ -20,14 +19,13 @@
         android:layout_height="59dp"
         android:src="@drawable/logo"
        />
-    <TextView
+    <kg.neobis.careerfair.ui.custom.TextViewRobotoMedium
         android:id="@+id/pass_registration"
         android:layout_width="289dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:text="@string/pass_registration_text"
         android:fontFamily="@font/roboto_medium"
-        android:textAppearance="@style/TitleTextStyle"
         android:textSize="24sp" />
 
     <EditText

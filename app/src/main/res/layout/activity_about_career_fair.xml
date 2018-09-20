@@ -18,7 +18,7 @@
             android:src="@drawable/logo"
             android:background="@color/logo_background"/>
 
-        <TextView
+        <kg.neobis.careerfair.ui.custom.TextViewRobotoMedium
             android:id="@+id/tvAbout"
             style="@style/CustomTitleStyle"
             android:text="@string/amazon_default_text" />
