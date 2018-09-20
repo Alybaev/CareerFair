@@ -1,74 +1,55 @@
 package kg.neobis.careerfair.ui.employers
 
-import android.content.Context
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.bumptech.glide.Glide
-import com.bumptech.glide.request.RequestOptions
 import kg.neobis.careerfair.R
 import kg.neobis.careerfair.model.Organizers
 import kotlinx.android.synthetic.main.item_employers.view.*
-import android.graphics.BitmapFactory
-import android.net.Uri
-import java.io.File
 
 
-class EmployersAdapter(var context: Context, var listener: Listener, var info: ArrayList<Organizers>) : RecyclerView.Adapter<EmployersAdapter.MViewHolder>() {
+class EmployersAdapter(var listener: Listener, var mList: ArrayList<Organizers>) : RecyclerView.Adapter<EmployersAdapter.ViewHolder>() {
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MViewHolder {
-
-
-        return MViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.item_employers, parent, false))
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+        val mView = LayoutInflater.from(parent.context).inflate(R.layout.item_employers, parent, false)
+        return ViewHolder(mView)
     }
-
 
     override fun getItemCount(): Int {
-        return info.size
+        return mList.size
     }
 
-    override fun onBindViewHolder(holder: MViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        holder.bind(position)
+    }
 
+    inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
+        fun bind(position: Int) {
+            Glide.with(itemView)
+                    .asBitmap()
+                    .load(mList[position].logo_url)
+                    .into(itemView.photo_of_employer)
 
+            itemView.name_of_employer.text = mList[position].full_name
+            itemView.company_of_employer.text = mList[position].description
 
-        Glide.with(context)
-                .asBitmap()
-                .load(info[position].logo_url)
-                .into(holder.imageOfEmployer)
-
-        holder.nameOfEmployer.text = info[position].full_name
-        holder.companyOfEmployer.text = info[position].description
-
-        holder.employerInfo.setOnClickListener {
-            listener.onItemSelectedAt(position)
+            itemView.employer_info.tag = mList.get(position)
+            itemView.employer_info.setOnClickListener {it ->
+                listener.onItemSelectedAt(it.tag as Organizers)
+            }
         }
-
-
     }
 
-
-
-    inner class MViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-
-        var imageOfEmployer = view.photo_of_employer
-        var nameOfEmployer = view.name_of_employer
-        var companyOfEmployer = view.company_of_employer
-        var employerInfo = view.employer_info
-
-    }
-
-    fun setMData(info: ArrayList<Organizers>?) {
-        if(info == null)
-            return
-        this.info = info
+    fun setMData(info: ArrayList<Organizers>) {
+        this.mList = info
         notifyDataSetChanged()
     }
 
     interface Listener {
-        fun onItemSelectedAt(position: Int)
+        fun onItemSelectedAt(item: Organizers)
     }
-
 
 }

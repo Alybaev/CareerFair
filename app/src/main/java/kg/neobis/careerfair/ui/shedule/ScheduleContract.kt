@@ -2,7 +2,7 @@ package kg.neobis.careerfair.ui.shedule
 
 
 import kg.neobis.careerfair.model.Shedule
-import kg.neobis.careerfair.utils.custom_classes.IProgressBar
+import kg.neobis.careerfair.utils.IProgressBar
 
 interface ScheduleContract {
     interface  View : IProgressBar {

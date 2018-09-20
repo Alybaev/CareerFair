@@ -8,22 +8,19 @@
     android:layout_margin="8dp"
     android:orientation="horizontal">
 
-    <com.joooonho.SelectableRoundedImageView
+    <ImageView
         android:id="@+id/photo_of_employer"
         android:layout_width="70dp"
         android:layout_height="70dp"
         android:layout_gravity="center_vertical"
         android:layout_margin="5dp"
         android:background="@drawable/shadow_circle"
-        android:scaleType="fitXY"
-        android:src="@drawable/default_image_for_employers128px"
-        app:sriv_border_width="1dp"
-        app:sriv_oval="true" />
+        android:src="@drawable/default_image_for_employers128px" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginStart="15dp"
+        android:layout_margin="15dp"
         android:gravity="center_vertical"
         android:orientation="vertical">
 
@@ -44,12 +41,9 @@
             android:id="@+id/company_of_employer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="3sp"
             android:ellipsize="end"
             android:maxLines="2"
-            tools:text="Amazon.com, Inc."
-
-            />
+            tools:text="Amazon.com, Inc."/>
     </LinearLayout>
 
 </LinearLayout>

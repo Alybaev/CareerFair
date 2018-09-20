@@ -10,51 +10,39 @@ import kg.neobis.careerfair.model.Shedule
 import kotlinx.android.synthetic.main.item_shedule.view.*
 
 
-class ScheduleAdapter(var listener: Listener, var infoAboutSchedule : ArrayList<Shedule>) : RecyclerView.Adapter<ScheduleAdapter.MViewHolder>() {
+class ScheduleAdapter(var listener: Listener, var mList: ArrayList<Shedule>) : RecyclerView.Adapter<ScheduleAdapter.ViewHolder>() {
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MViewHolder {
-
-
-        return MViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.item_shedule, parent, false))
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+        val mView = LayoutInflater.from(parent.context).inflate(R.layout.item_shedule, parent, false)
+        return ViewHolder(mView)
     }
 
 
     override fun getItemCount(): Int {
-        return infoAboutSchedule.size
+        return mList.size
     }
 
-    override fun onBindViewHolder(holder: MViewHolder, position: Int) {
-
-        holder.start_time.text = infoAboutSchedule[position].start.substring(0,infoAboutSchedule[position].start.length - 3)
-        holder.end_time.text = infoAboutSchedule[position].end.substring(0,infoAboutSchedule[position].end.length - 3)
-        holder.topic.text = infoAboutSchedule[position].subject
-        holder.place.text = infoAboutSchedule[position].place
-
-//        holder.frameForCategory.setOnClickListener {
-//            listener.onItemSelectedAt(position)
-//        }
-
-
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        holder.bind(mList.get(position))
     }
 
-    fun setMData(info:  ArrayList<Shedule>) {
-        this.infoAboutSchedule = info
+    fun setMData(info: ArrayList<Shedule>) {
+        this.mList = info
         notifyDataSetChanged()
     }
-    inner class MViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        var start_time = view.time_text_start
-        var end_time = view.time_text_end
 
-        var topic = view.topic_text
-        var place = view.place_text
+    inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
-
+        fun bind(item: Shedule) {
+            itemView.time_text_start.text = item.start.substring(0, item.start.length - 3)
+            itemView.time_text_end.text = item.end.substring(0, item.end.length - 3)
+            itemView.topic_text.text = item.subject
+            itemView.place_text.text = item.place
+        }
 
     }
 
     interface Listener {
         fun onItemSelectedAt(position: Int)
     }
-
-
 }

@@ -35,7 +35,7 @@ class OrganizersActivity : BaseActivity(), OrganizersAdapter.Listener, Organizer
 
     private fun initAdapter() {
         val info = ArrayList<Organizers>()
-        mAdapter = OrganizersAdapter(this, this, info)
+        mAdapter = OrganizersAdapter(this, info)
         rvOrganizers.adapter = mAdapter
     }
 

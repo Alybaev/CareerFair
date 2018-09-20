@@ -14,7 +14,6 @@ class EmployersActivity : BaseActivity(), EmployersAdapter.Listener, OrganizersC
 
     private var presenter: OrganizersContract.Presenter? = null
     private var mAdapter: EmployersAdapter? = null
-    private var info: ArrayList<Organizers>? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,16 +35,14 @@ class EmployersActivity : BaseActivity(), EmployersAdapter.Listener, OrganizersC
         presenter?.getInfo(Constants.PATH_FOR_EMPLOYERS)
     }
 
-    override fun onItemSelectedAt(position: Int) {
+    override fun onItemSelectedAt(item: Organizers) {
         val intent = Intent(this, DetailActivity::class.java)
-        intent.putExtra(Constants.POSITION_KEY, position)
-        intent.putExtra(Constants.INFO_KEY, info)
+        intent.putExtra("data", item)
         startActivity(intent)
     }
 
     private fun initAdapter() {
-        info = ArrayList<Organizers>()
-        mAdapter = EmployersAdapter(this, this, info!!)
+        mAdapter = EmployersAdapter(this, ArrayList<Organizers>())
         rvEmployer.adapter = mAdapter
     }
 }

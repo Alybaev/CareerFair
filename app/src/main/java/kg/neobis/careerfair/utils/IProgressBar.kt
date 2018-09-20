@@ -1,4 +1,4 @@
-package kg.neobis.careerfair.utils.custom_classes
+package kg.neobis.careerfair.utils
 
 interface IProgressBar {
 

@@ -1,4 +1,4 @@
-package kg.neobis.careerfair.utils.data
+package kg.neobis.careerfair.data
 
 import com.bumptech.glide.BuildConfig
 import com.google.gson.GsonBuilder
@@ -12,7 +12,7 @@ object NetWork {
 
     val REQUEST_TIME_MINUTE = 3L
 
-    fun initService(baseUrl :String) : ForumService{
+    fun initService(baseUrl :String) : ForumService {
         return Retrofit.Builder().baseUrl(baseUrl).addConverterFactory(initGson())
                 .client(getClient()).build()
                 .create(ForumService::class.java)

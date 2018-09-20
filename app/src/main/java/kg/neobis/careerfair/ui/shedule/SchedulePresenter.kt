@@ -1,7 +1,7 @@
 package kg.neobis.careerfair.ui.shedule
 
 import kg.neobis.careerfair.model.Shedule
-import kg.neobis.careerfair.utils.custom_classes.ApplicationClass
+import kg.neobis.careerfair.ui.ApplicationClass
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

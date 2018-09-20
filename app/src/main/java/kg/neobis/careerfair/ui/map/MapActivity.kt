@@ -21,8 +21,7 @@ class MapActivity : BaseActivity() {
     }
 
     private fun initSpinner() {
-        val adapter = ArrayAdapter.createFromResource(this, R.array.stageList, android.R.layout.simple_spinner_item)
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        val adapter = ArrayAdapter.createFromResource(this, R.array.stageList, R.layout.item_spinner)
         spinner_in_map.adapter = adapter
         setSpinnerListener()
     }
@@ -32,7 +31,7 @@ class MapActivity : BaseActivity() {
             override fun onNothingSelected(parent: AdapterView<*>?) {}
 
             override fun onItemSelected(parent: AdapterView<*>, itemSelected: View, selectedItemPosition: Int, selectedId: Long) {
-                imageMap1.setImageResource(when (selectedItemPosition) {
+                imageView.setImageResource(when (selectedItemPosition) {
                     0 -> R.drawable.image_2_floor
                     1 -> R.drawable.image_1_floor
                     2 -> R.drawable.image_3_floor

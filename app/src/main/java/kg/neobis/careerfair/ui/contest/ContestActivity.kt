@@ -4,9 +4,9 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import kg.neobis.careerfair.R
+import kg.neobis.careerfair.data.Preference
 import kg.neobis.careerfair.ui.BaseActivity
 import kg.neobis.careerfair.utils.Constants
-import kg.neobis.careerfair.utils.FileUtils
 import kotlinx.android.synthetic.main.activity_contest.*
 
 class ContestActivity : BaseActivity(), ContestAdapter.Listener {
@@ -34,7 +34,7 @@ class ContestActivity : BaseActivity(), ContestAdapter.Listener {
 
     override fun onItemSelectedAt(position: Int) {
         val intent = Intent(this, ContestActivityGoogleForm::class.java)
-        val checkRegistration: String? = FileUtils.readCacheData<String>(this, position.toString())
+        val checkRegistration: String? = Preference.getToken(this)
         val urlsOfForms = resources.getStringArray(R.array.urls)
         if (checkRegistration == null) {
             intent.putExtra(Constants.URL_KEY, urlsOfForms[position])

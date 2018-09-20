@@ -17,15 +17,14 @@ class DetailActivity : BaseActivity() {
     }
 
     private fun initIncludedView() {
-        val info = intent.getSerializableExtra(Constants.INFO_KEY) as? ArrayList<Organizers>
-        val position = intent.getIntExtra(Constants.POSITION_KEY,0)
-        title = info?.get(position)?.full_name
-        tvName.text = position.let { info?.get(it)?.full_name }
+        val item = intent.getSerializableExtra("data") as? Organizers
+        title = item?.full_name
+        tvName.text = item?.full_name
 
         Glide.with(this)
-                .load(info?.get(position)?.logo_url)
+                .load(item?.logo_url)
                 .into(ivImage)
 
-        tvDescription.text = info?.get(position)?.description
+        tvDescription.text = item?.description
     }
 }

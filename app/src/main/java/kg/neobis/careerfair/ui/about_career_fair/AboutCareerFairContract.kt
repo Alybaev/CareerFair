@@ -1,7 +1,7 @@
 package kg.neobis.careerfair.ui.about_career_fair
 
 import kg.neobis.careerfair.model.AboutCareerFair
-import kg.neobis.careerfair.utils.custom_classes.IProgressBar
+import kg.neobis.careerfair.utils.IProgressBar
 
 interface AboutCareerFairContract {
 

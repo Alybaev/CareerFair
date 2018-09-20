@@ -1,60 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="horizontal"
     android:layout_width="match_parent"
     android:layout_height="103dp"
-    android:weightSum="100">
+    android:orientation="horizontal">
+
     <LinearLayout
         android:layout_width="0dp"
         android:layout_height="match_parent"
-        android:orientation="vertical"
         android:layout_gravity="center_vertical"
-        android:layout_weight="20">
+        android:layout_weight="15"
+        android:orientation="vertical">
+
         <kg.neobis.careerfair.ui.custom.TextViewRobotoRegular
             android:id="@+id/time_text_start"
+            style="@style/SheduleItemStyle"
             android:layout_width="match_parent"
             android:layout_height="29dp"
-            tools:text="12:00"
-            android:textSize="16sp"
+            android:fontFamily="@font/roboto_bold"
             android:gravity="center_horizontal"
-            style="@style/SheduleItemStyle"
-            android:fontFamily="@font/roboto_bold"/>
-        <ImageView
-            android:paddingStart="4dp"
-            android:layout_width="match_parent"
+            android:textSize="16sp"
+            tools:text="12:00" />
+
+        <View
+            android:layout_width="2dp"
+            android:layout_gravity="center"
             android:layout_height="48dp"
-            android:src="@drawable/yellow_line_long"/>
+            android:background="#FEE04A" />
+
         <kg.neobis.careerfair.ui.custom.TextViewRobotoRegular
             android:id="@+id/time_text_end"
+            style="@style/SheduleItemStyle"
             android:layout_width="match_parent"
             android:layout_height="29dp"
-            tools:text="13:00"
+            android:fontFamily="@font/roboto_bold"
+            android:gravity="center_horizontal"
             android:textColor="@color/colorBlack"
             android:textSize="16sp"
-            android:gravity="center_horizontal"
-            style="@style/SheduleItemStyle"
-            android:fontFamily="@font/roboto_bold"/>
-        
+            tools:text="13:00" />
+
     </LinearLayout>
+
     <kg.neobis.careerfair.ui.custom.TextViewRobotoRegular
-        android:background="@color/lightGreyColor"
         android:id="@+id/topic_text"
-        android:layout_weight="40"
         style="@style/SheduleItemStyle"
-        android:fontFamily="@font/roboto_bold"
-        android:layout_marginStart="6dp"
-        tools:text="Что написать на 'чистой доске' ?"
-        />
+        android:layout_weight="50"
+        android:padding="12dp"
+        android:background="@color/lightGreyColor"
+        tools:text="Что написать на 'чистой доске' ?" />
 
     <kg.neobis.careerfair.ui.custom.TextViewRobotoRegular
-
         android:id="@+id/place_text"
-        android:layout_weight="40"
         style="@style/SheduleItemStyle"
-        tools:text="4 этаж 410 каб."
-        />
-
+        android:padding="10dp"
+        android:layout_weight="30"
+        tools:text="4 этаж 410 каб." />
 
 
 </LinearLayout>

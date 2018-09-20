@@ -1,4 +1,4 @@
-package kg.neobis.careerfair.utils.data
+package kg.neobis.careerfair.data
 
 import kg.neobis.careerfair.model.AboutCareerFair
 import kg.neobis.careerfair.model.Organizers
