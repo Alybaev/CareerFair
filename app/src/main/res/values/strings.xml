@@ -51,6 +51,7 @@
     <string name="take_part_in_interview">Примите участие в наших опросах</string>
     <string name="go_to_interview_button_text">Перейти</string>
     <string name="about_app">О Приложений</string>
+    <string name="map_text_employers">Список компаний на этом этаже:</string>
     <string-array name="interview_topics">
         <item>Тенденций карьеры</item>
         <item>Вопросы генеральных директоров</item>

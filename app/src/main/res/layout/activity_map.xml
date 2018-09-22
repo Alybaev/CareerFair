@@ -1,36 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.map.MapActivity">
+    android:fillViewport="true">
 
-    <com.alexvasilkov.gestures.views.GestureImageView
-        android:id="@+id/imageView"
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        tools:context=".ui.map.MapActivity">
 
-    <LinearLayout
-        android:id="@+id/linearLayout2"
-        android:layout_width="110dp"
+        <LinearLayout
+            android:id="@+id/linearLayout2"
+            android:layout_width="110dp"
 
-        android:layout_height="45dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="28dp"
-        android:orientation="horizontal">
+            android:layout_height="45dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="28dp"
+            android:orientation="horizontal">
 
 
-        <Spinner
-            android:id="@+id/spinner_in_map"
+            <Spinner
+                android:id="@+id/spinner_in_map"
+                android:layout_width="match_parent"
+                android:layout_height="46dp"
+                android:layout_gravity="end"
+                android:background="@drawable/bg_spinnner"
+                android:gravity="center_vertical"
+
+
+                />
+
+        </LinearLayout>
+
+        <com.alexvasilkov.gestures.views.GestureImageView
+            android:id="@+id/imageView"
             android:layout_width="match_parent"
-            android:layout_height="46dp"
-            android:layout_gravity="end"
-            android:background="@drawable/bg_spinnner"
-            android:gravity="center_vertical"
+            android:layout_height="351dp"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/linearLayout2" />
+
+        <kg.neobis.careerfair.ui.custom.TextViewRobotoMedium
+            android:id="@+id/tvList"
+            style="@style/CustomTitleStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/imageView"
+            android:text="@string/map_text_employers" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rvMap"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:nestedScrollingEnabled="false"
+            android:layout_below="@id/tvList"
+            android:layout_marginStart="0dp"
+            app:layoutManager="android.support.v7.widget.LinearLayoutManager"
+            tools:listitem="@layout/item_employers" />
 
 
-            />
 
-    </LinearLayout>
-</RelativeLayout>
+
+    </RelativeLayout>
+</android.support.v4.widget.NestedScrollView>

@@ -30,7 +30,7 @@ class OrganizersPresenter(val view: OrganizersContract.View?) : OrganizersContra
         })
     }
 
-    override fun getInfo(requestUrl: String?) {
+    override fun    getInfo(requestUrl: String?) {
         if (TextUtils.isEmpty(requestUrl))
             return
         view?.showProgress()
