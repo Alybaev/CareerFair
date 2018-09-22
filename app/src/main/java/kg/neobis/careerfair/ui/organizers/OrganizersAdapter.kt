@@ -36,6 +36,7 @@ class OrganizersAdapter(var listener: Listener, var mList: ArrayList<Organizers>
             } else {
                 itemView.logo_of_company.setImageResource(R.drawable.default_image_for_organizers128px)
             }
+            itemView.tvCompany.text = mList[position].full_name
             itemView.logo_of_company.setOnClickListener {
                 listener.onItemSelectedAt(position)
             }

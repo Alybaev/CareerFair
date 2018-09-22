@@ -10,6 +10,6 @@ interface AboutCareerFairContract {
         fun onError(message: String?)
     }
     interface Presenter {
-        fun getInfoAboutCareerFair()
+        fun getInfoAboutCareerFair(path : String)
     }
 }

@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="horizontal"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:layout_marginEnd="10dp">
+    android:paddingEnd="10dp">
 
     <com.joooonho.SelectableRoundedImageView
         android:id="@+id/logo_of_company"
@@ -16,5 +17,15 @@
         app:sriv_border_width="1dp"
         android:src="@drawable/default_image_for_organizers128px"
         />
+    <kg.neobis.careerfair.ui.custom.TextViewRobotoMedium
+        android:maxLines="2"
+        android:ellipsize="end"
+        android:layout_marginTop="4dp"
+        android:textStyle="bold"
+        android:gravity="center"
+        tools:text="Neobis"
+        android:id="@+id/tvCompany"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content" />
 
 </LinearLayout>

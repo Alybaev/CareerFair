@@ -13,6 +13,8 @@ object Constants {
     val PATH_FOR_MEDIA_PARTNERS = "mediapartner"
     val PATH_FOR_SPONSORS = "sponsor"
     val PATH_FOR_EMPLOYERS = "employer"
+    val PATH_FOR_APP = "app"
+    val PATH_FOR_CAREER = "about"
 
     val URL_OF_REGISTRATION_GOOGLE_FORM = "https://docs.google.com/forms/d/e/1FAIpQLSevckocpQKbsAVyn5xKaMBsDbR3rY90n5ItBoPy7xOAxfZkzw/viewform"
     val URL_OF_REGISTRATION_RESPONSE_GOOGLE_FORM = "https://docs.google.com/forms/d/e/1FAIpQLSevckocpQKbsAVyn5xKaMBsDbR3rY90n5ItBoPy7xOAxfZkzw/formResponse"

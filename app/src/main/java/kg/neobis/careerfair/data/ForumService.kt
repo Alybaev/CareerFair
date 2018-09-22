@@ -14,18 +14,10 @@ interface ForumService {
     fun getInfoAbout(@Path("category") category: String): Call<ArrayList<Organizers>>
     @GET("organizer/")
     fun getOrganizers(): Call<ArrayList<Organizers>>
-    @GET("sponsor/")
-    fun getSponsorsList(): Call<List<Organizers>>
-    @GET("employer/")
-    fun getListEmployers():Call<List<Organizers>>
-    @GET("partner/")
-    fun getPartnersList():Call<List<Organizers>>
-    @GET("mediapartner/")
-    fun getMediaPartnersList():Call<List<Organizers>>
     @GET("shedule/")
     fun getScheduleList():Call<ArrayList<Shedule>>
-    @GET("about/")
-    fun getInfoAboutCareerFair():Call<ArrayList<AboutCareerFair>>
+    @GET("{category}/")
+    fun getInfoAboutCareerFair(@Path("category") category: String):Call<ArrayList<AboutCareerFair>>
 
 
 

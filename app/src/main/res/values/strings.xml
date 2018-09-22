@@ -11,7 +11,7 @@
     <string name="input_email">E-mail</string>
     <!--main menu-->
     <string name="main_menu_title">Главное меню</string>
-    <string name="about_career_fair_text"><![CDATA[ <b><font color=#ffffff>О</b><b><font color=#FEE04A> Ярмарке Вакансий</b>
+    <string name="about_career_fair_text"><![CDATA[ <b><font color=#FEE04A>О Ярмарке Карьеры</b>
 ]]> </string>
     <string name="time_title">Время</string>
     <string name="theme_title">Тема</string>
@@ -26,6 +26,7 @@
         <item>Партнеры и Медиа-партнеры</item>
         <item>Спонсоры</item>
         <item>Опросы</item>
+        <item>О Приложений</item>
     </string-array>
     <!--baseActivity-->
     <string name="loading">Loading</string>
@@ -49,6 +50,7 @@
     <string name="about_career_fair_detail_info">Американский университет в Центральной Азии в партнерстве с кадровой компанией WIND и спонсорами BEELINE и BANK OF ASIA проведут тренинги и семинары по подготовке к профессиональной деятельности молодых специалистов.\n\nКонцепция мероприятия заключается в мультифункциональности пространства, ориентированного на потребности студентов и выпускников, это:\n\n 1. возможность продолжения учебы в магистерских программах;\n 2. возможность трудоустройства студентов;\n 3. возможность создания своего бизнеса и предоставление рабочих мест в сфере туризма.\n 4. возможность привлечь внимание на профессии окружающей среды.\n\nСоответственно, ярмарка карьеры и стартапов будет совмещать четыре зоны:\n 1. образовательные программы\n 2. компании, предлагающие вакансии и стажировки\n 3. зона стартапов в сфере туризма\n 4. Карьера в сфере окружающая среда</string>
     <string name="take_part_in_interview">Примите участие в наших опросах</string>
     <string name="go_to_interview_button_text">Перейти</string>
+    <string name="about_app">О Приложений</string>
     <string-array name="interview_topics">
         <item>Тенденций карьеры</item>
         <item>Вопросы генеральных директоров</item>

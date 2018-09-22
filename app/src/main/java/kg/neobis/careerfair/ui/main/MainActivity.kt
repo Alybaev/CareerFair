@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity
 import android.text.Html
 import android.text.Spanned
 import kg.neobis.careerfair.R
+import kg.neobis.careerfair.ui.about_app.AboutAppActivity
 import kg.neobis.careerfair.ui.about_career_fair.AboutCareerFairActivity
 import kg.neobis.careerfair.ui.contest.ContestActivity
 import kg.neobis.careerfair.ui.employers.EmployersActivity
@@ -57,6 +58,7 @@ class MainActivity : AppCompatActivity(), Adapter.Listener {
                     4 -> AboutCareerFairActivity::class.java
                     3 -> ContestActivity::class.java
                     7 -> InterviewActivity::class.java
+                    8 -> AboutAppActivity::class.java
                     else -> OrganizersActivity::class.java
                 })
         intent.putExtra(Constants.NAME_OF_CATEGORY_KEY, nameOfCategory)

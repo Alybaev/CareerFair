@@ -32,7 +32,7 @@ class AboutCareerFairActivity : BaseActivity(), AboutCareerFairContract.View, Or
             title = list[4]
             OrganizersPresenter(this).getInfo(Constants.PATH_FOR_ORGANIZERS)
         } else {
-            AboutCareerFairPresenter(this).getInfoAboutCareerFair()
+            AboutCareerFairPresenter(this).getInfoAboutCareerFair(Constants.PATH_FOR_CAREER)
         }
     }
 
