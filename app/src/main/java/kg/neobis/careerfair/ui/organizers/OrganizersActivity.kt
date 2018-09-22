@@ -1,6 +1,7 @@
 package kg.neobis.careerfair.ui.organizers
 
 import android.os.Bundle
+import android.support.v7.widget.LinearLayoutManager
 import kg.neobis.careerfair.R
 import kg.neobis.careerfair.model.Organizers
 import kg.neobis.careerfair.ui.BaseActivity
@@ -34,8 +35,10 @@ class OrganizersActivity : BaseActivity(), OrganizersAdapter.Listener, Organizer
     }
 
     private fun initAdapter() {
+        val layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
         val info = ArrayList<Organizers>()
         mAdapter = OrganizersAdapter(this, info)
+        rvOrganizers.layoutManager = layoutManager
         rvOrganizers.adapter = mAdapter
     }
 

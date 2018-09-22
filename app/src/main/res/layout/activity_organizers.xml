@@ -31,8 +31,8 @@
             android:id="@+id/tvOrganizers"
             style="@style/CustomTitleStyle"
             android:layout_marginEnd="@dimen/margin_end_in_organizers_activity"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="24dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="12dp"
             android:text="@string/amazon_default_text" />
 
     </LinearLayout>

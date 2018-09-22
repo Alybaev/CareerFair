@@ -24,13 +24,14 @@
 
         <View
             android:layout_width="2dp"
-            android:layout_gravity="center"
             android:layout_height="48dp"
+            android:layout_gravity="center"
             android:background="#FEE04A" />
 
         <kg.neobis.careerfair.ui.custom.TextViewRobotoRegular
             android:id="@+id/time_text_end"
             style="@style/SheduleItemStyle"
+            android:layout_weight="@integer/weight_for_time"
             android:layout_width="match_parent"
             android:layout_height="29dp"
             android:fontFamily="@font/roboto_bold"
@@ -41,19 +42,32 @@
 
     </LinearLayout>
 
-    <kg.neobis.careerfair.ui.custom.TextViewRobotoRegular
-        android:id="@+id/topic_text"
-        style="@style/SheduleItemStyle"
-        android:layout_weight="50"
-        android:padding="12dp"
+    <android.support.v4.widget.NestedScrollView
+        android:layout_weight="@integer/weight_for_topic"
+        android:layout_height="match_parent"
+        android:layout_width="0dp"
+        android:padding="1dp"
         android:background="@color/lightGreyColor"
-        tools:text="Что написать на 'чистой доске' ?" />
+        android:layout_marginTop="@dimen/margin_top_for_item_in_schedule">
+
+        <kg.neobis.careerfair.ui.custom.TextViewRobotoRegular
+            android:id="@+id/topic_text"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            style="@style/SheduleItemStyle"
+            android:layout_marginTop="0dp"
+            android:layout_gravity="start"
+
+
+
+            tools:text="Что написать на 'чистой доске' ?" />
+    </android.support.v4.widget.NestedScrollView>
 
     <kg.neobis.careerfair.ui.custom.TextViewRobotoRegular
         android:id="@+id/place_text"
         style="@style/SheduleItemStyle"
-        android:padding="10dp"
-        android:layout_weight="30"
+        android:layout_weight="@integer/weight_for_place"
+        android:padding="2dp"
         tools:text="4 этаж 410 каб." />
 
 

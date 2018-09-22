@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="weight_for_time">15</integer>
+    <integer name="weight_for_topic">50</integer>
+    <integer name="weight_for_place">30</integer>
+
+</resources>

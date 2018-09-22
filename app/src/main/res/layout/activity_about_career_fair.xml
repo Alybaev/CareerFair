@@ -15,8 +15,7 @@
             android:id="@+id/ivLogo"
             android:layout_width="match_parent"
             android:layout_height="180dp"
-            android:src="@drawable/logo"
-            android:background="@color/logo_background"/>
+          />
 
         <kg.neobis.careerfair.ui.custom.TextViewRobotoMedium
             android:id="@+id/tvAbout"

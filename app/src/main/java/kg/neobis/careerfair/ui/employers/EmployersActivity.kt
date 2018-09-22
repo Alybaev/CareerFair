@@ -2,9 +2,11 @@ package kg.neobis.careerfair.ui.employers
 
 import android.content.Intent
 import android.os.Bundle
+import android.support.v7.widget.LinearLayoutManager
 import kg.neobis.careerfair.R
 import kg.neobis.careerfair.model.Organizers
 import kg.neobis.careerfair.ui.BaseActivity
+import kg.neobis.careerfair.ui.custom.DividerItemDecoration
 import kg.neobis.careerfair.ui.organizers.OrganizersContract
 import kg.neobis.careerfair.ui.organizers.OrganizersPresenter
 import kg.neobis.careerfair.utils.Constants
@@ -44,5 +46,6 @@ class EmployersActivity : BaseActivity(), EmployersAdapter.Listener, OrganizersC
     private fun initAdapter() {
         mAdapter = EmployersAdapter(this, ArrayList<Organizers>())
         rvEmployer.adapter = mAdapter
+        rvEmployer.addItemDecoration(DividerItemDecoration(this))
     }
 }

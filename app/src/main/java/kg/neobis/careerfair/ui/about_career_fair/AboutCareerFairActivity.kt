@@ -39,14 +39,19 @@ class AboutCareerFairActivity : BaseActivity(), AboutCareerFairContract.View, Or
     override fun onSuccessAboutCarerrFair(result: List<AboutCareerFair>) {
         if (result.isNotEmpty()) {
             tvAbout.text = result[0].description
+
         }
+        ivLogo.setImageResource(R.drawable.logo)
+        ivLogo.setBackgroundColor(ContextCompat.getColor(this,R.color.logo_background))
     }
 
     override fun onSuccess(result: ArrayList<Organizers>) {
-        ivLogo.background = ContextCompat.getDrawable(this, R.color.lightGreyColor)
-        Glide.with(this)
-                .load(result[0].logo_url)
-                .into(ivLogo)
-        tvAbout.text = result[0].description
+        if (result.isNotEmpty()) {
+            ivLogo.background = ContextCompat.getDrawable(this, R.color.lightGreyColor)
+            Glide.with(this)
+                    .load(result[0].logo_url)
+                    .into(ivLogo)
+            tvAbout.text = result[0].description
+        }
     }
 }

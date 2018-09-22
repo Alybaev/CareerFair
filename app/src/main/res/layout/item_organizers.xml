@@ -6,11 +6,15 @@
     android:layout_height="wrap_content"
     android:layout_marginEnd="10dp">
 
-    <ImageView
+    <com.joooonho.SelectableRoundedImageView
         android:id="@+id/logo_of_company"
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_marginEnd="8dp"
-        android:src="@drawable/default_image_for_organizers128px"/>
+        app:sriv_oval="true"
+        android:scaleType="fitXY"
+        app:sriv_border_width="1dp"
+        android:src="@drawable/default_image_for_organizers128px"
+        />
 
 </LinearLayout>

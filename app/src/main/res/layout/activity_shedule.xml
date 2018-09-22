@@ -9,37 +9,39 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="15dp"
         android:orientation="vertical">
 
         <LinearLayout
             android:id="@+id/linearLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
             android:orientation="horizontal">
 
             <kg.neobis.careerfair.ui.custom.TextViewRobotoRegular
                 style="@style/SheduleSubtitlesStyle"
-                android:layout_weight="20"
+                android:layout_weight="@integer/weight_for_time"
                 android:gravity="center_horizontal"
                 android:text="@string/time_title" />
 
             <kg.neobis.careerfair.ui.custom.TextViewRobotoRegular
                 style="@style/SheduleSubtitlesStyle"
-                android:layout_weight="40"
+                android:layout_weight="@integer/weight_for_topic"
                 android:text="@string/theme_title" />
 
             <kg.neobis.careerfair.ui.custom.TextViewRobotoRegular
                 style="@style/SheduleSubtitlesStyle"
-                android:layout_weight="40"
+                android:layout_weight="@integer/weight_for_place"
                 android:text="@string/place_title" />
 
         </LinearLayout>
 
         <android.support.v7.widget.RecyclerView
+            android:layout_marginTop="8dp"
             android:id="@+id/rvSchedule"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+
             app:layoutManager="android.support.v7.widget.LinearLayoutManager"
             android:nestedScrollingEnabled="false"
             tools:listitem="@layout/item_shedule" />

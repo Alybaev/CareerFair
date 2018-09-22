@@ -34,4 +34,6 @@ object Constants {
     val URL_KEY_FOR_CACHE_ABOUT_CAREER_FAIR = "urlKeyCache3"
     val TAG_FOR_SHOW_DIALOG_FRAGMENT: String = "dialogHint"
     val BUNDLE_KEY_POSITION: String? = "position"
+
+    val RESPONSE_TIME_SLEEP = 1000
 }

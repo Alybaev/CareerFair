@@ -30,8 +30,8 @@ class OrganizersAdapter(var listener: Listener, var mList: ArrayList<Organizers>
         fun bind(position: Int) {
             if (!TextUtils.isEmpty(mList[position].logo_url)) {
                 Glide.with(itemView.context)
+                        .asBitmap()
                         .load(mList.get(position).logo_url)
-                        .apply(RequestOptions.circleCropTransform())
                         .into(itemView.logo_of_company)
             } else {
                 itemView.logo_of_company.setImageResource(R.drawable.default_image_for_organizers128px)

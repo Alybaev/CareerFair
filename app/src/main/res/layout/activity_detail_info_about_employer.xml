@@ -18,17 +18,27 @@
             android:layout_height="100dp"
             android:orientation="horizontal">
 
-            <ImageView
+            <com.joooonho.SelectableRoundedImageView
                 android:id="@+id/ivImage"
                 android:layout_width="70dp"
                 android:layout_height="70dp"
+                android:layout_gravity="center_vertical"
+                android:adjustViewBounds="true"
+                app:sriv_oval="true"
+                android:scaleType="fitXY"
+                app:sriv_border_width="1dp"
+                android:src="@drawable/default_image_for_employers128px"
                 android:layout_margin="5dp"
-                android:src="@drawable/default_image_for_employers128px"/>
+                />
 
             <kg.neobis.careerfair.ui.custom.TextViewRobotoLight
+                android:gravity="center_vertical"
+                android:textSize="30sp"
                 android:id="@+id/tvName"
                 style="@style/CustomTitleStyle"
+                android:padding="8dp"
                 android:layout_height="match_parent"
+                android:layout_marginBottom="3dp"
                 tools:text="Amazon" />
 
         </LinearLayout>
@@ -42,6 +52,7 @@
             android:id="@+id/tvDescription"
             style="@style/CustomTitleStyle"
             android:layout_marginTop="15dp"
+
             android:text="@string/amazon_default_text"
             android:textSize="14sp" />
     </LinearLayout>

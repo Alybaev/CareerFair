@@ -22,8 +22,10 @@ class DetailActivity : BaseActivity() {
         tvName.text = item?.full_name
 
         Glide.with(this)
+                .asBitmap()
                 .load(item?.logo_url)
                 .into(ivImage)
+
 
         tvDescription.text = item?.description
     }

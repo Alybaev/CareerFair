@@ -26,7 +26,7 @@ class ContestAdapter(var listener: Listener, var mList: Array<String>) : Recycle
 
         fun bind(position: Int){
             itemView.tvContest.text = mList[position]
-            itemView.tvContest.setOnClickListener {
+            itemView.btnParticipate.setOnClickListener {
                 listener.onItemSelectedAt(position)
             }
             itemView.ivHint.setOnClickListener {

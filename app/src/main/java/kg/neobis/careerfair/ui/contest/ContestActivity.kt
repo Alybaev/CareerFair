@@ -2,11 +2,15 @@ package kg.neobis.careerfair.ui.contest
 
 import android.content.Intent
 import android.os.Bundle
+import android.support.v7.widget.LinearLayoutManager
 import android.widget.Toast
 import kg.neobis.careerfair.R
+import kg.neobis.careerfair.R.attr.layoutManager
 import kg.neobis.careerfair.data.Preference
 import kg.neobis.careerfair.ui.BaseActivity
+import kg.neobis.careerfair.ui.custom.DividerItemDecoration
 import kg.neobis.careerfair.utils.Constants
+import kg.neobis.careerfair.utils.FileUtils
 import kotlinx.android.synthetic.main.activity_contest.*
 
 class ContestActivity : BaseActivity(), ContestAdapter.Listener {
@@ -29,18 +33,21 @@ class ContestActivity : BaseActivity(), ContestAdapter.Listener {
     private fun initAdapter() {
         val namesOfContests = resources.getStringArray(R.array.name_contests)
         mAdapter = ContestAdapter(this, namesOfContests!!)
+        rvContest.addItemDecoration(DividerItemDecoration(this))
         rvContest.adapter = mAdapter
+
     }
 
     override fun onItemSelectedAt(position: Int) {
         val intent = Intent(this, ContestActivityGoogleForm::class.java)
-        val checkRegistration: String? = Preference.getToken(this)
+
+        val checkRegistration: String? = FileUtils.readCacheData<String>(this, position.toString())
         val urlsOfForms = resources.getStringArray(R.array.urls)
-        if (checkRegistration == null) {
+        if(checkRegistration == null ){
             intent.putExtra(Constants.URL_KEY, urlsOfForms[position])
             startActivity(intent)
-        } else {
-            Toast.makeText(this, "Вы уже учавствуете в этом конкурсе", Toast.LENGTH_SHORT).show()
+        }else {
+            Toast.makeText(this,"Вы уже учавствуете в этом конкурсе",Toast.LENGTH_SHORT).show()
         }
     }
 

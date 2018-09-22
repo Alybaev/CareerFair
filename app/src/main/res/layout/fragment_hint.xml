@@ -19,7 +19,7 @@
     <kg.neobis.careerfair.ui.custom.TextViewRobotoRegular
         android:id="@+id/tvHint"
         style="@style/CustomTitleStyle"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="5dp"
         android:gravity="center_horizontal" />
 
 </LinearLayout>

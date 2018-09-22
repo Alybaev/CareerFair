@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">CareerFair</string>
+    <string name="app_name">Career Fair</string>
     <string name="welcome_text">Добро\nпожаловать на</string>
     <string name="career_fair">Career Fair</string>
     <!--login activity-->

@@ -4,13 +4,10 @@ import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.amulyakhare.textdrawable.TextDrawable
-import com.amulyakhare.textdrawable.util.ColorGenerator
 import kg.neobis.careerfair.R
 import kotlinx.android.synthetic.main.item_category.view.*
 
 class Adapter(var listener: Listener, var mList: Array<String>) : RecyclerView.Adapter<Adapter.ViewHolder>() {
-    private var generator = ColorGenerator.MATERIAL
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val mView = LayoutInflater.from(parent.context).inflate(R.layout.item_category, parent, false)
@@ -28,15 +25,28 @@ class Adapter(var listener: Listener, var mList: Array<String>) : RecyclerView.A
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
         fun bind(position: Int) {
-            // Get the first letter of list item
-            val letter = mList[position][0].toString()
-            // Create a new TextDrawable for our image's background
-            val drawable = TextDrawable.builder().buildRound(letter, generator.randomColor)
-            itemView.imageView.setImageDrawable(drawable)
+            if (position % 2 == 0) {
+                itemView.shadow_view2.visibility = View.VISIBLE
+                itemView.frame_for_category2.visibility = View.VISIBLE
+                itemView.yellow_line_image2.visibility = View.VISIBLE
+                itemView.shadow_view.visibility = View.INVISIBLE
+                itemView.frame_for_category.visibility = View.INVISIBLE
+                itemView.yellow_line_image.visibility = View.INVISIBLE
 
+            } else {
+                itemView.shadow_view2.visibility = View.INVISIBLE
+                itemView.frame_for_category2.visibility = View.INVISIBLE
+                itemView.yellow_line_image2.visibility = View.INVISIBLE
+                itemView.shadow_view.visibility = View.VISIBLE
+                itemView.frame_for_category.visibility = View.VISIBLE
+                itemView.yellow_line_image.visibility = View.VISIBLE
+            }
             itemView.tvCategory.text = mList[position]
 
-            itemView.setOnClickListener {
+            itemView.frame_for_category.setOnClickListener {
+                listener.onItemSelectedAt(position, mList[position])
+            }
+            itemView.frame_for_category2.setOnClickListener {
                 listener.onItemSelectedAt(position, mList[position])
             }
         }
