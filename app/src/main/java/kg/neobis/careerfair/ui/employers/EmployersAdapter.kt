@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.bumptech.glide.Glide
+import com.bumptech.glide.request.RequestOptions
 import kg.neobis.careerfair.R
 import kg.neobis.careerfair.model.Organizers
 import kotlinx.android.synthetic.main.item_employers.view.*
@@ -29,8 +30,11 @@ class EmployersAdapter(var listener: Listener, var mList: ArrayList<Organizers>)
 
         fun bind(position: Int) {
             Glide.with(itemView)
-                    .asBitmap()
                     .load(mList[position].logo_url)
+                    .apply(RequestOptions()
+                            .centerInside()
+                            .override(250, 250)
+                            .error(R.drawable.default_image_for_employers128px))
                     .into(itemView.photo_of_employer)
 
             itemView.name_of_employer.text = mList[position].full_name

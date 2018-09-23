@@ -46,6 +46,5 @@ class EmployersActivity : BaseActivity(), EmployersAdapter.Listener, OrganizersC
     private fun initAdapter() {
         mAdapter = EmployersAdapter(this, ArrayList<Organizers>())
         rvEmployer.adapter = mAdapter
-        rvEmployer.addItemDecoration(DividerItemDecoration(this))
     }
 }

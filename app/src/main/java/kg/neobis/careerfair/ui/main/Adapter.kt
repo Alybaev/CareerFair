@@ -26,18 +26,14 @@ class Adapter(var listener: Listener, var mList: Array<String>) : RecyclerView.A
 
         fun bind(position: Int) {
             if (position % 2 == 0) {
-                itemView.shadow_view2.visibility = View.VISIBLE
                 itemView.frame_for_category2.visibility = View.VISIBLE
                 itemView.yellow_line_image2.visibility = View.VISIBLE
-                itemView.shadow_view.visibility = View.INVISIBLE
                 itemView.frame_for_category.visibility = View.INVISIBLE
                 itemView.yellow_line_image.visibility = View.INVISIBLE
 
             } else {
-                itemView.shadow_view2.visibility = View.INVISIBLE
                 itemView.frame_for_category2.visibility = View.INVISIBLE
                 itemView.yellow_line_image2.visibility = View.INVISIBLE
-                itemView.shadow_view.visibility = View.VISIBLE
                 itemView.frame_for_category.visibility = View.VISIBLE
                 itemView.yellow_line_image.visibility = View.VISIBLE
             }

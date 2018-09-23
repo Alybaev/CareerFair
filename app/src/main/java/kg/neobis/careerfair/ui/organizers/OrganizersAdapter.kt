@@ -1,7 +1,6 @@
 package kg.neobis.careerfair.ui.organizers
 
 import android.support.v7.widget.RecyclerView
-import android.text.TextUtils
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -28,14 +27,11 @@ class OrganizersAdapter(var listener: Listener, var mList: ArrayList<Organizers>
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         fun bind(position: Int) {
-            if (!TextUtils.isEmpty(mList[position].logo_url)) {
-                Glide.with(itemView.context)
-                        .asBitmap()
-                        .load(mList.get(position).logo_url)
-                        .into(itemView.logo_of_company)
-            } else {
-                itemView.logo_of_company.setImageResource(R.drawable.default_image_for_organizers128px)
-            }
+            Glide.with(itemView.context)
+                    .load(mList.get(position).logo_url)
+                    .apply(RequestOptions.circleCropTransform().centerInside()
+                            .error(R.drawable.default_image_for_organizers128px))
+                    .into(itemView.logo_of_company)
             itemView.tvCompany.text = mList[position].full_name
             itemView.logo_of_company.setOnClickListener {
                 listener.onItemSelectedAt(position)

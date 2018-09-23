@@ -3,9 +3,9 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:aapt="http://schemas.android.com/aapt"
     android:width="10dp"
-    android:height="52.25dp"
+    android:height="66dp"
     android:viewportWidth="10"
-    android:viewportHeight="52.25"
+    android:viewportHeight="66"
     >
 
     <group>

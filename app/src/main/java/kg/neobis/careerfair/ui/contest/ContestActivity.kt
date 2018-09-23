@@ -2,11 +2,8 @@ package kg.neobis.careerfair.ui.contest
 
 import android.content.Intent
 import android.os.Bundle
-import android.support.v7.widget.LinearLayoutManager
 import android.widget.Toast
 import kg.neobis.careerfair.R
-import kg.neobis.careerfair.R.attr.layoutManager
-import kg.neobis.careerfair.data.Preference
 import kg.neobis.careerfair.ui.BaseActivity
 import kg.neobis.careerfair.ui.custom.DividerItemDecoration
 import kg.neobis.careerfair.utils.Constants

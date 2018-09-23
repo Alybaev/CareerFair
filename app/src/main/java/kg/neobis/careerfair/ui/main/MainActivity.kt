@@ -55,8 +55,8 @@ class MainActivity : AppCompatActivity(), Adapter.Listener {
                     0 -> ScheduleActivity::class.java
                     1 -> MapActivity::class.java
                     2 -> EmployersActivity::class.java
-                    4 -> AboutCareerFairActivity::class.java
                     3 -> ContestActivity::class.java
+                    4 -> AboutCareerFairActivity::class.java
                     7 -> InterviewActivity::class.java
                     8 -> AboutAppActivity::class.java
                     else -> OrganizersActivity::class.java

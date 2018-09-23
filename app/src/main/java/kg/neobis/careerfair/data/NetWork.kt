@@ -17,6 +17,7 @@ object NetWork {
                 .client(getClient()).build()
                 .create(ForumService::class.java)
     }
+
     private fun getClient(): OkHttpClient {
         val client = OkHttpClient.Builder()
                 .addInterceptor { chain ->
