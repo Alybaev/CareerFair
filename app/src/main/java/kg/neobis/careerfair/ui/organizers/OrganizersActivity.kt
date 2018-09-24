@@ -1,12 +1,14 @@
 package kg.neobis.careerfair.ui.organizers
 
 import android.os.Bundle
+import android.support.v4.content.ContextCompat
 import android.support.v7.widget.LinearLayoutManager
 import kg.neobis.careerfair.R
 import kg.neobis.careerfair.model.Organizers
 import kg.neobis.careerfair.ui.BaseActivity
 import kg.neobis.careerfair.utils.Constants
 import kotlinx.android.synthetic.main.activity_organizers.*
+import kotlinx.android.synthetic.main.item_organizers.*
 
 class OrganizersActivity : BaseActivity(), OrganizersAdapter.Listener, OrganizersContract.View {
     private var presenter: OrganizersContract.Presenter? = null
@@ -44,6 +46,7 @@ class OrganizersActivity : BaseActivity(), OrganizersAdapter.Listener, Organizer
 
     override fun onItemSelectedAt(position: Int) {
         tvOrganizers.text = info!![position].description
+
     }
 
     override fun onSuccess(result: ArrayList<Organizers>) {

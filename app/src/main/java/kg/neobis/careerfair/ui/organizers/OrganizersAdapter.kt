@@ -1,5 +1,6 @@
 package kg.neobis.careerfair.ui.organizers
 
+import android.support.v4.content.ContextCompat
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
@@ -8,6 +9,7 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import kg.neobis.careerfair.R
 import kg.neobis.careerfair.model.Organizers
+import kotlinx.android.synthetic.main.item_organizers.*
 import kotlinx.android.synthetic.main.item_organizers.view.*
 
 class OrganizersAdapter(var listener: Listener, var mList: ArrayList<Organizers>) : RecyclerView.Adapter<OrganizersAdapter.ViewHolder>() {

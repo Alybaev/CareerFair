@@ -26,8 +26,8 @@
         <item>Партнеры и Медиа-партнеры</item>
         <item>Спонсоры</item>
         <item>Опросы</item>
-        <item>О Приложении</item>
         <item>О Хакатоне</item>
+        <item>О Приложении</item>
     </string-array>
     <!--baseActivity-->
     <string name="loading">Loading</string>
