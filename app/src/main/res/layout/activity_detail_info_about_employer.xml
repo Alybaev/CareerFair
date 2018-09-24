@@ -45,6 +45,8 @@
             android:background="#FEE04A" />
 
         <kg.neobis.careerfair.ui.custom.TextViewRobotoMedium
+            android:autoLink="web"
+            android:textColorLink="@color/colorBlack"
             android:id="@+id/tvDescription"
             style="@style/CustomTitleStyle"
             android:layout_marginTop="15dp"

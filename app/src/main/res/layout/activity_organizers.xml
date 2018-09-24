@@ -34,6 +34,8 @@
         <kg.neobis.careerfair.ui.custom.TextViewRobotoMedium
             android:id="@+id/tvOrganizers"
             style="@style/CustomTitleStyle"
+            android:autoLink="web"
+            android:textColorLink="@color/colorBlack"
             android:layout_marginEnd="@dimen/margin_end_in_organizers_activity"
             android:layout_marginStart="12dp"
             android:layout_marginTop="12dp"
