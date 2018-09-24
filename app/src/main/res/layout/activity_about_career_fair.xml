@@ -21,6 +21,8 @@
         <kg.neobis.careerfair.ui.custom.TextViewRobotoMedium
             android:id="@+id/tvAbout"
             style="@style/CustomTitleStyle"
+            android:textColorLink="@android:color/black"
+            android:autoLink="web"
             android:text="@string/amazon_default_text" />
 
     </LinearLayout>

@@ -16,7 +16,7 @@
         <LinearLayout
             android:id="@+id/linearLayout2"
             android:layout_width="110dp"
-
+            android:background="@color/greyColor"
             android:layout_height="45dp"
             android:layout_marginLeft="16dp"
             android:layout_marginTop="28dp"
@@ -25,14 +25,9 @@
 
             <Spinner
                 android:id="@+id/spinner_in_map"
-                android:layout_width="match_parent"
-                android:layout_height="46dp"
-                android:layout_gravity="end"
-                android:background="@drawable/bg_spinnner"
-                android:gravity="center_vertical"
-
-
-                />
+                android:layout_width="110dp"
+                android:layout_alignParentRight="true"
+                android:layout_height="45dp"/>
 
         </LinearLayout>
 

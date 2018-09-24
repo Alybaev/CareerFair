@@ -2,6 +2,7 @@ package kg.neobis.careerfair.ui.about_career_fair
 
 import android.os.Bundle
 import android.support.v4.content.ContextCompat
+import android.text.method.LinkMovementMethod
 import com.bumptech.glide.Glide
 import kg.neobis.careerfair.R
 import kg.neobis.careerfair.model.AboutCareerFair
@@ -11,6 +12,7 @@ import kg.neobis.careerfair.ui.organizers.OrganizersContract
 import kg.neobis.careerfair.ui.organizers.OrganizersPresenter
 import kg.neobis.careerfair.utils.Constants
 import kotlinx.android.synthetic.main.activity_about_career_fair.*
+
 
 class AboutCareerFairActivity : BaseActivity(), AboutCareerFairContract.View, OrganizersContract.View {
 
@@ -31,7 +33,13 @@ class AboutCareerFairActivity : BaseActivity(), AboutCareerFairContract.View, Or
         if (name == list[4]) {
             title = list[4]
             OrganizersPresenter(this).getInfo(Constants.PATH_FOR_ORGANIZERS)
-        } else {
+        } else if(name == list[9]){
+            title = list[9]
+            ivLogo.setImageResource(R.drawable.about_hackaton_drawable)
+            tvAbout.text = getString(R.string.about_hackaton)
+            tvAbout.setMovementMethod(LinkMovementMethod.getInstance());
+        }
+        else{
             AboutCareerFairPresenter(this).getInfoAboutCareerFair(Constants.PATH_FOR_CAREER)
         }
     }

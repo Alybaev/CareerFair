@@ -37,7 +37,7 @@
             android:label="Карта" />
         <activity
             android:name=".ui.employers.EmployersActivity"
-            android:label="Работадатели" />
+            android:label="Работодатели" />
         <activity android:name=".ui.employers.DetailActivity" />
         <activity
             android:name=".ui.about_career_fair.AboutCareerFairActivity"
@@ -47,7 +47,7 @@
             android:label="Опросы" />
         <activity android:name=".ui.contest.ContestActivityGoogleForm" />
         <activity android:name=".ui.about_app.AboutAppActivity"
-            android:label="О Приложений" />
+            android:label="О Приложении" />
     </application>
 
 </manifest>

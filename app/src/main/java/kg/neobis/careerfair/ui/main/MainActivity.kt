@@ -59,6 +59,7 @@ class MainActivity : AppCompatActivity(), Adapter.Listener {
                     4 -> AboutCareerFairActivity::class.java
                     7 -> InterviewActivity::class.java
                     8 -> AboutAppActivity::class.java
+                    9 -> AboutCareerFairActivity::class.java
                     else -> OrganizersActivity::class.java
                 })
         intent.putExtra(Constants.NAME_OF_CATEGORY_KEY, nameOfCategory)
