@@ -29,6 +29,7 @@ class SplashScreen : AppCompatActivity() {
             override fun onAnimationEnd(animation: Animation) {
                 val token = Preference.getToken(applicationContext)
                 startActivity(Intent(this@SplashScreen, getNextTask(token)))
+                finish()
             }
         })
         ivLogo.startAnimation(anim_in)
