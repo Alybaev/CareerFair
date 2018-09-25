@@ -33,8 +33,8 @@ class AboutCareerFairActivity : BaseActivity(), AboutCareerFairContract.View, Or
         if (name == list[4]) {
             title = list[4]
             OrganizersPresenter(this).getInfo(Constants.PATH_FOR_ORGANIZERS)
-        } else if(name == list[9]){
-            title = list[9]
+        } else if(name == list[8]){
+            title = list[8]
             ivLogo.setImageResource(R.drawable.about_hackaton_drawable)
             tvAbout.text = getString(R.string.about_hackaton)
             tvAbout.setMovementMethod(LinkMovementMethod.getInstance());
