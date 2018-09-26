@@ -40,6 +40,7 @@ class AboutCareerFairActivity : BaseActivity(), AboutCareerFairContract.View, Or
             tvAbout.setMovementMethod(LinkMovementMethod.getInstance());
         }
         else{
+            title = "О Ярмарке Карьеры"
             AboutCareerFairPresenter(this).getInfoAboutCareerFair(Constants.PATH_FOR_CAREER)
         }
     }
