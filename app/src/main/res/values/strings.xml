@@ -35,7 +35,6 @@
     <string-array name="name_contests">
         <item>“Самое лучшее Мок-интервью”</item>
         <item>“Самое лучшее CV”</item>
-        <item>“О Фестивале”</item>
     </string-array>
     <string name="take_part_in_contest">Участвовать</string>
     <string name="amazon_default_text">Нет информаций</string>
@@ -55,7 +54,8 @@
     <string name="map_text_employers">Список компаний на этом этаже:</string>
     <string-array name="interview_topics">
         <item>Опрос для работодателей</item>
-        <item>Вопросы генеральных директоров</item>
+        <item>Вопросы от спонсоров</item>
+        <item>О Фестивале</item>
     </string-array>
     <!--url-->
     <string-array name="urls">

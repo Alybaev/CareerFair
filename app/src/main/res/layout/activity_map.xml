@@ -20,14 +20,16 @@
             android:layout_height="45dp"
             android:layout_marginLeft="16dp"
             android:layout_marginTop="28dp"
+            android:layout_marginBottom="5dp"
             android:orientation="horizontal">
 
 
             <Spinner
                 android:id="@+id/spinner_in_map"
                 android:layout_width="110dp"
+                android:layout_height="45dp"
                 android:layout_alignParentRight="true"
-                android:layout_height="45dp"/>
+                />
 
         </LinearLayout>
 

@@ -9,6 +9,7 @@ import android.webkit.WebViewClient
 import kg.neobis.careerfair.R
 import kg.neobis.careerfair.data.Preference
 import kg.neobis.careerfair.ui.contest.ContestActivity
+import kg.neobis.careerfair.ui.interview.InterviewActivity
 import kg.neobis.careerfair.ui.main.MainActivity
 import kg.neobis.careerfair.utils.Constants.RESPONSE_TIME_SLEEP
 import kg.neobis.careerfair.utils.Constants.URL_OF_ABOUT_CAREER_RESPONSE_GOOGLE_FORM
@@ -44,7 +45,12 @@ class SimpleWebViewClientImpl(var activity: Activity) : WebViewClient() {
         val urlResponses = activity.resources.getStringArray(R.array.urls_responses)
         for (i in 0 until urlResponses.size) {
             if (url.contains(urlResponses[i])) {
-                intent = Intent(activity, ContestActivity::class.java)
+
+                if(url.contains("https://docs.google.com/forms/d/e/1FAIpQLSfMWsSbLRpRsfkT9Xw0f7PfKRoQXwHKslwi6ZQNi8SlsQMn8Q/formResponse")){
+                    intent = Intent(activity, InterviewActivity::class.java)
+                }else{
+                    intent = Intent(activity, ContestActivity::class.java)
+                }
                 FileUtils.writeCacheData(activity, i.toString(), urlResponses[i])
                 activity!!.startActivity(intent)
                 activity.finish()
