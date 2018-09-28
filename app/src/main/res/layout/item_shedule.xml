@@ -46,6 +46,7 @@
         android:layout_height="match_parent"
         android:layout_width="0dp"
         android:padding="1dp"
+        android:fillViewport="true"
         android:background="@color/lightGreyColor"
         android:layout_marginTop="@dimen/margin_top_for_item_in_schedule">
 
@@ -56,6 +57,7 @@
             style="@style/SheduleItemStyle"
             android:layout_marginTop="0dp"
             android:layout_gravity="start"
+            android:ellipsize="end"
 
 
 

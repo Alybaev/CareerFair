@@ -24,8 +24,8 @@ class InterviewActivity : BaseActivity(), InterviewAdapter.Listener {
         var customTabWebView = CustomTabForWebView()
         var url : String? = null
         when (position) {
-            0 -> Constants.URL_OF_INTERVIEW_TENDENCY_OF_CAREER
-            1 -> Constants.URL_OF_INTERVIEW_QUESTIONS_OF_DIRECTORS
+            0 -> url = Constants.URL_OF_INTERVIEW_TENDENCY_OF_CAREER
+            1 -> url =  Constants.URL_OF_INTERVIEW_QUESTIONS_OF_DIRECTORS
             2 -> {
                 val intent = Intent(this, ContestActivityGoogleForm::class.java)
 
